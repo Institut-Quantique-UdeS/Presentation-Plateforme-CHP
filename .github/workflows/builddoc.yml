@@ -1,0 +1,17 @@
+name: Build Documentation CI
+
+on:
+  push:
+    branches: [ test_docs ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Sphinx build
+      run: sphinx-build ./ docs
+
