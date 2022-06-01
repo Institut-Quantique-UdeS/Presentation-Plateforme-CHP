@@ -1,6 +1,6 @@
 .. gpus
 
-Calcul sur GPUs
+Calcul sur GPUs (A VENIR)
 ---------------
 
 TODO

@@ -37,8 +37,7 @@ Qui peut ensuite être transmis sur une autre machine pour reproduire l'environn
 
    pip install -r requirement.txt
 
-Ce qui garantie la réplicabilité des résultats de recherche entre différents acteurs.
-Finalement, dans la configuration actuel des serveurs de l'IQ, la création d'environnement virtuel directement sur les serveurs permet l'installation de librairies Python optimisées pour ces derniers.
+Finalement, dans la configuration actuel des serveurs de l'IQ, la création d'environnements virtuels doit s'effectuer directement sur les serveurs afin de bénéfier des dernières librairies Python disponibles et optimisées pour les serveurs.
 
 La création d'un environnement virtuel sur les serveurs de calcul de l'IQ se fait comme suit:
 
@@ -52,19 +51,45 @@ La création d'un environnement virtuel sur les serveurs de calcul de l'IQ se fa
                                         #--no-index permet d'installer les libraries
                                         #précompilées et optimisées par Calcul Canada
 
-À noter qu'un environnement virtuel créé sur les serveurs de l'IQ ne peut être utilisé sur les noeuds de connexion de Mammouth Parallèle 2, car ce dernier ont été optimisé pour des processeurs plus récent.
+À noter qu'un environnement virtuel créé sur les serveurs de l'IQ ne peut être utilisé sur les noeuds de connexion de MP2 (Mammouth Parallèle 2), car l'environnement a en effet été optimisé pour des processeurs plus récent.
 
 
 Création d'une tâche de calcul pour Python
 ==========================================
 
-
-
-Par défault, les scripts Python ne sont pas parallélisés, et donc la réservation de plusieurs coeurs ne diminuera pas le temps de calcul.
-C'est alors la responsabilité de l'usager de paralléliser son code explicitement (voir section suivante) ou de vérifier que les librairies qu'il utilise bénéficie d'une parallélisation.
+TODO
 
 
 Parallélisation avec Python
 ===========================
 
-TODO
+
+Généralités
+###########
+
+Par défault, les scripts Python ne sont pas parallélisés, et donc la réservation de plusieurs coeurs ne diminuera pas le temps de calcul.
+C'est alors la responsabilité de l'usager de paralléliser son code explicitement (voir section suivante) ou de vérifier que les librairies qu'il utilise bénéficie d'une parallélisation.
+
+Par exemple, certaines fonctions de NumPy et de SciPy bénéficie d'une parallélisation automatique.
+
+
+Parallélisation de données
+##########################
+
+Il est généralement toujours plus efficace d'effectuer de la parallélisation de donnée contre la parallélisation de tâches de calcul. 
+C'est à dire, si un usager doit effectuer le même calcul sur 40 jeux de données différents, il sera plus efficace d'utiliser 40 processus en parallèle avec un jeu de données par processus plutôt que de traiter chacun des 40 jeux de données avec 40 processus.
+Le parallélisation de donnée peut-être à l'intérieur même d'un script Python avec la librairie ``multiprocessing``.
+
+
+*Thread-oversubscription*
+#########################
+
+Les différentes manière de parallèliser des tâches de calcul peuvent parfois entrer en confilt, notamment à travers la sur-souscription de fils (*thread-oversubsciption* en anglais).
+Prenons l'exemple d'un usager voulant traiter 8 jeux de données sur un processeur 8 ceours avec la librairie ``multiprocessing``, en assignant un jeu de donnée par coeur (pour rappel, ce type de parallélisation est plus efficace que de traiter un jeu à la fois avec les 8 coeurs).
+Cet usager utilise une fonction de la librairie SciPy (par exemple ``scipy.sparse.linalg.eigsh``) qui est elle aussi automatiquement parallélisé.
+Ainsi, lors de l'éxecution du code, chaque coeur traitera un jeu de donnée, mais comme la fonction est elle-même parallélisée et voit 8 coeurs disponible, elle va automatiquement s'exécuter sur ces 8 coeurs.
+L'usager se retrouvera donc avec 64 (8 fois 8) fils roulant sur son processeur 8 coeurs, réduisant ainsi drastiquement les performances de son code.
+
+Pour pallier à ce problème, il est nécessaire de spécifier à la fonction SciPy parallèliser de ne s'exécuter que sur un seul fil.
+La libraire Python `ThreadPoolCtl <https://pypi.org/project/threadpoolctl/>`_ peut être utilisée dans ce cas.
+(A TERMINER)

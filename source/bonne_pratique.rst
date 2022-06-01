@@ -1,6 +1,6 @@
 .. bonne_pratique
 
-Rendre son code publique (open-source)
+Rendre son code publique (open-source) (A VENIR)
 --------------------------------------
 
 Hébergement du code
@@ -38,6 +38,18 @@ Ils permettent aussi à un utilisateur du code de s'assurer que ce dernier est b
 Pour des code Python, le logicel `PyTest <https://docs.pytest.org/en/7.1.x/>`_ peut être utilisé.
 
 Pour des codes C++, TODO.
+
+Voir aussi le cours de CodeRefinery sur le sujet: `https://coderefinery.github.io/testing/ <https://coderefinery.github.io/testing/>`_
+
+
+Documentation
+=============
+
+
+
+Voir la section dédiée `TODO`_.
+
+
 
 
 Gestion des versions, déploiement

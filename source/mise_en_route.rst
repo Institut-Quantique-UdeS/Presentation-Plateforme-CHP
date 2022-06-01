@@ -24,11 +24,11 @@ WSL est cependant plus complexe à installer.
 
 
 Connexion
-==========
+=========
 
 Les ressources CHP de l'IQ sont hebergés aux Centre de Calcul Scientifique de l'Université de Sherbrooke, et sont actuellement branchées sur la grappe nationale Mammouth Parallèle 2 (abrégée MP2).
 Leur accès requiert un compte Calcul Canada Database (CCDB) ainsi que la signature d'un entente d'utilisation (voir XX).
-Une fois l'accès garanti, la connection se fait par SSH via un terminal (MacOS et Linux) ou le client SSH Windows nouvellement installé (voir rubrique :ref:`Mise_en_route_windows` ci-dessus):
+Une fois l'accès garanti, la connection se fait par SSH via un terminal (MacOS et Linux) ou le client SSH Windows nouvellement installé - voir rubrique :ref:`Mise_en_route_windows` ci-dessus:
 
 .. code-block:: bash
 
