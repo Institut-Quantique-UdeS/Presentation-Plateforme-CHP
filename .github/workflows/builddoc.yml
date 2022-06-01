@@ -12,6 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: Prerequisite
+      run: pip install sphinx sphinx_rtd_theme
+    
     - name: Sphinx build
-      run: sphinx-build ./ docs
+      run: sphinx-build ./source ./docs
 
