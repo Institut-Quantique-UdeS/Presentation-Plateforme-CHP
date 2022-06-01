@@ -23,8 +23,8 @@ Les ressources disponibles à l'IQ
 
 Pour répondre aux besoins de CHP de ses membres, l'IQ s'est doté de différentes ressources de calcul:
 
-* Trois serveurs de type "CPU" équipés de deux processeurs AMD EPYC 7643 (48 coeurs à 2.3 GHz chacun), 512 GB de méoire vive, un SSD local de 1 TB et configurés avec la pile logiciel de Calcul Canada.
-* Un serveurs de type "GPU" équipé de deux accélérateurs NVidia A40 avec 48 GB de mémoire vive dédiée, deux processeurs Intel Xeon Gold 6342 (24 coeurs à 2.8 GHz chacun), 512 GB de mémoire vive principal, un SSD local de 1TB, aussi configuré avec la pile logiciel de Calcul Canada.
+* Trois serveurs de type "CPU" équipés de deux processeurs AMD EPYC 7643 (48 coeurs à 2.3 GHz chacun), 512 GB de mémoire vive, un SSD local de 1 TB et configurés avec la pile logicielle de Calcul Canada.
+* Un serveurs de type "GPU" équipé de deux accélérateurs NVidia A40 avec 48 GB de mémoire vive dédiée, deux processeurs Intel Xeon Gold 6342 (24 coeurs à 2.8 GHz chacun), 512 GB de mémoire vive principal, un SSD local de 1TB, aussi configuré avec la pile logicielle de Calcul Canada.
 * Un serveur de service équipé de 24 disques SAS de 16TB chacun (total de 384TB), de deux processeurs XX (12 coeurs à 2.9 GHz chacun) et de 256 GB de RAM. 
 
 Ces ressources, de taille intermédiaire entre un ordinateur personnel et une grappe de calcul, peuvent être utilisées sans limite et sans coût d'utilisation associé.
@@ -47,3 +47,8 @@ L'accès aux ressources de calcul de l'IQ se fait en deux étapes:
 
 L'accès aux ressources est régi par la politique d'accès aux calculateurs (voir lien au-dessus).
 
+
+Vue d'ensemble du fonctionnement d'une grappe de calcul
+=======================================================
+
+TODO

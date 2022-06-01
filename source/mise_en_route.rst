@@ -37,18 +37,47 @@ Une fois l'accès garanti, la connection se fait par SSH via un terminal (MacOS 
 Les utilisateurs sont ensuite invités à entrer leur mot de passe de la CCDB.
 Notez qu'aucuns caractères ne s'affiche à l'écran mais ils sont bel et bien entrés dans le système.
 
-Après connection, il est recommandé de charger immédiatement l'environnement standard 2020 pour bénéficier des dernières fonctionnalités avec la commande (voir section "chargement des logiciels" plus bas):
+Après connexion, les usagers arrivent sur le noeuds de connexion de la grappe MP2 avec une architecture très différente de celle des serveurs de calcul de l'IQ.
+Ainsi, les noeuds de connexion doivent être utilisés uniquement pour la gestion de l'espace de travail et des fichiers, mais pas pour la compilation de logiciel ou la création d'environnement virtuel Python.
+Ces derniers doivent s'effectué directement sur les serveurs de l'IQ via une allocation interactive (voir `TODO`_).
+
+
+Chargement des logiciels
+========================
+
+Par défault, l'environnement de travail après la connexion ne contient aucuns logiciels.
+Ceux-ci doivent donc être chargés manuellement sous la forme de module.
+De nombreux logiciels sont pré-compilés et disponibles pour utilisation dans la pile logicielle d'Alliance qui est utilisée sur les serveurs de calcul.
+Pour rechercher si un logiciel est installé et quelles versions sont disponibles:
 
 .. code-block:: bash
 
-   module load StdEnv/2020
+   module spider <nom_du_logiciel>
+
+Pour plus d'information sur une version spécifique et comment charger le module correspondant, il faut ajouter la version du logiciel:
+
+.. code-block:: bash
+
+   module spider <nom_du_logiciel>/<version>
+
+Le chargement du logiciel se fait alors par la commande:
+
+.. code-block:: bash
+
+   module load <nom_du_logiciel>
+   
+Parfois, il est nécessaire de charger plusieurs modules avant de pouvoir charger le logiciel voulu.
+En effet, certain modules dépendent d'autres modules qui doivent être présents pour assurer leur bon fonctionnement.
+Il faut alors consulter la sortie de ``module spider X`` pour obtenir plus d'informations.
+
+Pour un complément d'informations sur l'utilisation des modules, voir la documentation correspondance sur le site de l'Alliance `ici <https://docs.alliancecan.ca/wiki/Utiliser_des_modules>`_.
 
 
+Rappel des commandes Linux basiques
+===================================
 
-Utilisation
-===========
-
-Après connexion, les usagers arrivent sur les noeuds de connection de la grappe MP2 et y naviguent par la ligne de commandes.
+Navigation
+##########
 
 Les commandes basiques pour la navigation dans le système de fichiers sont disponibles dans le tableau ci-dessous:
 
@@ -81,7 +110,9 @@ Aussi ``..`` désigne le répertoire parent.
 Par exemple ``cd ..`` signifie retourner dans le répertoire précédent.
 Finalement, ``~`` désigne le répertoire *home*, soit le répertoire d'arrivée juste après la connexion par SSH.
 
-Commandes basiques pour l'édition de fichiers ASCII:
+
+Edition de fichier ASCII
+########################
 
 .. list-table::
    :widths: 30 70
@@ -102,36 +133,9 @@ Commandes basiques pour l'édition de fichiers ASCII:
    * - ``nano <file>``
      - Ouvre le fichier ``<file>`` dans un éditeur de fichier interactif. Appuyer sur `Crtl+O` pour sauvegarder et `Ctrl+X` pour quitter
 
-Pour une introduction plus profonde à la ligne de commande, il est possible de suivre l'autoformation d'introduction de Software Carpentry (disponible `ici <https://swcarpentry.github.io/shell-novice/>`_), ou les formations de Calcul Québec (voir la page `EventBrite dédiée <https://www.eventbrite.ca/o/calcul-quebec-8295332683>`_).
 
+Autres ressources
+#################
 
-Chargement des logiciels
-========================
-
-Par défault, l'environnement de travail après la connection ne contient aucuns logiciels.
-Ceux-ci doivent donc être chargés manuellement sous la forme de module.
-De nombreux logiciels sont pré-compilés et disponibles pour utilisation dans la pile logicielle d'Alliance qui est utilisée sur les serveurs de calcul.
-Pour rechercher si un logiciel est installé et quelles versions sont disponibles:
-
-.. code-block:: bash
-
-   module spider <nom_du_logiciel>
-
-Pour plus d'information sur une version spécifique et comment charger le module correspondant, il faut ajouter la version du logiciel:
-
-.. code-block:: bash
-
-   module spider <nom_du_logiciel>/<version>
-
-Le chargement du logiciel se fait alors par la commande:
-
-.. code-block:: bash
-
-   module load <nom_du_logiciel>
-   
-Parfois, il est nécessaire de charger plusieurs modules avant de pouvoir charger le logiciel voulu.
-En effet, certain modules dépendent d'autres modules qui doivent être présents pour assurer leur bon fonctionnement.
-Il faut alors consulter la sortie de ``module spider X`` pour obtenir plus d'informations.
-
-Pour un complément d'informations sur l'utilisation des modules, voir la documentation correspondance sur le site de l'Alliance `ici <https://docs.alliancecan.ca/wiki/Utiliser_des_modules>`_.
+Pour une introduction plus profonde à la ligne de commande, il est possible de suivre l'autoformation d'introduction de Software Carpentry (disponible `ici <https://swcarpentry.github.io/shell-novice/>`_), ou les formations de Calcul Québec (voir la page `EventBrite dédiée <https://www.eventbrite.ca/o/calcul-quebec-8295332683>`_)
 
