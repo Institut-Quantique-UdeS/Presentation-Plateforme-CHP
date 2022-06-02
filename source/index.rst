@@ -26,8 +26,11 @@ Index
    recap_pressees
    description
    mise_en_route
-   commandes_linux
+   job
    python
+   commandes_linux
+
+..
    parallelisation
    compilation
    gpus

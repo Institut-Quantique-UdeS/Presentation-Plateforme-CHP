@@ -3,7 +3,7 @@
 Tâches de calcul en Python
 --------------------------
 
-(Informations complémentaires pour toutes cette section: la documentation de l'Alliance `ici <https://docs.alliancecan.ca/wiki/Python/fr>`_).
+(Informations complémentaires pour toute cette section: la `documentation de l'Alliance <https://docs.alliancecan.ca/wiki/Python/fr>`_. Assurez-vous d'avoir aussi lu :doc:`job`)
 
 Le language de programmation Python est disponible est sur les serveurs de calcul de l'IQ.
 Il existe de multiples versions installées, allant de Python 3.6 à 3.10.2 et qui peuvent être détaillées avec:
