@@ -11,4 +11,8 @@ Récapitulatif et importants conseils pour les personnes préssées
 
 * Création d'environnements virtuels et compilation de logiciels à faire directement sur les serveurs de l'IQ en mode interactif (optimisation pour l'architecture des serveurs IQ).
 
-* Accès au serveur GPU de l'IQ en spécifiant explicitement le nom du noeud ``cp3705`` à l'ordonnanceur, exemple: ``sbatch mon_script_gpu.sh --node-list=cp3705``.
+* Espace ``/scratch`` non accessible depuis les calculateurs.
+
+* Accès à espace de stockage privé sur les serveurs de données de l'IQ (384 To) à ``/net/nfs-iq/data/[username]``. Espace partagé à ``/net/nfs-iq/data/def-[sponsor]``.
+
+* Accès au serveur GPU de l'IQ en spécifiant explicitement le nom du noeud ``cp3705`` à l'ordonnanceur, exemple: ``sbatch mon_script_gpu.sh --nodelist=cp3705``.

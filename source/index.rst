@@ -6,7 +6,7 @@
 Plateforme Calcul Haute Performance de l'IQ
 ===========================================
 
-*Dernière mise à jour: 1 juin 2022*
+*Dernière mise à jour: 2 juin 2022*
 
 Cher étudiants et étudiantes, cher personnel de recherche et cher professeurs et professeures,
 
@@ -26,6 +26,7 @@ Index
    recap_pressees
    description
    mise_en_route
+   commandes_linux
    python
    parallelisation
    compilation

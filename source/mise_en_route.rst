@@ -73,69 +73,14 @@ Il faut alors consulter la sortie de ``module spider X`` pour obtenir plus d'inf
 Pour un complément d'informations sur l'utilisation des modules, voir la documentation correspondance sur le site de l'Alliance `ici <https://docs.alliancecan.ca/wiki/Utiliser_des_modules>`_.
 
 
-Rappel des commandes Linux basiques
-===================================
+Accéder au serveur de données de l'IQ et spécificités réseau
+============================================================
 
-Navigation
-##########
+Serveur de données accessible sur ``/net/nfs-iq/data``.
+Chaque utilisateur possède un espace propre avec son nom d'utilisateur (par exemple, ``/net/nfs-iq/data/moroub`` pour l'utilisateur ``moroub``) et un espace partagée avec son groupe de la même manière que l'espace ``/project`` sur les grappes nationales.
 
-Les commandes basiques pour la navigation dans le système de fichiers sont disponibles dans le tableau ci-dessous:
+Espace ``/scratch`` non accessible depuis les calculateurs de l'IQ
 
-.. list-table::
-   :widths: 30 70
-   :header-rows: 1
+Connexion entre les noeuds de calcul de l'IQ et le répertoire ``/home`` et ``/project`` à 1 Gb/s.
 
-   * - Commande
-     - Description
-   * - ``pwd``
-     - Retourne le chemin absolu vers l'emplacement actuel
-   * - ``ls``
-     - Liste les fichiers et répertoires à l'emplacement actuel
-   * - ``cd <dir>``
-     - Entre dans le répertoire ``<dir>``
-   * - ``mv <orig> <dest>``
-     - Déplace ou renomme le fichier ou le répertoire ``<orig>`` à ``<dest>``
-   * - ``cp <orig> <dest>``
-     - Copie le fichier donnée par le chemin ``<orig>`` au chemin de destination ``<dest>``
-   * - ``cp -r <orig> <dest>``
-     - Copie le répertoire ``<orig>`` au chemin de destination ``<dest>``
-   * - ``rm <file>``
-     - Supprime le fichier donnée par le chemin `<file>` (attention, suppression permanente, pas de corbeille:)
-   * - ``rm <dir>``
-     - Supprime le répertoire donnée par le chemin `<file>` (attention, suppression permanente, pas de corbeille!)
-
-À noter que ``./`` designe l'emplacement actuelle.
-Par example, ``cd ./`` demande à la ligne de commande d'aller dans le répertoire actuel (donc ne fait rien), ou encore, ``cp folder1/foo.txt ./`` copie le fichier `foo.txt` situé dans le dossier `folder1` dans le répertoire actuel (d'où est appelé la commande ``cp``).
-Aussi ``..`` désigne le répertoire parent. 
-Par exemple ``cd ..`` signifie retourner dans le répertoire précédent.
-Finalement, ``~`` désigne le répertoire *home*, soit le répertoire d'arrivée juste après la connexion par SSH.
-
-
-Edition de fichier ASCII
-########################
-
-.. list-table::
-   :widths: 30 70
-   :header-rows: 1
-
-   * - Commande
-     - Description
-   * - ``cat <file>``
-     - Affiche le contenu du fichier ``<file>`` dans le terminal
-   * - ``head -n X <file>`` 
-     - Affiche les X premières lignes du fichier ``<file>`` dans le terminal
-   * - ``tail -n X <file>``
-     - Affiche les X dernières lignes du fichier ``<file>`` dans le terminal
-   * - ``less <file>``
-     - Affiche le contenu du fichier ``<file>`` avec defilement (appuyer sur ``q`` pour quitter)
-   * - ``touch <file>``
-     - Crée un fichier vide nommé `<file>``
-   * - ``nano <file>``
-     - Ouvre le fichier ``<file>`` dans un éditeur de fichier interactif. Appuyer sur `Crtl+O` pour sauvegarder et `Ctrl+X` pour quitter
-
-
-Autres ressources
-#################
-
-Pour une introduction plus profonde à la ligne de commande, il est possible de suivre l'autoformation d'introduction de Software Carpentry (disponible `ici <https://swcarpentry.github.io/shell-novice/>`_), ou les formations de Calcul Québec (voir la page `EventBrite dédiée <https://www.eventbrite.ca/o/calcul-quebec-8295332683>`_)
-
+Connexion internoeuds de calcul de l'IQ et avec le serveur de donnée à 10 Gb/s.
