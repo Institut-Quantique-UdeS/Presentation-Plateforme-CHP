@@ -28,7 +28,7 @@ Les commandes basiques pour la navigation dans le système de fichiers sont disp
      - Copie le répertoire ``<orig>`` au chemin de destination ``<dest>``
    * - ``rm <file>``
      - Supprime le fichier donnée par le chemin `<file>` (attention, suppression permanente, pas de corbeille:)
-   * - ``rm <dir>``
+   * - ``rm -r <dir>``
      - Supprime le répertoire donnée par le chemin `<file>` (attention, suppression permanente, pas de corbeille!)
 
 À noter que ``./`` designe l'emplacement actuelle.

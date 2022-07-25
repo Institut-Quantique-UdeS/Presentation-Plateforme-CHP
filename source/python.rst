@@ -87,7 +87,7 @@ Le parallélisation de donnée peut-être à l'intérieur même d'un script Pyth
 Les différentes manière de parallèliser des tâches de calcul peuvent parfois entrer en confilt, notamment à travers la sur-souscription de fils (*thread-oversubsciption* en anglais).
 Prenons l'exemple d'un usager voulant traiter 8 jeux de données sur un processeur 8 ceours avec la librairie ``multiprocessing``, en assignant un jeu de donnée par coeur (pour rappel, ce type de parallélisation est plus efficace que de traiter un jeu à la fois avec les 8 coeurs).
 Cet usager utilise une fonction de la librairie SciPy (par exemple ``scipy.sparse.linalg.eigsh``) qui est elle aussi automatiquement parallélisé.
-Ainsi, lors de l'éxecution du code, chaque coeur traitera un jeu de donnée, mais comme la fonction est elle-même parallélisée et voit 8 coeurs disponible, elle va automatiquement s'exécuter sur ces 8 coeurs.
+Ainsi, lors de l'éxecution du code, chaque coeur traitera un jeu de donnée, mais comme la fonction est elle-même parallélisée et voit 8 coeurs disponibles, elle va automatiquement s'exécuter sur ces 8 coeurs.
 L'usager se retrouvera donc avec 64 (8 fois 8) fils roulant sur son processeur 8 coeurs, réduisant ainsi drastiquement les performances de son code.
 
 Pour pallier à ce problème, il est nécessaire de spécifier à la fonction SciPy parallèliser de ne s'exécuter que sur un seul fil.

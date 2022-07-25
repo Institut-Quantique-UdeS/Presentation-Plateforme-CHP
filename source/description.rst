@@ -43,12 +43,6 @@ L'accès aux ressources de calcul de l'IQ se fait en deux étapes:
 
 #. Création d'un `compte Calcul Canada (CCDB) <https://alliancecan.ca/en/services/advanced-research-computing/account-management/apply-account>`_. À noter que la création d'un compte Calcul Canada doit se faire via un parrain (par exemple un professeur) pour les membres ayant le statut étudiants, stagiaires, stagiaires post-doctorals et personnels de recherche.
 
-#. Après avoir obtenu leur compte CCDB, les membres doivent remplir l'annexe C de la politique d'accès au calculateurs (disponible `ici <TODO>`_), et la remettre au comité des usagers des calculateurs pour approbation.
+#. Après avoir obtenu leur compte CCDB, les membres doivent remplir l'annexe C de la politique d'accès au calculateurs (disponible `ici <https://forms.office.com/r/UKb6yPneD1>`_).
 
-L'accès aux ressources est régi par la politique d'accès aux calculateurs (voir lien au-dessus).
-
-
-Vue d'ensemble du fonctionnement d'une grappe de calcul
-=======================================================
-
-TODO
+L'accès aux ressources est régi par la politique d'accès aux calculateurs (voir `ici <https://www.usherbrooke.ca/iq/wp-content/uploads/2022/06/Politiques-Calculateurs-haute-performance-HPC-2022-06-02.pdf>`_).

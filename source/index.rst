@@ -6,7 +6,7 @@
 Plateforme Calcul Haute Performance de l'IQ
 ===========================================
 
-*Dernière mise à jour: 2 juin 2022*
+*Dernière mise à jour: 3 juin 2022*
 
 Cher étudiants et étudiantes, cher personnel de recherche et cher professeurs et professeures,
 
@@ -16,6 +16,13 @@ La plateforme CHP a pour but d'encourager l'utilisation du calcul haute performa
 Le présent site regroupe de la documentation technique pour assister les membres de l'IQ à son utilisation, des ressources pour la programmation puis différents liens vers des librairies et des codes optimisés et créés par la communauté.
 
 **/!\\ /!\\ /!\\** Pour les personnes pressées, veuillez prendre 2 minutes pour lire le :doc:`recap_pressees` pour prendre connaissance des spécificités des serveurs de calcul de l'IQ **/!\\ /!\\ /!\\**
+
+
+Dernières nouvelles
+===================
+
+* 3 juin 2022: Site internet disponible!
+
 
 Index
 =====

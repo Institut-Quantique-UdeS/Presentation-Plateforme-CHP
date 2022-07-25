@@ -3,6 +3,8 @@
 Lancement de tâches de calcul sur les serveurs
 ----------------------------------------------
 
+Cette page est un complément d'information de la page de l'Alliance dédiée: `Exécuter des tâches <https://docs.alliancecan.ca/wiki/Running_jobs/fr>_`
+
 Les serveurs de calcul peuvent être utilisés de deux manières différentes qui correspondent à deux types de tâches distinctes:
 
 * Les tâches dites interactives où les usagers sont redirigées sur les noeuds de calcul.
@@ -16,16 +18,31 @@ En plus de pénaliser les autres utilisateurs qui font de la gestion de fichiers
 Tâches interactives
 ===================
 
-Tâches courte pour la réalisation de tests, l'exploration de donnée ou la compilation de code.
-Requiert l'action d'un humain.
-Généralement courtes (moins de 4 heures)
+Les tâches interactives sont des tâches généralement courtes (moins de 4 heures) qui requiert l'action soutenue de l'usager, comme la réalisation de tests, l'exploration de données, le débogage ou la compilation de codes.
+La commande ``salloc`` suivie de l'option ``-p c-iq`` permet d'être redirigé sur un noeuds de calcul de l'IQ avec 1 CPU et 8 Go de mémoire vive:
+
+.. code-block:: bash
+
+   salloc -p c-iq -t [HH]::[mm]:[ss] --mem=8G --cpu-per-task=1
+   
+À l'arrivé sur les serveurs de calcul, il est recommandé de charger de suite l'environnement standard le plus récent: 
+
+.. code-block:: bash
+
+   module load StdEnv/2020
 
 
 Tâches en batch
 ===============
 
-Toutes tâches qui ne nécessite pas l'action d'un humain (lancement d'un script Python par exemle).
-Doit être la façon priviligié d'utiliser les serveurs de calcul car elle maximise l'efficacité.
+Les tâches en batch désignent toutes tâches qui ne nécessite pas l'action de l'usager (lancement d'un script Python par exemple).
+Elle doit être la façon priviligié d'utiliser les serveurs de calcul car elle maximise leur l'efficacité.
+Les scripts bash pour le lancement des tâches est exactement similaire aux scripts sur les autres grappes nationales de l'Alliance (voir la page `Exécuter des tâches <https://docs.alliancecan.ca/wiki/Running_jobs/fr>_`), à la seule différence qu'il est nécessaire de charger l'environnement standard ``StdEnv/2020`` dans le script.
+La soumission se fait ensuite en précisant la partition des noeuds de l'IQ à l'ordonnanceur:
+
+.. code-block:: bash
+
+   sbatch -p c-iq job.sh
 
 
 Calcul sur GPU
@@ -33,4 +50,12 @@ Calcul sur GPU
 
 Les tâches de calcul faisans l'utilisation de GPU ne sont pas différente des tâches CPU et peuvent être de type interactive ou en batch.
 
-Accès au serveur GPU de l'IQ en spécifiant explicitement le nom du noeud ``cp3705`` à l'ordonnanceur, exemple: ``sbatch mon_script_gpu.sh --nodelist=cp3705``.
+Au contraire des grappes nationales, les GPU ne sont pas connus de l'ordonnanceur et il faut donc spécifier explicitement le nom du serveur GPU de l'IQ à ce dernier avec l'option ``--nodelist=cp3705``.
+
+Par exemple, pour soumettre une tâches interactive avec accès aux GPU, la commande est la suivante:
+
+.. code-block:: bash
+
+   salloc -p c-iq -t [HH]::[mm]:[ss] --mem=8G --cpu-per-task=1 --nodelist=cp3705
+
+
