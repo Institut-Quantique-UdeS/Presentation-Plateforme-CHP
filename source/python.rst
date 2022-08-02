@@ -3,9 +3,9 @@
 Tâches de calcul en Python
 --------------------------
 
-(Informations complémentaires pour toute cette section: la `documentation de l'Alliance <https://docs.alliancecan.ca/wiki/Python/fr>`_. Assurez-vous d'avoir aussi lu :doc:`job`)
+Les innformations présentées ci-dessous sont complémentaires de la documentation de l'Alliance relative à `Python <https://docs.alliancecan.ca/wiki/Python/fr>`_. 
 
-Le language de programmation Python est disponible est sur les serveurs de calcul de l'IQ.
+Le language de programmation Python est disponible sur les serveurs de calcul de l'IQ.
 Il existe de multiples versions installées, allant de Python 3.6 à 3.10.2 et qui peuvent être détaillées avec:
 
 .. code-block:: bash
@@ -23,7 +23,7 @@ Environnement virtuel
 =====================
 
 Il est (vivement) recommandé d'utiiser des environnements virtuels Python pour lancer des tâches de calcul sur les serveurs de calcul de l'IQ, et à raison d'un environnement par tâche de calcul spécifique.
-Les environnements virtuels Python ont tout d'abord l'avantage d'isoler chaque tâches de calcul, ce qui limite les conflits de version entre certaines librairies.
+Les environnements virtuels Python ont tout d'abord l'avantage d'isoler chaque tâche de calcul, ce qui limite les conflits de version entre certaines librairies.
 Ils fournissent de plus un environnement réplicable entre différentes machines.
 La liste des librairies installées peut-être imprimer dans un fichier ``requirement.txt`` avec la commande:
 
@@ -51,13 +51,7 @@ La création d'un environnement virtuel sur les serveurs de calcul de l'IQ se fa
                                         #--no-index permet d'installer les libraries
                                         #précompilées et optimisées par Calcul Canada
 
-À noter qu'un environnement virtuel créé sur les serveurs de l'IQ ne peut être utilisé sur les noeuds de connexion de MP2 (Mammouth Parallèle 2), car l'environnement a en effet été optimisé pour des processeurs plus récent.
-
-
-Création d'une tâche de calcul pour Python
-==========================================
-
-TODO
+À noter qu'un environnement virtuel créé sur les serveurs de l'IQ ne peut être utilisé sur les noeuds de connexion de MP2, car l'environnement a en effet été optimisé pour des processeurs plus récent.
 
 
 Parallélisation avec Python
@@ -68,17 +62,17 @@ Généralités
 ###########
 
 Par défault, les scripts Python ne sont pas parallélisés, et donc la réservation de plusieurs coeurs ne diminuera pas le temps de calcul.
-C'est alors la responsabilité de l'usager de paralléliser son code explicitement (voir section suivante) ou de vérifier que les librairies qu'il utilise bénéficie d'une parallélisation.
-
-Par exemple, certaines fonctions de NumPy et de SciPy bénéficie d'une parallélisation automatique.
+C'est alors la responsabilité de l'usager de paralléliser son code explicitement (voir section suivante) ou de vérifier que les librairies qu'il utilise bénéficie d'une parallélisation (tel que certaines fonction de NumPy ou de SciPy).
 
 
 Parallélisation de données
 ##########################
 
-Il est généralement toujours plus efficace d'effectuer de la parallélisation de donnée contre la parallélisation de tâches de calcul. 
+Par construction, Python ne permet pas la parallélisation d'une tâche de calcul par mémoire partagée.
+En revanche, il est possible de coder et de paralléliser les opérations les plus longues dans un autre langage (comme C++), puis d'appeler ce code dans Python.
+Aussi, lorsque qu'un script Python est utilisé pour traiter plusieurs jeux de données, par exemplen une expérience avec divers jeux de paramètres, la librairie ``multiprocessing`` peut être utilisé pour traiter les différents jeux de données en parallèle via plusieurs processus.
+Ce type de parallélisation, dit "de données", est toujours plus efficace que d'effectuer la parallélisation du traitement d'un jeu de donnée. 
 C'est à dire, si un usager doit effectuer le même calcul sur 40 jeux de données différents, il sera plus efficace d'utiliser 40 processus en parallèle avec un jeu de données par processus plutôt que de traiter chacun des 40 jeux de données avec 40 processus.
-Le parallélisation de donnée peut-être à l'intérieur même d'un script Python avec la librairie ``multiprocessing``.
 
 
 *Thread-oversubscription*
@@ -92,4 +86,3 @@ L'usager se retrouvera donc avec 64 (8 fois 8) fils roulant sur son processeur 8
 
 Pour pallier à ce problème, il est nécessaire de spécifier à la fonction SciPy parallèliser de ne s'exécuter que sur un seul fil.
 La libraire Python `ThreadPoolCtl <https://pypi.org/project/threadpoolctl/>`_ peut être utilisée dans ce cas.
-(A TERMINER)

@@ -1,6 +1,6 @@
 .. parallelisation
 
-D'un code lambda à un code haute performance, parallélisation (A VENIR)
+D'un code lambda à un code haute performance, parallélisation
 -------------------------------------------------------------
 
 

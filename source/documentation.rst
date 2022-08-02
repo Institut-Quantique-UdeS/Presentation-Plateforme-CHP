@@ -1,10 +1,10 @@
 .. Documentation
 
-Documenter son code (A VENIR)
+Documenter son code 
 -------------------
 
 Vous avez probablement le code le plus beau, le plus performant de tout les codes, mais vous êtes aussi la seule personne à pouvoir l'utiliser si la documentation n'est pas à la hauteur.
-En effet, un code est inutilisable pour autruit sans la documentation appropriée.
+En effet, un code est inutilisable pour autrui sans la documentation appropriée.
 
 Publier sa documentation en ligne
 =================================

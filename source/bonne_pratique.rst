@@ -1,6 +1,6 @@
 .. bonne_pratique
 
-Rendre son code publique (open-source) (A VENIR)
+Rendre son code publique (open-source)
 --------------------------------------
 
 Hébergement du code

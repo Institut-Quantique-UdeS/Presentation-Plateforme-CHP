@@ -9,7 +9,7 @@ Connection à la plateforme
 Installation d'un client SSH (Windows seulement)
 ================================================
 
-La connection à la plateforme CHP se fait au moyen du protocole SSH (voir documentation de l'Alliance `https://docs.alliancecan.ca/wiki/SSH/fr(https://docs.alliancecan.ca/wiki/SSH/fr)`_.
+La connection à la plateforme CHP se fait au moyen du `protocole SSH <https://docs.alliancecan.ca/wiki/SSH/fr>`_.
 Par défault, alors que Linux et MacOS l'intègre nativement, les usagers de Windows doivent installer un client SSH.
 
 Les utilisateurs ont le choix entre:
@@ -27,7 +27,7 @@ Connexion
 =========
 
 Les ressources CHP de l'IQ sont hebergés aux Centre de Calcul Scientifique de l'Université de Sherbrooke, et sont actuellement branchées sur la grappe nationale Mammouth Parallèle 2 (abrégée MP2).
-Leur accès requiert un compte Calcul Canada Database (CCDB) ainsi que la signature d'un entente d'utilisation (voir XX).
+Leur accès requiert un compte Calcul Canada Database (CCDB) ainsi que la signature d'un entente d'utilisation (voir :ref:`demande_d_acces`).
 Une fois l'accès garanti, la connection se fait par SSH via un terminal (MacOS et Linux) ou le client SSH Windows nouvellement installé:
 
 .. code-block:: bash
@@ -44,7 +44,7 @@ Utilisation
 IMPORTANT! 
 Les noeuds de connexion de la grappe MP2 ont une architecture CPU différente de celle des serveurs de calcul de l'IQ, en plus d'être configuré avec un environnement standard obsolète (``nixpkgs/16.09``).
 Ainsi, les noeuds de connexion doivent être utilisés uniquement pour la gestion de l'espace de travail et des fichiers.
-Toutes autres tâches, tel que la compilation de logiciel, la création d'environnement virtuel Python, ou le debogage de code doit se fare directement sur les serveurs de l'IQ via une allocation interactive (voir `TODO`_).
+Toutes autres tâches, tel que la compilation de logiciel, la création d'environnement virtuel Python, ou le debogage de code doit se fare directement sur les serveurs de l'IQ via une allocation interactive (voir :ref:`taches_interactives`).
 
 
 Chargement des logiciels
@@ -74,12 +74,12 @@ Le chargement du logiciel se fait alors par la commande:
 Parfois, il est nécessaire de charger plusieurs modules avant de pouvoir charger le logiciel voulu.
 En effet, certain modules dépendent d'autres modules qui doivent être présents pour assurer leur bon fonctionnement.
 Il faut alors consulter la sortie de ``module spider X`` pour obtenir plus d'informations.
-Pour un complément d'informations sur l'utilisation des modules, voir la documentation correspondance sur le site de l'Alliance `ici <https://docs.alliancecan.ca/wiki/Utiliser_des_modules>`_.
+Pour un complément d'informations sur l'utilisation des modules, voir la documentation correspondante sur le site de l'Alliance (`Utiliser des modules <ttps://docs.alliancecan.ca/wiki/Utiliser_des_modules>`_).
 
-Aussi, il se peut que certains logiciels (tel que TRIQS) peuvent apparaître comme non disponibles lorsque chargés sur les noeuds de connexion de MP2.
+Aussi, il se peut que certains logiciels peuvent apparaître comme non disponibles lorsque chargés sur les noeuds de connexion de MP2 (essayer ``module spider triqs`` par exemple).
 Cela est dû à l'architecture différente des les noeuds de connexion de MP2, et pour laquelle ces logiciels n'ont pas été compilés.
 Néanmoins, il se peut que ces logiciels soient tout de même disponibles et compilés pour l'architecture des noeuds de calcul de l'IQ.
-Ainsi, il est nécessaire de se connecter directement sur les noeuds de l'IQ (via une allocation interactive) pour vérifier que ces logiciels sont bien dispponibles.
+Ainsi, il est nécessaire de se connecter directement sur les noeuds de l'IQ (via une allocation interactive, ``salloc -p c-iq -t 01:00:00 --mem 4G --cpus-per-task=1``) et de relancer la recherhce pour vérifier que ces logiciels sont bien disponibles.
 
 
 Accéder au serveur de données de l'IQ et spécificités réseau
