@@ -65,3 +65,25 @@ Cette dernière montre alors la mémoire GPU utilisé ainsi que la charge du pro
 
 En revanche, comme les GPUs ne sont pas connus de l'ordonnanceur, il peut parfois être nécessaire de spécifier aux programmes exécutés quel GPU utiliser.
 Par exemple, lors de l'entrainement de réseau de neuronne avec PyTorch, la méthode ``.to(device)`` permettant de spécifier quel processeur utilisé (CPU ou GPU) peut être appelé soit avec ``device='cpu'``, pour le CPU, ``device='cuda'`` pour un GPU, ``device='cuda:0'`` pour le GPU 0 ou ``device='cuda:1'`` pour le GPU 1 explicitement.
+
+
+Alias pour les commandes SLURM communes
+=======================================
+
+Pour éviter de nommer la partition de l'IQ à chaque soumission de scripts ou de tâches interactives, les usagers peuvent définir un alias de commandes spéciales pour les serveurs de l'IQ:
+
+.. code-block:: bash
+
+   alias sbatch-iq="sbatch -p c-iq"
+   alias salloc-iq="salloc -p c-iq"
+   alias sbatch-iq-gpu="sbatch -p c-iq --nodelist=cp3705"
+   alias salloc-iq-gpu="salloc -p c-iq --nodelist=cp3705"
+
+Ces trois commandes sont à ajouter à la fin du fichier ``~/.bash_profile``.
+Ainsi, la soumission d'un script batch pour le serveur GPU de l'IQ s'écrit simplement:
+
+.. code-block:: bash
+
+   sbatch-iq-gpu job.sh
+
+

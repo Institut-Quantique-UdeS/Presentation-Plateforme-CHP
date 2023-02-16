@@ -6,7 +6,7 @@
 Plateforme Calcul Haute Performance de l'IQ
 ===========================================
 
-*Dernière mise à jour: 2 aout 2022*
+*Dernière mise à jour: 16 février 2023*
 
 Cher étudiants et étudiantes, cher personnel de recherche et cher professeurs et professeures,
 
@@ -30,6 +30,7 @@ Index
    job
    python
    commandes_linux
+   installation_logiciel
 
 ..
    parallelisation
