@@ -75,15 +75,40 @@ Stockage des données et spécificités réseau
 
 Le serveur de données de l'IQ d'une capacité de 180 To est accessible sur ``/net/nfs-iq/data`` (depuis les noeuds de connexion et les serveurs de calcul de l'IQ, MP2 et autre).
 Chaque utilisateur possède un espace propre avec son nom d'utilisateur (par exemple, ``/net/nfs-iq/data/moroub`` pour l'utilisateur ``moroub``) et un espace partagée avec son groupe de la même manière que l'espace ``/project`` sur les grappes nationales (voir `Répertoire /project <https://docs.alliancecan.ca/wiki/Project_layout/fr>`_).
-Les données enregistrées dans les répertoire ``/net/nfs-iq/`` sont dupliquées sur deux disques pour prévenir le bris d'un des disques de données et sont sauvegardées à tout les X jours.
+Les données enregistrées dans les répertoire ``/net/nfs-iq/`` sont dupliquées sur deux disques pour prévenir le bris d'un des disques de données et sont sauvegardées à tout les jours puis mises sur ruban à toutes les semaines pour archivage.
 
-L'interconnection entre le serveur de données et les serveurs de calcul de l'IQ est 25 fois plus performante que l'interconnection avec ``/project`` ou ``/home`` (25 Gbit/s contre 1 Gb/s). 
-Les usagers sont donc fortement incités à utiliser cette espace de stockage leur étant dédié.
+Il est recommandé aux usagers de prioriser leur espace de stockage sur le serveursde données de l'IQ quand les données sont traitées sur les serveurs de calcul de l'IQ. 
+En effet, l'interconnexion entre le serveur de données et les serveurs de calcul de l'IQ a un débit théorique de 25 Gbit/s, contre 1 Gbit/s pour l'interconnexion entre les espaces ``/project`` ou ``/home`` de MP2.
+Les meilleures performances en entrées et sorties de données est cependant toujours atteintes en utilisant le stockage temporaire local sur les noeuds de calcul, accessible avec la variable d'environnement ``$SLURM_TMPDIR``.
+Le tableau ci-dessous récapitule les performances des différents espaces de stockage pour les tâches de calcul sur les serveurs de l'IQ versus les noeuds réguliers de MP2:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Origine des données
+     - Calcul sur les serveurs de l'IQ
+     - Calcul sur les noeuds réguliers de MP2
+   * - ``$SCRATCH``
+     - Inaccessible
+     - Très bonne
+   * - ``$HOME``
+     - Mauvaise
+     - Très bonne
+   * - ``$PROJECT``
+     - Mauvaise
+     - Très bonne
+   * - ``/net/nfs-iq/data``
+     - Bonne
+     - Bonne
+   * - ``$SLURM_TMPDIR``
+     - Meilleure
+     - Meilleure
+
 
 Ajout d'une clé SSH (méthode manuelle)
 ======================================
 
-#. Générez une pair de clé SSH publique et privée sur votre ordinateur (voir `Générer une clé SSH <https://docs.alliancecan.ca/wiki/SSH_Keys/fr#Générer_une_clé_SSH>`_).
+#. Générez une paire de clé SSH publique et privée sur votre ordinateur (voir `Générer une clé SSH <https://docs.alliancecan.ca/wiki/SSH_Keys/fr#Générer_une_clé_SSH>`_).
 
 #. Visualiser la clé publique créée sur votre ordinateur: ``cat $HOME/.ssh/[nom_de_la_clé].pub``
 
