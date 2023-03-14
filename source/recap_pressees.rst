@@ -3,18 +3,16 @@
 Récapitulatif et importants conseils pour les personnes préssées
 ----------------------------------------------------------------
 
-* Les serveurs de l'IQ sont actuellement branchés sur la grappe MP2. L'accès aux serveurs se fait donc via MP2 et par SSH (``ssh [utilisateur]@mp2.computecanada.ca``).
+* La plateforme de calcul haute perfomance de l'IQ a été concue pour avoir la même expérience que les grappes nationnales. La présente documentation ainsi que `celle de l'Alliance <https://docs.alliancecan.ca>`_ s'applique donc sur la plateforme.
 
-* Les serveurs de l'IQ accessible uniquement aux membres de l'IQ et configuré sur une partition spéciale ``c-iq`` de MP2. Il est obligatoire de spécifier la partition pour utiliser les serveurs de l'IQ, sinon, la tâche sera soumise aux noeuds réguliers de MP2. Exemple pour soumettre une tâche: ``sbatch -p c-iq job.sh``.
+* L'accès aux serveurs se fait par SSH, nom du noeud de connexion ``ip09.ccs.usherbrooke.ca``.
 
-* L'environnement standard de MP2 sur lequel les serveurs de l'IQ sont connectés est ``nixpkgs/16.09`` qui n'est plus maintenu. Il est donc nécessaire de charger le dernier environnement standard ``module load StdEnv/2020`` dans le script lors de la soumission d'une tâche de calcul sur les serveurs de l'IQ, ou à l'arriver sur les serveurs de l'IQ lors d'une tâche interactive.
+* La plateforme est branchée à la grappe nationnale MP2, et les serveurs de l'IQ sont accessibles sur une partition spéciale ``c-iq`` de MP2. Toutes les ressources de MP2 peuvent être atteintes, par exemple les partitions ``c-apc``, ``c-aphex``, ``c-royer``, ...
 
-* Les noeuds de connexion de MP2 possède une architecture différente que celle des serveurs de l'IQ. En conséquence, pour de meilleurs performances et une meilleure expérience utilisateur, la création d'environnements virtuels et la compilation de logiciels doit à faire directement sur les serveurs de l'IQ, par exemple via une allocation interactive (``salloc``).
-
-* À cause des deux dernières différences entre les noeuds de MP2 et les serveurs de l'IQ, certains logiciels et librairies (incluant Python) peuvent ne pas être visibles ni chargés sur les noeuds de connexion de MP2 . Une allocation (``salloc -t 01:00:00 --mem 8G --cpus-per-task=1``) sur les noeuds de l'IQ résout le problème.
+* Les serveurs de l'IQ (partition ``c-iq``) sont accessibles uniquement aux membres de l'IQ. Il est obligatoire de spécifier la partition pour utiliser les serveurs de l'IQ, sinon, la tâche sera soumise aux noeuds réguliers de MP2. Exemple pour soumettre une tâche: ``sbatch -p c-iq job.sh [job_argument]``.
 
 * L'espace ``/scratch`` de MP2 est non accessible depuis les calculateurs de l'IQ.
 
-* Les serveurs de l'IQ sont dottés d'un serveurs de données dédié de 384 To présent à ``/net/nfs-iq/data/[username]``. Espace partagé à ``/net/nfs-iq/data/def-[sponsor]``.
+* Les serveurs de l'IQ sont dottés d'un serveurs de données dédié de 180 To (stockage redondant) présent à ``/net/nfs-iq/data/[username]``. Espace partagé à ``/net/nfs-iq/data/def-[sponsor]``.
 
-* Accès au serveur GPU de l'IQ en spécifiant explicitement le nom du noeud ``cp3705`` à l'ordonnanceur, exemple: ``sbatch mon_script_gpu.sh --nodelist=cp3705``.
+* Accès au serveur GPU de l'IQ en spécifiant explicitement le nom du noeud ``cp3705`` à l'ordonnanceur, exemple: ``sbatch -p c-iq --nodelist=cp3705 mon_script_gpu.sh``. Note: les GPUs ne sont pas définis dans SLURM, les GPUs doivent être spécifiée dans la tâche. Par exemple, pour PyTorch, utiliser la méthode ``.to("cuda:0")`` ou ``.to("cuda:1")`` pour le GPU 0 ou 1 respectivement.

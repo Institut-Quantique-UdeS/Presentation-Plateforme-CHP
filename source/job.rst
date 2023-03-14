@@ -26,12 +26,7 @@ La commande ``salloc`` suivie de l'option ``-p c-iq`` permet d'être redirigé s
 .. code-block:: bash
 
    salloc -p c-iq -t [HH]::[mm]:[ss] --mem=8G --cpu-per-task=1
-   
-À l'arrivé sur les serveurs de calcul, il est recommandé de charger de suite l'environnement standard le plus récent: 
 
-.. code-block:: bash
-
-   module load StdEnv/2020
 
 
 Tâches en batch
@@ -39,7 +34,7 @@ Tâches en batch
 
 Les tâches en batch désignent toutes tâches qui ne nécessite pas l'action de l'usager (lancement d'un script Python par exemple).
 Elle doit être la façon priviligié d'utiliser les serveurs de calcul car elle maximise leur l'efficacité.
-Les scripts bash pour le lancement des tâches est exactement similaire aux scripts sur les autres grappes nationales de l'Alliance (voir la page `Exécuter des tâches <https://docs.alliancecan.ca/wiki/Running_jobs/fr>`_), à la seule différence qu'il est nécessaire de charger l'environnement standard ``StdEnv/2020`` dans le script.
+Les scripts bash pour le lancement des tâches est exactement similaire aux scripts sur les autres grappes nationales de l'Alliance (voir la page `Exécuter des tâches <https://docs.alliancecan.ca/wiki/Running_jobs/fr>`_).
 La soumission se fait ensuite en précisant la partition des noeuds de l'IQ à l'ordonnanceur:
 
 .. code-block:: bash

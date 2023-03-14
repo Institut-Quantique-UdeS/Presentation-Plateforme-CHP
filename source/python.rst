@@ -19,6 +19,20 @@ La version voulue de Python peut être ensuite chargée avec (exemple pour la 3.
    module load python/3.9.6
  
 
+Recherche des librairies Python précompilées
+============================================
+
+La commande ``avail_wheels`` permet de rechercher les librairies Python précompilées par les équipes de l'Alliance et optimisées pour les serveurs de l'IQ, par exemple pour Qiskit:
+
+.. code-block:: bash
+
+    [moroub@ip09-rockylinux8 ~]$ avail_wheels qiskit
+    name    version    python    arch
+    ------  ---------  --------  -------
+    qiskit  0.39.3     py3       generic
+
+Qiskit version 0.39.3 optimisé pour les serveurs de l'IQ peut donc être installé via ``pip install qiskit==0.39.3 --no-index``. 
+
 Environnement virtuel
 =====================
 
@@ -29,34 +43,28 @@ La liste des librairies installées peut-être imprimer dans un fichier ``requir
 
 .. code-block:: bash
 
-   pip freeze > requirement.txt
+   pip freeze > requirements.txt
 
 Qui peut ensuite être transmis sur une autre machine pour reproduire l'environnement avec:
 
 .. code-block:: bash
 
-   pip install -r requirement.txt
-
-Finalement, dans la configuration actuel des serveurs de l'IQ, la création d'environnements virtuels doit s'effectuer directement sur les serveurs afin de bénéfier des dernières librairies Python disponibles et optimisées pour les serveurs.
+   pip install -r requirements.txt
 
 La création d'un environnement virtuel sur les serveurs de calcul de l'IQ se fait comme suit:
 
 .. code-block:: bash
 
-   salloc -p c-iq -t 01:00:00 --mem 4G  #allocation de 1 heure, 1 CPU, 4Gb de RAM
-   module load StdEnv/2020 python/3.XX  #chargement de Python 3.XX
+   module load python/3.XX  		#chargement de Python 3.XX
    virtualenv --no-download ENV         #création environnement virtuel
    source ENV/bin/activate              #activation de l'environnement virtuel
    pip install --no-index X Y Z ...     #installation des librairies, l'option
                                         #--no-index permet d'installer les libraries
-                                        #précompilées et optimisées par Calcul Canada
-
-À noter qu'un environnement virtuel créé sur les serveurs de l'IQ ne peut être utilisé sur les noeuds de connexion de MP2, car l'environnement a en effet été optimisé pour des processeurs plus récent.
+                                        #précompilées et optimisées par les équipe de l'Alliance
 
 
 Parallélisation avec Python
 ===========================
-
 
 Généralités
 ###########

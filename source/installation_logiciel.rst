@@ -23,7 +23,7 @@ Pyqcm
 
 Pyqcm est une librairie Python développé par David Sénéchal qui implémente les méthodes des clusters pour pour les systèmes quantiques hautement corrélés.
 
-Instructions d'installation:
+Instructions d'installation (voir aussi la `documentation de Pyqcm <https://dsenech.github.io/qcm_wed_doc/intro.html#installation>_`):
 
 .. code-block:: bash
 
@@ -48,7 +48,7 @@ La procédure pour charger Ansys sur la plateforme est la suivante:
 .. code-block:: bash
 
     setenv("ANSYSLMD_LICENSE_FILE", "6624@ip39.ccs.usherbrooke.ca")
-    setenv("ANSYSLI_SERVERS", "6624@ip39.ccs.usherbrooke.ca")
+    setenv("ANSYSLI_SERVERS", "2325@ip39.ccs.usherbrooke.ca")
     
 #. Envoyer un courriel à CMC Microsystems (``mcsupport@cmc.ca``) avec votre nom d'utilisateur sur les serveurs de l'IQ, votre nom, le nom de la personne qui vous fourni la licence et le nom du serveur de licence (``ip39.ccs.usherbrooke.ca``).
 

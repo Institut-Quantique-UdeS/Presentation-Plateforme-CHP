@@ -119,7 +119,8 @@ Le tableau suivant présente ces ressources:
 Ressources de l'Alliance
 ########################
 
-L'Alliance pour la Recherche (anciennement Calcul Canada) met à disposition des professeurs rattachés à un université canadienne et leurs étudiants et personels de recherche l'accès à des grappes de serveurs (supercalculateurs) sans coût d'utilisation. Les personnes intéressées sont référer au site de l'Alliance qui décrit ces ressources (`National Host Sites <https://alliancecan.ca/en/services/advanced-research-computing/federation/national-host-sites>`_).
+L'Alliance pour la Recherche (anciennement Calcul Canada) met à disposition des professeurs rattachés à un université canadienne et leurs étudiants et personels de recherche l'accès à des grappes de serveurs (supercalculateurs) sans coût d'utilisation. 
+Les personnes intéressées sont référer au site de l'Alliance qui décrit ces ressources (`National Host Sites <https://alliancecan.ca/en/services/advanced-research-computing/federation/national-host-sites>`_).
 
 
 .. _demande_d_acces:
@@ -129,8 +130,17 @@ Demande d'accès aux ressources
 
 L'accès aux ressources de calcul de l'IQ se fait en deux étapes:
 
-#. Création d'un `compte Calcul Canada (CCDB) <https://alliancecan.ca/en/services/advanced-research-computing/account-management/apply-account>`_. À noter que la création d'un compte Calcul Canada doit se faire via un parrain (par exemple un professeur) pour les membres ayant le statut étudiants, stagiaires, stagiaires post-doctorals et personnels de recherche.
+#. Création d'un compte sur la CCDB ou un compte restreint au serveur de l'IQ:
 
-#. Après avoir obtenu leur compte CCDB, les membres doivent remplir `l'annexe C de la politique d'accès au calculateurs <https://forms.office.com/r/UKb6yPneD1>`_.
+    #. Création d'un `compte Calcul Canada (CCDB) <https://alliancecan.ca/en/services/advanced-research-computing/account-management/apply-account>`_. 
+    À noter que la création d'un compte Calcul Canada doit se faire via un parrain (par exemple un professeur) pour les membres ayant le statut étudiants, stagiaires, stagiaires post-doctorals et personnels de recherche.
+    L'obtention d'un compte CCDB donne aussi accès à toutes les grappes de l'Alliance.
+
+    #. S'il n'est pas possible d'obtenir un sponsor (par exemple, membre de l'Algolab), il est possible d'avoir un compte restreint aux serveurs de l'IQ.
+    Dans ce cas, envoyer un courriel à Stefanos Kourtis ou Moïse Rousseau avec le nom d'utilisateur que vous désirez, votre nom et un compte vous sera créé dans les jours qui suivent avec un mot de passe généré aléatoirement que vous devrez changer.
+    Une clé SSH publique peut aussi être fournie, voir `Clé SSH <https://docs.alliancecan.ca/wiki/SSH_Keys/fr>`_.
+    
+
+#. Après avoir obtenu leur compte CCDB ou leur identifiant ``iq-``, les membres doivent remplir `l'annexe C de la politique d'accès au calculateurs <https://forms.office.com/r/UKb6yPneD1>`_.
 
 L'accès aux ressources est régi par la `politique d'accès aux calculateurs <https://www.usherbrooke.ca/iq/wp-content/uploads/2022/06/Politiques-Calculateurs-haute-performance-HPC-2022-06-02.pdf>`_.
