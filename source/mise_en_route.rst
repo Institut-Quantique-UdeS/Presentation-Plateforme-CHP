@@ -80,6 +80,22 @@ Les données enregistrées dans les répertoire ``/net/nfs-iq/`` sont dupliquée
 L'interconnection entre le serveur de données et les serveurs de calcul de l'IQ est 25 fois plus performante que l'interconnection avec ``/project`` ou ``/home`` (25 Gbit/s contre 1 Gb/s). 
 Les usagers sont donc fortement incités à utiliser cette espace de stockage leur étant dédié.
 
+Ajout d'une clé SSH (méthode manuelle)
+======================================
+
+#. Générez une pair de clé SSH publique et privée sur votre ordinateur (voir `Générer une clé SSH <https://docs.alliancecan.ca/wiki/SSH_Keys/fr#Générer_une_clé_SSH>`_).
+
+#. Visualiser la clé publique créée sur votre ordinateur: ``cat $HOME/.ssh/[nom_de_la_clé].pub``
+
+#. Connectez vous à ``ip09.ccs.usherbrooke.ca`` avec votre nom d'utilisateur et votre mot de passe.
+
+#. Éditer le fichier ``$HOME/.ssh/authorized_keys`` avec l'éditeur de votre choix (le créer si ce dernier n'existe pas).
+
+#. Ajouter la clé publique à la fin du fichier ``$HOME/.ssh/authorized_keys`` sur une nouvelle ligne.
+
+#. Déconnectez-vous, puis reconnectez-vous avec: ``ssh -i $HOME/.ssh/[nom_de_la_clé] [utilisateur]@ip09.ccs.usherbrooke.ca``.
+
+
 
 Connexion via MP2 (ancienne méthode, non recommandée)
 =====================================================
