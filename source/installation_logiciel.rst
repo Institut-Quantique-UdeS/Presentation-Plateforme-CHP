@@ -4,18 +4,6 @@ Installation de logiciels (recettes)
 ------------------------------------
 
 Cette page présente les recettes permettant d'installer les logiciels souvent utilisés à l'IQ.
-Toutes les installations sont à faire sur les noeuds de calcul de l'IQ, et PAS sur les noeuds de connexions de MP2 (différentes architectures).
-
-Qiskit
-======
-
-.. code-block:: bash
-
-    module load StdEnv/2020 
-    module load python/3.9 scipy-stack symengine/0.9.0 flexiblas/3.0.4
-    virtualenv --no-download env_qiskit
-    source env_qiskit/bin/activate
-    pip install qiskit==0.39.1 --no-index
 
 
 Pyqcm
@@ -29,12 +17,52 @@ Instructions d'installation (voir aussi la `documentation de Pyqcm <https://dsen
 
     git clone https://bitbucket.org/dsenechQCM/qcm_wed #download
     cd qcm_wed #enter source dir
-    git checkout v1.1.2 #check the latest version (16 feb 2023)
+    git checkout v2.0.2 #check the latest version (April 5th, 2023)
     module load StdEnv/2020 gcc/9.3.0 cmake/3.23.1 python/3.9
     virtualenv env_qcm --no-download #create virtual environment
     source env_qcm/bin/activate #activate it
     pip install . --no-index
 
+
+Qiskit
+======
+
+.. code-block:: bash
+
+    module load StdEnv/2020 
+    module load python/3.9 scipy-stack/2022a symengine/0.9.0 flexiblas/3.0.4
+    virtualenv --no-download env_qiskit
+    source env_qiskit/bin/activate
+    #manually download requests-ntlm because the precompiled version is problematic
+    wget https://files.pythonhosted.org/packages/03/4b/8b9a1afde8072c4d5710d9fa91433d504325821b038e00237dc8d6d833dc/requests_ntlm-1.1.0-py2.py3-none-any.whl
+    pip install ./requests_ntlm-1.1.0-py2.py3-none-any.whl
+    pip install qiskit==0.42.0 --no-index
+
+
+A noter que cela installe le simulateur Qiskit AER avec prise en charge des GPUs.
+Il n'y a pas besoin d'installer la librairie``qiskit-aer-gpu``.
+
+
+QUIMB
+=====
+
+Quimb is an easy but fast python library for quantum information and many-body calculations, including with tensor networks.
+
+.. code-block:: bash
+
+    module load StdEnv/2020  gcc/9.3.0  openmpi/4.0.3
+    module load python/3.10 scipy-stack/2022a igraph/0.10.2 slepc/3.17.1
+    virtualenv env_quimb --no-download
+    source env_quimb/bin/activate
+    pip install quimb[tensor] cotengra --no-index
+    
+
+
+STIM
+====
+
+Stim is a fast simulator for quantum stabilizer circuits.
+    
 
 Suite Ansys
 ===========
