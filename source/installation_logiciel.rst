@@ -11,16 +11,17 @@ Pyqcm
 
 Pyqcm est une librairie Python développé par David Sénéchal qui implémente les méthodes des clusters pour pour les systèmes quantiques hautement corrélés.
 
-Instructions d'installation (voir aussi la `documentation de Pyqcm <https://dsenech.github.io/qcm_wed_doc/intro.html#installation>_`):
+Instructions d'installation (voir aussi la `documentation de Pyqcm <https://dsenech.github.io/qcm_wed_doc/intro.html#installation>`_):
 
 .. code-block:: bash
 
     git clone https://bitbucket.org/dsenechQCM/qcm_wed #download
     cd qcm_wed #enter source dir
-    git checkout v2.0.2 #check the latest version (April 5th, 2023)
-    module load StdEnv/2020 gcc/9.3.0 cmake/3.23.1 python/3.9
+    git checkout v2.0.3 #check the latest version (April 24th, 2023)
+    module load StdEnv/2020 gcc/9.3.0 cmake/3.23.1 python/3.9 flexiblas/3.0.4 eigen/3.4.0
     virtualenv env_qcm --no-download #create virtual environment
     source env_qcm/bin/activate #activate it
+    export CMAKE_ARGS="-DDOWNLOAD_CUBA=1 -DEIGEN_HAMILTONIAN=1 -DWITH_PRIMME=1 -DDOWNLOAD_PRIMME=1 -DBLA_VENDOR=FlexiBLAS"
     pip install . --no-index
 
 
@@ -58,7 +59,7 @@ Quimb is an easy but fast python library for quantum information and many-body c
     
 
 
-STIM
+Stim
 ====
 
 Stim is a fast simulator for quantum stabilizer circuits.
