@@ -17,12 +17,14 @@ Instructions d'installation (voir aussi la `documentation de Pyqcm <https://dsen
 
     git clone https://bitbucket.org/dsenechQCM/qcm_wed #download
     cd qcm_wed #enter source dir
-    git checkout v2.0.3 #check the latest version (April 24th, 2023)
-    module load StdEnv/2020 gcc/9.3.0 cmake/3.23.1 python/3.9 flexiblas/3.0.4 eigen/3.4.0
+    git checkout v2.1.4 #check the latest version (June 28th, 2023)
+    module load StdEnv/2020 gcc/9.3.0 cmake/3.23.1 python/3.9 flexiblas/3.0.4 eigen/3.4.0 scipy-stack
     virtualenv env_qcm --no-download #create virtual environment
     source env_qcm/bin/activate #activate it
-    export CMAKE_ARGS="-DDOWNLOAD_CUBA=1 -DEIGEN_HAMILTONIAN=1 -DWITH_PRIMME=1 -DDOWNLOAD_PRIMME=1 -DBLA_VENDOR=FlexiBLAS"
+    export CMAKE_ARGS="-DDOWNLOAD_CUBA=1 -DEIGEN_HAMILTONIAN=1 -DWITH_PRIMME=1 -DDOWNLOAD_PRIMME=1 -DBLA_VENDOR=FlexiBLAS -DWITH_GF_OPT_KERNEL=1"
     pip install . --no-index
+
+Ne pas oublier de charger le module FlexiBLAS avant de lancer un calcul avec Pyqcm afin d'utiliser la librairie BLIS plus performante sur les processeurs AMD comme ceux des serveurs de calcul de l'IQ (voir `BLAS et LAPACK <https://docs.alliancecan.ca/wiki/BLAS_and_LAPACK/fr>`_).
 
 
 Qiskit

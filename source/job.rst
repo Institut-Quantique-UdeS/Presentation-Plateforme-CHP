@@ -12,7 +12,6 @@ Les serveurs de calcul peuvent être utilisés de deux manières différentes qu
 * Les tâches dites en batch où l'usager soumet la tâche à un ordonnanceur qui est responsable de l'exécution de la tâche sur les noeuds de calcul.
 
 Dans tout les cas, il est interdit de lancer des tâches sur les noeuds de connexion.
-En plus de pénaliser les autres utilisateurs qui font de la gestion de fichiers, ces noeuds ne disposent pas des derniers logiciels disponibles dans la pile de l'Alliance et offrent de mauvaises performances.
 
 
 .. _taches_interactives:

@@ -11,8 +11,8 @@ Récapitulatif et importants conseils pour les personnes préssées
 
 * Les serveurs de l'IQ (partition ``c-iq``) sont accessibles uniquement aux membres de l'IQ. Il est obligatoire de spécifier la partition pour utiliser les serveurs de l'IQ, sinon, la tâche sera soumise aux noeuds réguliers de MP2. Exemple pour soumettre une tâche: ``sbatch -p c-iq job.sh [job_argument]``.
 
-* L'espace ``/scratch`` de MP2 est non accessible depuis les calculateurs de l'IQ.
+* Il est recommandé de travailler sur le serveur de données dédié de l'IQ pour de meilleures performances en entrée-sortie de fichier. Le serveur de donnée de l'IQ est accessible à ``/net/nfs-iq/data/[username]``. Espace partagé à ``/net/nfs-iq/data/def-[sponsor]``. Capacité de 180 To (stockage redondant).
 
-* Les serveurs de l'IQ sont dottés d'un serveurs de données dédié de 180 To (stockage redondant) présent à ``/net/nfs-iq/data/[username]``. Espace partagé à ``/net/nfs-iq/data/def-[sponsor]``.
+* L'espace ``/scratch`` de MP2 est non accessible depuis les calculateurs de l'IQ.
 
 * Accès au serveur GPU de l'IQ en spécifiant explicitement le nom du noeud ``cp3705`` à l'ordonnanceur, exemple: ``sbatch -p c-iq --nodelist=cp3705 mon_script_gpu.sh``. Note: les GPUs ne sont pas définis dans SLURM, les GPUs doivent être spécifiée dans la tâche. Par exemple, pour PyTorch, utiliser la méthode ``.to("cuda:0")`` ou ``.to("cuda:1")`` pour le GPU 0 ou 1 respectivement.

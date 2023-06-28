@@ -113,7 +113,17 @@ Le tableau suivant présente ces ressources:
      - David Sénéchal
      - Oui
      - c-apc
-   
+   * - 1
+     - CPU
+     - AMD EPYC 9554 @ 3.1 GHz (x2)
+     - 128
+     - 1.5 TB (DDR5)
+     - 1 TB (NVMe)
+     - 
+     - Alexandre Blais
+     - Non
+     - c-blais
+
 
 
 Ressources de l'Alliance
