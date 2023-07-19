@@ -12,6 +12,23 @@ Les serveurs de calcul peuvent être utilisés de deux manières différentes qu
 * Les tâches dites en batch où l'usager soumet la tâche à un ordonnanceur qui est responsable de l'exécution de la tâche sur les noeuds de calcul.
 
 Dans tout les cas, il est interdit de lancer des tâches sur les noeuds de connexion.
+Aussi, pour des calculs sur les serveur de l'IQ, il est recommandé d'enregistrer les données et de soumettre les tâches depuis le NAS de l'IQ qui possède de meilleures performances en entrée-sortie de données, c'est-à-dire depuis ``/net/nfs-iq/data/[nom_utilisateur]`` (voir aussi :ref:`stockage_et_reseau`).
+
+
+.. _taches_batch:
+
+Tâches en batch
+===============
+
+Les tâches en batch désignent toutes tâches qui ne nécessite pas l'action de l'usager pendant les calculs (lancement d'un script Python par exemple).
+Les tâches en batch maximise l'efficacité des serveurs de calcul et elle doit donc être la façon priviligiée d'utiliser la plateforme de calcul de l'IQ.
+Les scripts bash pour le lancement des tâches sont exactement les mêmes que les scripts utilisés pour soumettre sur les autres grappes nationales de l'Alliance (voir la page `Exécuter des tâches <https://docs.alliancecan.ca/wiki/Running_jobs/fr>`_).
+La soumission se fait ensuite en précisant la partition des noeuds de l'IQ avec l'option ``-p c-iq`` à l'ordonnanceur:
+
+.. code-block:: bash
+
+   sbatch -p c-iq job.sh
+
 
 
 .. _taches_interactives:
@@ -26,19 +43,6 @@ La commande ``salloc`` suivie de l'option ``-p c-iq`` permet d'être redirigé s
 
    salloc -p c-iq -t [HH]::[mm]:[ss] --mem=8G --cpu-per-task=1
 
-
-
-Tâches en batch
-===============
-
-Les tâches en batch désignent toutes tâches qui ne nécessite pas l'action de l'usager (lancement d'un script Python par exemple).
-Elle doit être la façon priviligié d'utiliser les serveurs de calcul car elle maximise leur l'efficacité.
-Les scripts bash pour le lancement des tâches est exactement similaire aux scripts sur les autres grappes nationales de l'Alliance (voir la page `Exécuter des tâches <https://docs.alliancecan.ca/wiki/Running_jobs/fr>`_).
-La soumission se fait ensuite en précisant la partition des noeuds de l'IQ à l'ordonnanceur:
-
-.. code-block:: bash
-
-   sbatch -p c-iq job.sh
 
 
 Calcul sur GPU

@@ -70,6 +70,8 @@ Il faut alors consulter la sortie de ``module spider X`` pour obtenir plus d'inf
 Pour un complément d'informations sur l'utilisation des modules, voir la documentation correspondante sur le site de l'Alliance (`Utiliser des modules <https://docs.alliancecan.ca/wiki/Utiliser_des_modules>`_).
 
 
+.. _stockage_et_reseau:
+
 Stockage des données et spécificités réseau
 ===========================================
 
