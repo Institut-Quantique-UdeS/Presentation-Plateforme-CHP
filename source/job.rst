@@ -63,6 +63,7 @@ Cette dernière montre alors la mémoire GPU utilisé ainsi que la charge du pro
 
 En revanche, comme les GPUs ne sont pas connus de l'ordonnanceur, il peut parfois être nécessaire de spécifier aux programmes exécutés quel GPU utiliser.
 Par exemple, lors de l'entrainement de réseau de neuronne avec PyTorch, la méthode ``.to(device)`` permettant de spécifier quel processeur utilisé (CPU ou GPU) peut être appelé soit avec ``device='cpu'``, pour le CPU, ``device='cuda'`` pour un GPU, ``device='cuda:0'`` pour le GPU 0 ou ``device='cuda:1'`` pour le GPU 1 explicitement.
+La variable d'environnement ``CUDA_VISIBLE_DEVICES`` permet aussi de sélectionner explicitement quels GPUs utiliser, par exemple ``CUDA_VISIBLE_DEVICES=0`` pour le GPU 0 ou ``CUDA_VISIBLE_DEVICES=0,1`` pour les deux GPUs.
 
 
 Alias pour les commandes SLURM communes
