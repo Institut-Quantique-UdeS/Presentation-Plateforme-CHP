@@ -6,7 +6,7 @@
 Plateforme Calcul Haute Performance de l'IQ
 ===========================================
 
-*Dernière mise à jour: 19 juillet 2023*
+*Dernière mise à jour: 27 juillet 2023*
 
 Cher étudiants et étudiantes, cher personnel de recherche et cher professeurs et professeures,
 
