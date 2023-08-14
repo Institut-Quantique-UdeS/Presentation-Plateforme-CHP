@@ -11,42 +11,10 @@ Mathematica
 
 Mathematica est un logiciel propriétaire de calcul formel et numérique développé par Wolfram Research.
 Mathematica version 12.1 est installé sur le NAS de l'IQ et les exécutables se trouvent sous ``/net/nfs-iq/data/software/Mathematica/12.1/Executables``.
-Néanmoins, son utilisation requiert une licence disponible auprès du Département de physique de l'université.
-Les licences sont distribuées via un serveur de licence en ligne sur le réseau de l'université, et les usagers doivent donc se connecter depuis les serveurs de calcul sur le réseau de l'université via le serveur Bethe avec un tunnel SSH (à faire avant chaque calcul):
+Les licences sont distribuées via un serveur de licence en ligne sur le réseau de du département de physique et de l'université de manière transparente.
+Néanmoins, il est de la responsabilité de l'usager de se renseigner quant aux politiques d'accès à ces licences (si elles existent)
 
-.. code-block:: bash
-    
-    ssh -N -f -L 16286:10.44.34.42:16286 [cip_usherbrooke]@bethe.physique.usherbrooke.ca
-
-
-Exemple d'utilisation de Mathematica en tâche interactive:
-
-.. code-block:: bash
-    
-    salloc -p c-iq --mem=4G --cpu-per-task=1 --time=01:00:00 #demande d'allocation interactive
-    ssh -N -f -L 16286:10.44.34.42:16286 [cip_usherbrooke]@bethe.physique.usherbrooke.ca #demande mot de passe usherbrooke pour le lien avec Bethe
-    /net/nfs-iq/data/software/Mathematica/12.1/Executables/wolframscript -file script.wls #exécute les commandes dans le fichier script.wls
-
-
-Pour les tâches en batch, il est nécessaire de créer une clé SSH car il n'est pas possible d'interagir pour entrer le mot de passe pour le lien vers le serveur Bethe:
-
-* Création de la clé SSH dans ``~/.ssh/id_bethe_ed25519``:
-
-.. code-block:: bash
-    
-    ssh-keygen -t ed25519 #à mettre dans ~/.ssh/id_bethe_ed25519
-    
-
-* Copie de la clé public sur Bethe:
-
-.. code-block:: bash
-    
-    cat ~/.ssh/id_bethe_ed25519.pub
-    ssh [cip_usherbrooke]@bethe.physique.usherbrooke.ca
-    echo "[Le contenu de id_bethe_ed25519.pub affiché avec la commande cat]" >> ~/.ssh/authorized_keys
-
-
-* Dans le script de tâche, spécifier le tunnel SSH d'utiliser la clé (exemple):
+Exemple d'utilisation de Mathematica en tâche batch:
 
 .. code-block:: bash
     
@@ -55,7 +23,6 @@ Pour les tâches en batch, il est nécessaire de créer une clé SSH car il n'es
     #SBATCH --cpus-per-task=2
     #SBATCH --mem=8G
     
-    ssh -N -f -L 16286:10.44.34.42:16286 [cip_usherbrooke]@bethe.physique.usherbrooke.ca -i ~/.ssh/id_bethe_ed25519
     /net/nfs-iq/data/software/Mathematica/12.1/Executables/wolframscript -file script.wls
 
 
