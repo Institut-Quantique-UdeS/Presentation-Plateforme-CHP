@@ -66,6 +66,41 @@ Par exemple, lors de l'entrainement de réseau de neuronne avec PyTorch, la mét
 La variable d'environnement ``CUDA_VISIBLE_DEVICES`` permet aussi de sélectionner explicitement quels GPUs utiliser, par exemple ``CUDA_VISIBLE_DEVICES=0`` pour le GPU 0 ou ``CUDA_VISIBLE_DEVICES=0,1`` pour les deux GPUs.
 
 
+Efficacité d'une tâche de calcul
+================================
+
+La commande ``seff`` permet d'obtenir des statistiques sur l'efficacité des calculs effectués.
+Il est recommandé à la fin de chaque tâche que les ressources demandées ont correctement été utilisées afin de prévenir le gaspillage de ressource.
+Il est recommandé une efficacité CPU supérieure à 90% et une efficacité mémoire supérieure à 70%, avec un seuil minimum acceptable à 70% pour les CPUs et 50% pour la mémoire.
+Si les tâches soumises sont en général en-dessous de ces seuils, merci de revoir la demande de ressources basée sur les résultats précédents.
+
+La commande ``seff`` est à utiliser à partir de MP2 (elle n'est pas disponible sur ip09):
+
+.. code-block:: bash
+
+   ssh [utilisateur]@mp2.computecanada.ca
+   seff [JobID]
+
+Qui retourne le résultat suivant pour la tâche 1668335:
+
+.. code-block:: bash
+
+    [moroub@ip16-mp2 ~]$ seff 1668335
+    Job ID: 1668335
+    Cluster: mp2
+    User/Group: anaida/anaida
+    State: COMPLETED (exit code 0)
+    Cores: 1
+    CPU Utilized: 1-17:38:24
+    CPU Efficiency: 99.64% of 1-17:47:32 core-walltime
+    Job Wall-clock time: 1-17:47:32
+    Memory Utilized: 9.42 GB
+    Memory Efficiency: 12.06% of 78.12 GB
+
+L'efficacité des tâches est publique.
+
+
+
 Alias pour les commandes SLURM communes
 =======================================
 
