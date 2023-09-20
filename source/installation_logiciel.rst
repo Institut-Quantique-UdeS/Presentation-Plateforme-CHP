@@ -75,12 +75,28 @@ Quimb is an easy but fast python library for quantum information and many-body c
 
 .. code-block:: bash
 
-    module load StdEnv/2020  gcc/9.3.0  openmpi/4.0.3
-    module load python/3.10 scipy-stack/2022a igraph/0.10.2 slepc/3.17.1
+    module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3
+    module load python/3.10 scipy-stack/2022a igraph/0.10.2 slepc/3.17.2 kahypar/1.3.2
     virtualenv env_quimb --no-download
     source env_quimb/bin/activate
     pip install quimb[tensor] cotengra --no-index
+    pip install cupy jax --no-index #optional backend option
     
+
+
+QuSpin
+======
+
+QuSpin is an open-source Python package for Exact Diagonalization and quantum dynamics of arbitrary boson, fermion and spin many-body systems, supporting the use of various (user-defined) symmetries in one and higher dimensional lattice systems and (imaginary) time evolution following a user-specified driving protocol.
+
+.. code-block:: bash
+
+    module load python/3.9 scipy-stack/2023a
+    virtualenv env_quspin --no-download
+    source env_quspin/bin/activate
+    pip install dill==0.3.7 numba==0.57.0 numexpr==2.8.4 joblib==1.3.2 gmpy2==2.1.5 --no-index
+    pip install /net/nfs-iq/data/software/QuSpin/quspin-0.3.7-cp39-cp39-linux_x86_64.whl --no-index
+
 
 
 Stim
