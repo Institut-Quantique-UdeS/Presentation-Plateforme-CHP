@@ -15,4 +15,4 @@ Récapitulatif et importants conseils pour les personnes préssées
 
 * L'espace ``/scratch`` de MP2 est non accessible depuis les calculateurs de l'IQ.
 
-* Accès au serveur GPU de l'IQ en spécifiant explicitement le nom du noeud ``cp3705`` à l'ordonnanceur, exemple: ``sbatch -p c-iq --nodelist=cp3705 mon_script_gpu.sh``. Note: les GPUs ne sont pas définis dans SLURM, les GPUs doivent être spécifiée dans la tâche. Par exemple, pour PyTorch, utiliser la méthode ``.to("cuda:0")`` ou ``.to("cuda:1")`` pour le GPU 0 ou 1 respectivement.
+* Accès au serveur GPU de l'IQ en spécifiant explicitement le nom du noeud ``cp3705`` à l'ordonnanceur, exemple: ``sbatch -p c-iq --nodelist=cp3705 mon_script_gpu.sh``. Note: les GPUs ne sont pas définis dans SLURM mais les GPUs peuvent être spécifiée dans le script de tâche via la variable d'environnement ``CUDA_VISIBLE_DEVICES=[0 or 1 or 0,1]`` for GPU 0, GPU 1 or both GPUs repectivement.

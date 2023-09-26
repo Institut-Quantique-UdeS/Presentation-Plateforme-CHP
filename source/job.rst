@@ -52,11 +52,12 @@ Les tâches de calcul faisans l'utilisation de GPU ne sont pas différente des t
 
 Au contraire des grappes nationales, les GPU ne sont pas connus de l'ordonnanceur et il faut donc spécifier explicitement le nom du serveur GPU (``cp3705``) de l'IQ à ce dernier avec l'option ``--nodelist=cp3705``.
 
-Par exemple, pour soumettre une tâches interactive avec accès aux GPU, la commande est la suivante:
+Par exemple, pour soumettre une tâche batch ou interactive avec accès aux GPU, les commandes sont la suivante:
 
 .. code-block:: bash
 
-   salloc -p c-iq -t [HH]::[mm]:[ss] --mem=8G --cpu-per-task=1 --nodelist=cp3705
+   sbatch -p c-iq --nodelist=cp3705  job.sh #batch job
+   salloc -p c-iq --nodelist=cp3705 -t [HH]::[mm]:[ss] --mem=8G --cpu-per-task=1 #interactive job
    
 L'activité du GPU peut être suivi avec une tâches interactive sur le noeud GPU et avec la commande ``nvidia-smi``.
 Cette dernière montre alors la mémoire GPU utilisé ainsi que la charge du processeur pour chacun des deux GPU du serveur ``cp3705``.
