@@ -11,7 +11,7 @@ Récapitulatif et importants conseils pour les personnes préssées
 
 * Les serveurs de l'IQ (partition ``c-iq``) sont accessibles uniquement aux membres de l'IQ. Il est obligatoire de spécifier la partition pour utiliser les serveurs de l'IQ, sinon, la tâche sera soumise aux noeuds réguliers de MP2. Exemple pour soumettre une tâche: ``sbatch -p c-iq job.sh [job_argument]``.
 
-* Il est recommandé de travailler sur le serveur de données dédié de l'IQ pour de meilleures performances en entrée-sortie de fichier. Le serveur de donnée de l'IQ est accessible à ``/net/nfs-iq/data/[username]``. Espace partagé à ``/net/nfs-iq/data/def-[sponsor]``. Capacité de 180 To (stockage redondant).
+* Il est impératif de travailler sur le serveur de données dédié de l'IQ pour de meilleures performances en entrée-sortie de fichier. Le serveur de donnée de l'IQ est accessible à ``/net/nfs-iq/data/[username]``. Espace partagé à ``/net/nfs-iq/data/def-[sponsor]``. Capacité de 180 To (stockage redondant).
 
 * L'espace ``/scratch`` de MP2 est non accessible depuis les calculateurs de l'IQ.
 

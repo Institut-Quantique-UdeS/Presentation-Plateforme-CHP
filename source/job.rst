@@ -22,13 +22,14 @@ Tâches en batch
 
 Les tâches en batch désignent toutes tâches qui ne nécessite pas l'action de l'usager pendant les calculs (lancement d'un script Python par exemple).
 Les tâches en batch maximise l'efficacité des serveurs de calcul et elle doit donc être la façon priviligiée d'utiliser la plateforme de calcul de l'IQ.
-Les scripts bash pour le lancement des tâches sont exactement les mêmes que les scripts utilisés pour soumettre sur les autres grappes nationales de l'Alliance (voir la page `Exécuter des tâches <https://docs.alliancecan.ca/wiki/Running_jobs/fr>`_).
+Les scripts de soumission en bash pour le lancement des tâches sont exactement les mêmes que les scripts utilisés pour soumettre sur les autres grappes nationales de l'Alliance (voir la page `Exécuter des tâches <https://docs.alliancecan.ca/wiki/Running_jobs/fr>`_).
 La soumission se fait ensuite en précisant la partition des noeuds de l'IQ avec l'option ``-p c-iq`` à l'ordonnanceur:
 
 .. code-block:: bash
 
    sbatch -p c-iq job.sh
 
+Important! L'option ``-p c-iq`` doit absolument être placée avant le nom du script de soumission, sinon l'ordonnanceur pensera que ``-p c-iq`` est une option pour le script de soumission.
 
 
 .. _taches_interactives:
