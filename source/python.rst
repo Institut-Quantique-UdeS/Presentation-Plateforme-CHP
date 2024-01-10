@@ -33,6 +33,30 @@ La commande ``avail_wheels`` permet de rechercher les librairies Python précomp
 
 Qiskit version 0.39.3 optimisé pour les serveurs de l'IQ peut donc être installé via ``pip install qiskit==0.39.3 --no-index``. 
 
+En revanche, la commande précédente ne cherche que dans l'environnement standard chargé (par défaut en version 2020).
+Il est possible que des versions plus récentes soient disponible dans le nouvel environnement standard 2023:
+
+.. code-block:: bash
+
+    [moroub@ip09 ~]$ module load StdEnv/2020 && avail_wheels pyqcm --all
+    name    version    python    arch
+    ------  ---------  --------  ------
+    pyqcm   2.3.1      cp39      avx2
+    pyqcm   2.3.1      cp311     avx2
+    pyqcm   2.3.1      cp310     avx2
+    
+    [moroub@ip09 ~]$ module load StdEnv/2023 && avail_wheels pyqcm --all
+    
+    The following have been reloaded with a version change:
+      1) StdEnv/2020 => StdEnv/2023          3) gentoo/2020 => gentoo/2023           5) libfabric/1.10.1 => libfabric/1.18.0     7) ucx/1.8.0 => ucx/1.14.1
+      2) gcccore/.9.3.0 => gcccore/.12.3     4) imkl/2020.1.217 => imkl/2023.2.0     6) openmpi/4.0.3 => openmpi/4.1.5
+
+    name    version    python    arch
+    ------  ---------  --------  ---------
+    pyqcm   2.4.3      cp311     x86-64-v3
+    pyqcm   2.4.3      cp310     x86-64-v3
+
+
 Environnement virtuel
 =====================
 
