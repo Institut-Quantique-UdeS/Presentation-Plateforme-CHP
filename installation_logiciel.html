@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Installation de logiciels (recettes) &#8212; Documentation IQ-Plateforme-CHP </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <script src="_static/documentation_options.js?v=d1a510d7"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Problèmes courants" href="faq.html" />
+    <link rel="prev" title="Rappel des commandes Linux basiques" href="commandes_linux.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="faq.html" title="Problèmes courants"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="commandes_linux.html" title="Rappel des commandes Linux basiques"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation IQ-Plateforme-CHP </a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Installation de logiciels (recettes)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="installation-de-logiciels-recettes">
+<h1>Installation de logiciels (recettes)<a class="headerlink" href="#installation-de-logiciels-recettes" title="Link to this heading">¶</a></h1>
+<p>Cette page présente les recettes permettant d’installer les logiciels souvent utilisés à l’IQ.</p>
+<section id="mathematica">
+<h2>Mathematica<a class="headerlink" href="#mathematica" title="Link to this heading">¶</a></h2>
+<p>Mathematica est un logiciel propriétaire de calcul formel et numérique développé par Wolfram Research.
+Mathematica version 12.1 est installé sur le NAS de l’IQ et les exécutables se trouvent sous <code class="docutils literal notranslate"><span class="pre">/net/nfs-iq/data/software/Mathematica/12.1/Executables</span></code>.
+Les licences sont distribuées via un serveur de licence en ligne sur le réseau de du département de physique et de l’université de manière transparente.
+Néanmoins, il est de la responsabilité de l’usager de se renseigner quant aux politiques d’accès à ces licences (si elles existent)</p>
+<p>Exemple d’utilisation de Mathematica en tâche batch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --time=02:00:00</span>
+<span class="c1">#SBATCH --cpus-per-task=2</span>
+<span class="c1">#SBATCH --mem=8G</span>
+
+/net/nfs-iq/data/software/Mathematica/12.1/Executables/wolframscript<span class="w"> </span>-file<span class="w"> </span>script.wls
+</pre></div>
+</div>
+</section>
+<section id="pyqcm">
+<h2>Pyqcm<a class="headerlink" href="#pyqcm" title="Link to this heading">¶</a></h2>
+<p>Pyqcm est une librairie Python développé par David Sénéchal qui implémente les méthodes des clusters pour pour les systèmes quantiques hautement corrélés.</p>
+<p>Pyqcm est maintenant disponible comme librairie précompilée, l’installation se fait donc avec:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>StdEnv/2023
+module<span class="w"> </span>load<span class="w"> </span>python/3.10<span class="w"> </span>scipy-stack/2023b
+virtualenv<span class="w"> </span>env_qcm<span class="w"> </span>--no-download<span class="w"> </span><span class="c1">#create virtual environment</span>
+<span class="nb">source</span><span class="w"> </span>env_qcm/bin/activate<span class="w"> </span><span class="c1">#activate it</span>
+pip<span class="w"> </span>install<span class="w"> </span>pyqcm<span class="w"> </span>--no-index
+</pre></div>
+</div>
+<p>Pour une installation personnalisée, par exemple, pour version de développement ou expérimentation des options (voir aussi la <a class="reference external" href="https://dsenech.github.io/qcm_wed_doc/intro.html#installation">documentation de Pyqcm</a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://bitbucket.org/dsenechQCM/qcm_wed<span class="w"> </span><span class="c1">#download</span>
+<span class="nb">cd</span><span class="w"> </span>qcm_wed<span class="w"> </span><span class="c1">#enter source dir</span>
+module<span class="w"> </span>load<span class="w"> </span>StdEnv/2023<span class="w"> </span>cmake/3.27.7<span class="w"> </span>python/3.10<span class="w"> </span>flexiblas/3.3.1<span class="w"> </span>eigen/3.4.0<span class="w"> </span>scipy-stack<span class="w"> </span>cuba/4.2.2<span class="w"> </span>primme/3.2
+virtualenv<span class="w"> </span>env_qcm<span class="w"> </span>--no-download<span class="w"> </span><span class="c1">#create virtual environment</span>
+<span class="nb">source</span><span class="w"> </span>env_qcm/bin/activate<span class="w"> </span><span class="c1">#activate it</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CMAKE_ARGS</span><span class="o">=</span><span class="s2">&quot;-DEIGEN_HAMILTONIAN=1 -DWITH_PRIMME=1 -DBLA_VENDOR=FlexiBLAS -DPRIMME_DIR=</span><span class="nv">$EBROOTPRIMME</span><span class="s2"> -DCUBA_DIR=</span><span class="nv">$EBROOTCUBA</span><span class="s2"> -DWITH_GF_OPT_KERNEL=1&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span>--no-index
+</pre></div>
+</div>
+<p>Note: l’implémentation BLIS de la librairie BLAS possède de faible performance sur les processeurs AMD comme ceux des serveurs de calcul de l’IQ (voir <a class="reference external" href="https://qcm-wed.readthedocs.io/en/stable/parallel.html#numerical-integration">documentation de pyqcm</a>).
+Ainsi, il est recommandé d’utiliser Intel MKL (défaut) ou OpenBLAS via la variable d’environnement FLEXIBLAS (voir <a class="reference external" href="https://docs.alliancecan.ca/wiki/BLAS_and_LAPACK/fr">BLAS et LAPACK</a>).</p>
+</section>
+<section id="qiskit">
+<h2>Qiskit<a class="headerlink" href="#qiskit" title="Link to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>StdEnv/2020
+module<span class="w"> </span>load<span class="w"> </span>python/3.9<span class="w"> </span>scipy-stack/2023b<span class="w"> </span>symengine/0.9.0
+virtualenv<span class="w"> </span>--no-download<span class="w"> </span>env_qiskit
+<span class="nb">source</span><span class="w"> </span>env_qiskit/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">qiskit</span><span class="o">==</span><span class="m">0</span>.44.2<span class="w"> </span>qiskit-aer<span class="o">==</span><span class="m">0</span>.12.2<span class="w"> </span>--no-index
+</pre></div>
+</div>
+<p>A noter que cela installe le simulateur Qiskit AER avec prise en charge des GPUs.
+Il n’y a pas besoin d’installer la librairie``qiskit-aer-gpu``.</p>
+</section>
+<section id="quimb">
+<h2>QUIMB<a class="headerlink" href="#quimb" title="Link to this heading">¶</a></h2>
+<p>Quimb is an easy but fast python library for quantum information and many-body calculations, including with tensor networks.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>StdEnv/2020<span class="w"> </span>gcc/9.3.0<span class="w"> </span>openmpi/4.0.3
+module<span class="w"> </span>load<span class="w"> </span>python/3.10<span class="w"> </span>scipy-stack/2022a<span class="w"> </span>igraph/0.10.2<span class="w"> </span>slepc/3.17.2<span class="w"> </span>kahypar/1.3.2
+virtualenv<span class="w"> </span>env_quimb<span class="w"> </span>--no-download
+<span class="nb">source</span><span class="w"> </span>env_quimb/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>quimb<span class="o">[</span>tensor<span class="o">]</span><span class="w"> </span>cotengra<span class="w"> </span>--no-index
+pip<span class="w"> </span>install<span class="w"> </span>cupy<span class="w"> </span>jax<span class="w"> </span>--no-index<span class="w"> </span><span class="c1">#optional backend option</span>
+</pre></div>
+</div>
+</section>
+<section id="quspin">
+<h2>QuSpin<a class="headerlink" href="#quspin" title="Link to this heading">¶</a></h2>
+<p>QuSpin is an open-source Python package for Exact Diagonalization and quantum dynamics of arbitrary boson, fermion and spin many-body systems, supporting the use of various (user-defined) symmetries in one and higher dimensional lattice systems and (imaginary) time evolution following a user-specified driving protocol.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>python/3.9<span class="w"> </span>scipy-stack/2023a
+virtualenv<span class="w"> </span>env_quspin<span class="w"> </span>--no-download
+<span class="nb">source</span><span class="w"> </span>env_quspin/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span><span class="nv">dill</span><span class="o">==</span><span class="m">0</span>.3.7<span class="w"> </span><span class="nv">numba</span><span class="o">==</span><span class="m">0</span>.57.0<span class="w"> </span><span class="nv">numexpr</span><span class="o">==</span><span class="m">2</span>.8.4<span class="w"> </span><span class="nv">joblib</span><span class="o">==</span><span class="m">1</span>.3.2<span class="w"> </span><span class="nv">gmpy2</span><span class="o">==</span><span class="m">2</span>.1.5<span class="w"> </span>--no-index
+pip<span class="w"> </span>install<span class="w"> </span>/net/nfs-iq/data/software/QuSpin/quspin-0.3.7-cp39-cp39-linux_x86_64.whl<span class="w"> </span>--no-index
+</pre></div>
+</div>
+</section>
+<section id="stim">
+<h2>Stim<a class="headerlink" href="#stim" title="Link to this heading">¶</a></h2>
+<p>Stim is a fast simulator for quantum stabilizer circuits.</p>
+</section>
+<section id="suite-ansys">
+<h2>Suite Ansys<a class="headerlink" href="#suite-ansys" title="Link to this heading">¶</a></h2>
+<p>La suite de logiciel Ansys est une suite commerciale et nécessite un accès à une licence, via la plateforme CMC Microsystems par exemple.
+La plateforme de calcul haute performance de l’IQ est doté d’un serveur de licence CMC pour Ansys dédié.
+La procédure pour charger Ansys sur la plateforme est la suivante:</p>
+<ol class="arabic simple">
+<li><p>Créer le fichier de licence <code class="docutils literal notranslate"><span class="pre">~/.licences/ansys.lic</span></code> avec le contenu suivant (voir <a class="reference internal" href="commandes_linux.html"><span class="doc">Rappel des commandes Linux basiques</span></a> pour la création et l’édition de fichier):</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv<span class="o">(</span><span class="s2">&quot;ANSYSLMD_LICENSE_FILE&quot;</span>,<span class="w"> </span><span class="s2">&quot;6624@ip39.ccs.usherbrooke.ca&quot;</span><span class="o">)</span>
+setenv<span class="o">(</span><span class="s2">&quot;ANSYSLI_SERVERS&quot;</span>,<span class="w"> </span><span class="s2">&quot;2325@ip39.ccs.usherbrooke.ca&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Envoyer un courriel à CMC Microsystems (<code class="docutils literal notranslate"><span class="pre">mcsupport&#64;cmc.ca</span></code>) avec votre nom d’utilisateur sur les serveurs de l’IQ, votre nom, le nom de la personne qui vous fourni la licence et le nom du serveur de licence (<code class="docutils literal notranslate"><span class="pre">ip39.ccs.usherbrooke.ca</span></code>).</p></li>
+<li><p>CMC Microsystem active votre licence sur la plateforme de calcul de l’IQ sous quelques heures / jours.</p></li>
+</ol>
+<p>Les modules Ansys se chargent de la même manière que sur les grappes de l’Alliance, par exemple avec la commande <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">ansysedt/2021R2</span></code>.
+Vous pouvez aussi consulter la <a class="reference external" href="https://docs.alliancecan.ca/wiki/Ansys">documentation de l’Alliance</a>  pour en savoir plus sur comment utiliser Ansys sur les serveurs de calcul.</p>
+<p>Une version plus récente de AnsysEDT en version R2023.1 se trouve installer sur le NAS de l’IQ, sous <code class="docutils literal notranslate"><span class="pre">/net/nfs-iq/data/software/AnsysEM/v231/</span></code>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Installation de logiciels (recettes)</a><ul>
+<li><a class="reference internal" href="#mathematica">Mathematica</a></li>
+<li><a class="reference internal" href="#pyqcm">Pyqcm</a></li>
+<li><a class="reference internal" href="#qiskit">Qiskit</a></li>
+<li><a class="reference internal" href="#quimb">QUIMB</a></li>
+<li><a class="reference internal" href="#quspin">QuSpin</a></li>
+<li><a class="reference internal" href="#stim">Stim</a></li>
+<li><a class="reference internal" href="#suite-ansys">Suite Ansys</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="commandes_linux.html"
+                          title="Chapitre précédent">Rappel des commandes Linux basiques</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="faq.html"
+                          title="Chapitre suivant">Problèmes courants</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/installation_logiciel.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="faq.html" title="Problèmes courants"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="commandes_linux.html" title="Rappel des commandes Linux basiques"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation IQ-Plateforme-CHP </a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Installation de logiciels (recettes)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Moise Rousseau.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

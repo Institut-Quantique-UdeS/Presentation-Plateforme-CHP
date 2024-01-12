@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tâches de calcul en Python &#8212; Documentation IQ-Plateforme-CHP </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <script src="_static/documentation_options.js?v=d1a510d7"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Rappel des commandes Linux basiques" href="commandes_linux.html" />
+    <link rel="prev" title="Lancement de tâches de calcul sur les serveurs" href="job.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="commandes_linux.html" title="Rappel des commandes Linux basiques"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="job.html" title="Lancement de tâches de calcul sur les serveurs"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation IQ-Plateforme-CHP </a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Tâches de calcul en Python</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="taches-de-calcul-en-python">
+<h1>Tâches de calcul en Python<a class="headerlink" href="#taches-de-calcul-en-python" title="Link to this heading">¶</a></h1>
+<p>Les innformations présentées ci-dessous sont complémentaires de la documentation de l’Alliance relative à <a class="reference external" href="https://docs.alliancecan.ca/wiki/Python/fr">Python</a>.</p>
+<p>Le language de programmation Python est disponible sur les serveurs de calcul de l’IQ.
+Il existe de multiples versions installées, allant de Python 3.6 à 3.10.2 et qui peuvent être détaillées avec:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>spider<span class="w"> </span>python
+</pre></div>
+</div>
+<p>La version voulue de Python peut être ensuite chargée avec (exemple pour la 3.9.6):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>python/3.9.6
+</pre></div>
+</div>
+<section id="recherche-des-librairies-python-precompilees">
+<h2>Recherche des librairies Python précompilées<a class="headerlink" href="#recherche-des-librairies-python-precompilees" title="Link to this heading">¶</a></h2>
+<p>La commande <code class="docutils literal notranslate"><span class="pre">avail_wheels</span></code> permet de rechercher les librairies Python précompilées par les équipes de l’Alliance et optimisées pour les serveurs de l’IQ, par exemple pour Qiskit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>moroub@ip09-rockylinux8<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>avail_wheels<span class="w"> </span>qiskit
+name<span class="w">    </span>version<span class="w">    </span>python<span class="w">    </span>arch
+------<span class="w">  </span>---------<span class="w">  </span>--------<span class="w">  </span>-------
+qiskit<span class="w">  </span><span class="m">0</span>.39.3<span class="w">     </span>py3<span class="w">       </span>generic
+</pre></div>
+</div>
+<p>Qiskit version 0.39.3 optimisé pour les serveurs de l’IQ peut donc être installé via <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">qiskit==0.39.3</span> <span class="pre">--no-index</span></code>.</p>
+<p>En revanche, la commande précédente ne cherche que dans l’environnement standard chargé (par défaut en version 2020).
+Il est possible que des versions plus récentes soient disponible dans le nouvel environnement standard 2023:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>moroub@ip09<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>StdEnv/2020<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>avail_wheels<span class="w"> </span>pyqcm<span class="w"> </span>--all
+name<span class="w">    </span>version<span class="w">    </span>python<span class="w">    </span>arch
+------<span class="w">  </span>---------<span class="w">  </span>--------<span class="w">  </span>------
+pyqcm<span class="w">   </span><span class="m">2</span>.3.1<span class="w">      </span>cp39<span class="w">      </span>avx2
+pyqcm<span class="w">   </span><span class="m">2</span>.3.1<span class="w">      </span>cp311<span class="w">     </span>avx2
+pyqcm<span class="w">   </span><span class="m">2</span>.3.1<span class="w">      </span>cp310<span class="w">     </span>avx2
+
+<span class="o">[</span>moroub@ip09<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>StdEnv/2023<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>avail_wheels<span class="w"> </span>pyqcm<span class="w"> </span>--all
+
+The<span class="w"> </span>following<span class="w"> </span>have<span class="w"> </span>been<span class="w"> </span>reloaded<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>version<span class="w"> </span>change:
+<span class="w">  </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>StdEnv/2020<span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>StdEnv/2023<span class="w">          </span><span class="m">3</span><span class="o">)</span><span class="w"> </span>gentoo/2020<span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>gentoo/2023<span class="w">           </span><span class="m">5</span><span class="o">)</span><span class="w"> </span>libfabric/1.10.1<span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>libfabric/1.18.0<span class="w">     </span><span class="m">7</span><span class="o">)</span><span class="w"> </span>ucx/1.8.0<span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>ucx/1.14.1
+<span class="w">  </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>gcccore/.9.3.0<span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>gcccore/.12.3<span class="w">     </span><span class="m">4</span><span class="o">)</span><span class="w"> </span>imkl/2020.1.217<span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>imkl/2023.2.0<span class="w">     </span><span class="m">6</span><span class="o">)</span><span class="w"> </span>openmpi/4.0.3<span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>openmpi/4.1.5
+
+name<span class="w">    </span>version<span class="w">    </span>python<span class="w">    </span>arch
+------<span class="w">  </span>---------<span class="w">  </span>--------<span class="w">  </span>---------
+pyqcm<span class="w">   </span><span class="m">2</span>.4.3<span class="w">      </span>cp311<span class="w">     </span>x86-64-v3
+pyqcm<span class="w">   </span><span class="m">2</span>.4.3<span class="w">      </span>cp310<span class="w">     </span>x86-64-v3
+</pre></div>
+</div>
+</section>
+<section id="environnement-virtuel">
+<h2>Environnement virtuel<a class="headerlink" href="#environnement-virtuel" title="Link to this heading">¶</a></h2>
+<p>Il est (vivement) recommandé d’utiiser des environnements virtuels Python pour lancer des tâches de calcul sur les serveurs de calcul de l’IQ, et à raison d’un environnement par tâche de calcul spécifique.
+Les environnements virtuels Python ont tout d’abord l’avantage d’isoler chaque tâche de calcul, ce qui limite les conflits de version entre certaines librairies.
+Ils fournissent de plus un environnement réplicable entre différentes machines.
+La liste des librairies installées peut-être imprimer dans un fichier <code class="docutils literal notranslate"><span class="pre">requirement.txt</span></code> avec la commande:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>Qui peut ensuite être transmis sur une autre machine pour reproduire l’environnement avec:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>La création d’un environnement virtuel sur les serveurs de calcul de l’IQ se fait comme suit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>python/3.XX<span class="w">              </span><span class="c1">#chargement de Python 3.XX</span>
+virtualenv<span class="w"> </span>--no-download<span class="w"> </span>ENV<span class="w">         </span><span class="c1">#création environnement virtuel</span>
+<span class="nb">source</span><span class="w"> </span>ENV/bin/activate<span class="w">              </span><span class="c1">#activation de l&#39;environnement virtuel</span>
+pip<span class="w"> </span>install<span class="w"> </span>--no-index<span class="w"> </span>X<span class="w"> </span>Y<span class="w"> </span>Z<span class="w"> </span>...<span class="w">     </span><span class="c1">#installation des librairies, l&#39;option</span>
+<span class="w">                                     </span><span class="c1">#--no-index permet d&#39;installer les libraries</span>
+<span class="w">                                     </span><span class="c1">#précompilées et optimisées par les équipe de l&#39;Alliance</span>
+</pre></div>
+</div>
+</section>
+<section id="parallelisation-avec-python">
+<h2>Parallélisation avec Python<a class="headerlink" href="#parallelisation-avec-python" title="Link to this heading">¶</a></h2>
+<section id="generalites">
+<h3>Généralités<a class="headerlink" href="#generalites" title="Link to this heading">¶</a></h3>
+<p>Par défault, les scripts Python ne sont pas parallélisés, et donc la réservation de plusieurs coeurs ne diminuera pas le temps de calcul.
+C’est alors la responsabilité de l’usager de paralléliser son code explicitement (voir section suivante) ou de vérifier que les librairies qu’il utilise bénéficie d’une parallélisation (tel que certaines fonction de NumPy ou de SciPy).</p>
+</section>
+<section id="parallelisation-de-donnees">
+<h3>Parallélisation de données<a class="headerlink" href="#parallelisation-de-donnees" title="Link to this heading">¶</a></h3>
+<p>Par construction, Python ne permet pas la parallélisation d’une tâche de calcul par mémoire partagée.
+En revanche, il est possible de coder et de paralléliser les opérations les plus longues dans un autre langage (comme C++), puis d’appeler ce code dans Python.
+Aussi, lorsque qu’un script Python est utilisé pour traiter plusieurs jeux de données, par exemplen une expérience avec divers jeux de paramètres, la librairie <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> peut être utilisé pour traiter les différents jeux de données en parallèle via plusieurs processus.
+Ce type de parallélisation, dit « de données », est toujours plus efficace que d’effectuer la parallélisation du traitement d’un jeu de donnée.
+C’est à dire, si un usager doit effectuer le même calcul sur 40 jeux de données différents, il sera plus efficace d’utiliser 40 processus en parallèle avec un jeu de données par processus plutôt que de traiter chacun des 40 jeux de données avec 40 processus.</p>
+</section>
+<section id="thread-oversubscription">
+<h3><em>Thread-oversubscription</em><a class="headerlink" href="#thread-oversubscription" title="Link to this heading">¶</a></h3>
+<p>Les différentes manière de parallèliser des tâches de calcul peuvent parfois entrer en confilt, notamment à travers la sur-souscription de fils (<em>thread-oversubsciption</em> en anglais).
+Prenons l’exemple d’un usager voulant traiter 8 jeux de données sur un processeur 8 ceours avec la librairie <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>, en assignant un jeu de donnée par coeur (pour rappel, ce type de parallélisation est plus efficace que de traiter un jeu à la fois avec les 8 coeurs).
+Cet usager utilise une fonction de la librairie SciPy (par exemple <code class="docutils literal notranslate"><span class="pre">scipy.sparse.linalg.eigsh</span></code>) qui est elle aussi automatiquement parallélisé.
+Ainsi, lors de l’éxecution du code, chaque coeur traitera un jeu de donnée, mais comme la fonction est elle-même parallélisée et voit 8 coeurs disponibles, elle va automatiquement s’exécuter sur ces 8 coeurs.
+L’usager se retrouvera donc avec 64 (8 fois 8) fils roulant sur son processeur 8 coeurs, réduisant ainsi drastiquement les performances de son code.</p>
+<p>Pour pallier à ce problème, il est nécessaire de spécifier à la fonction SciPy parallèliser de ne s’exécuter que sur un seul fil.
+La libraire Python <a class="reference external" href="https://pypi.org/project/threadpoolctl/">ThreadPoolCtl</a> peut être utilisée dans ce cas.</p>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Tâches de calcul en Python</a><ul>
+<li><a class="reference internal" href="#recherche-des-librairies-python-precompilees">Recherche des librairies Python précompilées</a></li>
+<li><a class="reference internal" href="#environnement-virtuel">Environnement virtuel</a></li>
+<li><a class="reference internal" href="#parallelisation-avec-python">Parallélisation avec Python</a><ul>
+<li><a class="reference internal" href="#generalites">Généralités</a></li>
+<li><a class="reference internal" href="#parallelisation-de-donnees">Parallélisation de données</a></li>
+<li><a class="reference internal" href="#thread-oversubscription"><em>Thread-oversubscription</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="job.html"
+                          title="Chapitre précédent">Lancement de tâches de calcul sur les serveurs</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="commandes_linux.html"
+                          title="Chapitre suivant">Rappel des commandes Linux basiques</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/python.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="commandes_linux.html" title="Rappel des commandes Linux basiques"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="job.html" title="Lancement de tâches de calcul sur les serveurs"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation IQ-Plateforme-CHP </a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Tâches de calcul en Python</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Moise Rousseau.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

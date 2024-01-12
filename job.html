@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lancement de tâches de calcul sur les serveurs &#8212; Documentation IQ-Plateforme-CHP </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <script src="_static/documentation_options.js?v=d1a510d7"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Tâches de calcul en Python" href="python.html" />
+    <link rel="prev" title="Connexion et utilisation de la plateforme" href="mise_en_route.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="python.html" title="Tâches de calcul en Python"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="mise_en_route.html" title="Connexion et utilisation de la plateforme"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation IQ-Plateforme-CHP </a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Lancement de tâches de calcul sur les serveurs</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="lancement-de-taches-de-calcul-sur-les-serveurs">
+<h1>Lancement de tâches de calcul sur les serveurs<a class="headerlink" href="#lancement-de-taches-de-calcul-sur-les-serveurs" title="Link to this heading">¶</a></h1>
+<p>Cette page est un complément d’information de la page de l’Alliance dédiée: <a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr">Exécuter des tâches</a>.</p>
+<p>Les serveurs de calcul peuvent être utilisés de deux manières différentes qui correspondent à deux types de tâches distinctes:</p>
+<ul class="simple">
+<li><p>Les tâches dites interactives où les usagers sont redirigées sur les noeuds de calcul.</p></li>
+<li><p>Les tâches dites en batch où l’usager soumet la tâche à un ordonnanceur qui est responsable de l’exécution de la tâche sur les noeuds de calcul.</p></li>
+</ul>
+<p>Dans tout les cas, il est interdit de lancer des tâches sur les noeuds de connexion.
+Aussi, pour des calculs sur les serveur de l’IQ, il est recommandé d’enregistrer les données et de soumettre les tâches depuis le NAS de l’IQ qui possède de meilleures performances en entrée-sortie de données, c’est-à-dire depuis <code class="docutils literal notranslate"><span class="pre">/net/nfs-iq/data/[nom_utilisateur]</span></code> (voir aussi <a class="reference internal" href="mise_en_route.html#stockage-et-reseau"><span class="std std-ref">Stockage des données et spécificités réseau</span></a>).</p>
+<section id="taches-en-batch">
+<span id="taches-batch"></span><h2>Tâches en batch<a class="headerlink" href="#taches-en-batch" title="Link to this heading">¶</a></h2>
+<p>Les tâches en batch désignent toutes tâches qui ne nécessite pas l’action de l’usager pendant les calculs (lancement d’un script Python par exemple).
+Les tâches en batch maximise l’efficacité des serveurs de calcul et elle doit donc être la façon priviligiée d’utiliser la plateforme de calcul de l’IQ.
+Les scripts de soumission en bash pour le lancement des tâches sont exactement les mêmes que les scripts utilisés pour soumettre sur les autres grappes nationales de l’Alliance (voir la page <a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr">Exécuter des tâches</a>).
+La soumission se fait ensuite en précisant la partition des noeuds de l’IQ avec l’option <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">c-iq</span></code> à l’ordonnanceur:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>-p<span class="w"> </span>c-iq<span class="w"> </span>job.sh
+</pre></div>
+</div>
+<p>Important! L’option <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">c-iq</span></code> doit absolument être placée avant le nom du script de soumission, sinon l’ordonnanceur pensera que <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">c-iq</span></code> est une option pour le script de soumission.</p>
+</section>
+<section id="taches-interactives">
+<span id="id2"></span><h2>Tâches interactives<a class="headerlink" href="#taches-interactives" title="Link to this heading">¶</a></h2>
+<p>Les tâches interactives sont des tâches généralement courtes (moins de 4 heures) qui requiert l’action soutenue de l’usager, comme la réalisation de tests, l’exploration de données, le débogage ou la compilation de codes.
+La commande <code class="docutils literal notranslate"><span class="pre">salloc</span></code> suivie de l’option <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">c-iq</span></code> permet d’être redirigé sur un noeuds de calcul de l’IQ avec 1 CPU et 8 Go de mémoire vive:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salloc<span class="w"> </span>-p<span class="w"> </span>c-iq<span class="w"> </span>-t<span class="w"> </span><span class="o">[</span>HH<span class="o">]</span>::<span class="o">[</span>mm<span class="o">]</span>:<span class="o">[</span>ss<span class="o">]</span><span class="w"> </span>--mem<span class="o">=</span>8G<span class="w"> </span>--cpu-per-task<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+<section id="calcul-sur-gpu">
+<h2>Calcul sur GPU<a class="headerlink" href="#calcul-sur-gpu" title="Link to this heading">¶</a></h2>
+<p>Les tâches de calcul faisans l’utilisation de GPU ne sont pas différente des tâches CPU et peuvent être de type interactive ou en batch.</p>
+<p>Au contraire des grappes nationales, les GPU ne sont pas connus de l’ordonnanceur et il faut donc spécifier explicitement le nom du serveur GPU (<code class="docutils literal notranslate"><span class="pre">cp3705</span></code>) de l’IQ à ce dernier avec l’option <code class="docutils literal notranslate"><span class="pre">--nodelist=cp3705</span></code>.</p>
+<p>Par exemple, pour soumettre une tâche batch ou interactive avec accès aux GPU, les commandes sont la suivante:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>-p<span class="w"> </span>c-iq<span class="w"> </span>--nodelist<span class="o">=</span>cp3705<span class="w">  </span>job.sh<span class="w"> </span><span class="c1">#batch job</span>
+salloc<span class="w"> </span>-p<span class="w"> </span>c-iq<span class="w"> </span>--nodelist<span class="o">=</span>cp3705<span class="w"> </span>-t<span class="w"> </span><span class="o">[</span>HH<span class="o">]</span>::<span class="o">[</span>mm<span class="o">]</span>:<span class="o">[</span>ss<span class="o">]</span><span class="w"> </span>--mem<span class="o">=</span>8G<span class="w"> </span>--cpu-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="c1">#interactive job</span>
+</pre></div>
+</div>
+<p>L’activité du GPU peut être suivi avec une tâches interactive sur le noeud GPU et avec la commande <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code>.
+Cette dernière montre alors la mémoire GPU utilisé ainsi que la charge du processeur pour chacun des deux GPU du serveur <code class="docutils literal notranslate"><span class="pre">cp3705</span></code>.</p>
+<p>En revanche, comme les GPUs ne sont pas connus de l’ordonnanceur, il peut parfois être nécessaire de spécifier aux programmes exécutés quel GPU utiliser.
+Par exemple, lors de l’entrainement de réseau de neuronne avec PyTorch, la méthode <code class="docutils literal notranslate"><span class="pre">.to(device)</span></code> permettant de spécifier quel processeur utilisé (CPU ou GPU) peut être appelé soit avec <code class="docutils literal notranslate"><span class="pre">device='cpu'</span></code>, pour le CPU, <code class="docutils literal notranslate"><span class="pre">device='cuda'</span></code> pour un GPU, <code class="docutils literal notranslate"><span class="pre">device='cuda:0'</span></code> pour le GPU 0 ou <code class="docutils literal notranslate"><span class="pre">device='cuda:1'</span></code> pour le GPU 1 explicitement.
+La variable d’environnement <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES</span></code> permet aussi de sélectionner explicitement quels GPUs utiliser, par exemple <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES=0</span></code> pour le GPU 0 ou <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES=0,1</span></code> pour les deux GPUs.</p>
+</section>
+<section id="efficacite-d-une-tache-de-calcul">
+<h2>Efficacité d’une tâche de calcul<a class="headerlink" href="#efficacite-d-une-tache-de-calcul" title="Link to this heading">¶</a></h2>
+<p>La commande <code class="docutils literal notranslate"><span class="pre">seff</span></code> permet d’obtenir des statistiques sur l’efficacité des calculs effectués.
+Il est recommandé à la fin de chaque tâche que les ressources demandées ont correctement été utilisées afin de prévenir le gaspillage de ressource.
+Il est recommandé une efficacité CPU supérieure à 90% et une efficacité mémoire supérieure à 70%, avec un seuil minimum acceptable à 70% pour les CPUs et 50% pour la mémoire.
+Si les tâches soumises sont en général en-dessous de ces seuils, merci de revoir la demande de ressources basée sur les résultats précédents.</p>
+<p>La commande <code class="docutils literal notranslate"><span class="pre">seff</span></code> est à utiliser à partir de MP2 (elle n’est pas disponible sur ip09):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span><span class="o">[</span>utilisateur<span class="o">]</span>@mp2.computecanada.ca
+seff<span class="w"> </span><span class="o">[</span>JobID<span class="o">]</span>
+</pre></div>
+</div>
+<p>Qui retourne le résultat suivant pour la tâche 1668335:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>moroub@ip16-mp2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>seff<span class="w"> </span><span class="m">1668335</span>
+Job<span class="w"> </span>ID:<span class="w"> </span><span class="m">1668335</span>
+Cluster:<span class="w"> </span>mp2
+User/Group:<span class="w"> </span>anaida/anaida
+State:<span class="w"> </span>COMPLETED<span class="w"> </span><span class="o">(</span><span class="nb">exit</span><span class="w"> </span>code<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+Cores:<span class="w"> </span><span class="m">1</span>
+CPU<span class="w"> </span>Utilized:<span class="w"> </span><span class="m">1</span>-17:38:24
+CPU<span class="w"> </span>Efficiency:<span class="w"> </span><span class="m">99</span>.64%<span class="w"> </span>of<span class="w"> </span><span class="m">1</span>-17:47:32<span class="w"> </span>core-walltime
+Job<span class="w"> </span>Wall-clock<span class="w"> </span>time:<span class="w"> </span><span class="m">1</span>-17:47:32
+Memory<span class="w"> </span>Utilized:<span class="w"> </span><span class="m">9</span>.42<span class="w"> </span>GB
+Memory<span class="w"> </span>Efficiency:<span class="w"> </span><span class="m">12</span>.06%<span class="w"> </span>of<span class="w"> </span><span class="m">78</span>.12<span class="w"> </span>GB
+</pre></div>
+</div>
+<p>L’efficacité des tâches est publique.</p>
+</section>
+<section id="alias-pour-les-commandes-slurm-communes">
+<h2>Alias pour les commandes SLURM communes<a class="headerlink" href="#alias-pour-les-commandes-slurm-communes" title="Link to this heading">¶</a></h2>
+<p>Pour éviter de nommer la partition de l’IQ à chaque soumission de scripts ou de tâches interactives, les usagers peuvent définir un alias de commandes spéciales pour les serveurs de l’IQ:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span>sbatch-iq<span class="o">=</span><span class="s2">&quot;sbatch -p c-iq&quot;</span>
+<span class="nb">alias</span><span class="w"> </span>salloc-iq<span class="o">=</span><span class="s2">&quot;salloc -p c-iq&quot;</span>
+<span class="nb">alias</span><span class="w"> </span>sbatch-iq-gpu<span class="o">=</span><span class="s2">&quot;sbatch -p c-iq --nodelist=cp3705&quot;</span>
+<span class="nb">alias</span><span class="w"> </span>salloc-iq-gpu<span class="o">=</span><span class="s2">&quot;salloc -p c-iq --nodelist=cp3705&quot;</span>
+</pre></div>
+</div>
+<p>Ces trois commandes sont à ajouter à la fin du fichier <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code>.
+Ainsi, la soumission d’un script batch pour le serveur GPU de l’IQ s’écrit simplement:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch-iq-gpu<span class="w"> </span>job.sh
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Lancement de tâches de calcul sur les serveurs</a><ul>
+<li><a class="reference internal" href="#taches-en-batch">Tâches en batch</a></li>
+<li><a class="reference internal" href="#taches-interactives">Tâches interactives</a></li>
+<li><a class="reference internal" href="#calcul-sur-gpu">Calcul sur GPU</a></li>
+<li><a class="reference internal" href="#efficacite-d-une-tache-de-calcul">Efficacité d’une tâche de calcul</a></li>
+<li><a class="reference internal" href="#alias-pour-les-commandes-slurm-communes">Alias pour les commandes SLURM communes</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="mise_en_route.html"
+                          title="Chapitre précédent">Connexion et utilisation de la plateforme</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="python.html"
+                          title="Chapitre suivant">Tâches de calcul en Python</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/job.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="python.html" title="Tâches de calcul en Python"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="mise_en_route.html" title="Connexion et utilisation de la plateforme"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation IQ-Plateforme-CHP </a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Lancement de tâches de calcul sur les serveurs</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Moise Rousseau.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

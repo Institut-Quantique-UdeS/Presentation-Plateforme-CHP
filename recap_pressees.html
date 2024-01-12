@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Récapitulatif et importants conseils pour les personnes préssées &#8212; Documentation IQ-Plateforme-CHP </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <script src="_static/documentation_options.js?v=d1a510d7"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Presentation de la plaforme de Calcul Haute Performance" href="description.html" />
+    <link rel="prev" title="Plateforme Calcul Haute Performance de l’IQ" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="description.html" title="Presentation de la plaforme de Calcul Haute Performance"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Plateforme Calcul Haute Performance de l’IQ"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation IQ-Plateforme-CHP </a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Récapitulatif et importants conseils pour les personnes préssées</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="recapitulatif-et-importants-conseils-pour-les-personnes-pressees">
+<span id="recap-personnes-pressees"></span><h1>Récapitulatif et importants conseils pour les personnes préssées<a class="headerlink" href="#recapitulatif-et-importants-conseils-pour-les-personnes-pressees" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>La plateforme de calcul haute perfomance de l’IQ a été concue pour avoir la même expérience que les grappes nationnales. La présente documentation ainsi que <a class="reference external" href="https://docs.alliancecan.ca">celle de l’Alliance</a> s’applique donc sur la plateforme.</p></li>
+<li><p>L’accès aux serveurs se fait par SSH, nom du noeud de connexion <code class="docutils literal notranslate"><span class="pre">ip09.ccs.usherbrooke.ca</span></code>.</p></li>
+<li><p>La plateforme est branchée à la grappe nationnale MP2, et les serveurs de l’IQ sont accessibles sur une partition spéciale <code class="docutils literal notranslate"><span class="pre">c-iq</span></code> de MP2. Toutes les ressources de MP2 peuvent être atteintes, par exemple les partitions <code class="docutils literal notranslate"><span class="pre">c-apc</span></code>, <code class="docutils literal notranslate"><span class="pre">c-aphex</span></code>, <code class="docutils literal notranslate"><span class="pre">c-royer</span></code>, …</p></li>
+<li><p>Les serveurs de l’IQ (partition <code class="docutils literal notranslate"><span class="pre">c-iq</span></code>) sont accessibles uniquement aux membres de l’IQ. Il est obligatoire de spécifier la partition pour utiliser les serveurs de l’IQ, sinon, la tâche sera soumise aux noeuds réguliers de MP2. Exemple pour soumettre une tâche: <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">-p</span> <span class="pre">c-iq</span> <span class="pre">job.sh</span> <span class="pre">[job_argument]</span></code>.</p></li>
+<li><p>Il est impératif de travailler sur le serveur de données dédié de l’IQ pour de meilleures performances en entrée-sortie de fichier. Le serveur de donnée de l’IQ est accessible à <code class="docutils literal notranslate"><span class="pre">/net/nfs-iq/data/[username]</span></code>. Espace partagé à <code class="docutils literal notranslate"><span class="pre">/net/nfs-iq/data/def-[sponsor]</span></code>. Capacité de 180 To (stockage redondant).</p></li>
+<li><p>L’espace <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> de MP2 est non accessible depuis les calculateurs de l’IQ.</p></li>
+<li><p>Accès au serveur GPU de l’IQ en spécifiant explicitement le nom du noeud <code class="docutils literal notranslate"><span class="pre">cp3705</span></code> à l’ordonnanceur, exemple: <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">-p</span> <span class="pre">c-iq</span> <span class="pre">--nodelist=cp3705</span> <span class="pre">mon_script_gpu.sh</span></code>. Note: les GPUs ne sont pas définis dans SLURM mais les GPUs peuvent être spécifiée dans le script de tâche via la variable d’environnement <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES=[0</span> <span class="pre">or</span> <span class="pre">1</span> <span class="pre">or</span> <span class="pre">0,1]</span></code> for GPU 0, GPU 1 or both GPUs repectivement.</p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="index.html"
+                          title="Chapitre précédent">Plateforme Calcul Haute Performance de l’IQ</a></p>
+  </div>
+  <div>
+    <h4>Sujet suivant</h4>
+    <p class="topless"><a href="description.html"
+                          title="Chapitre suivant">Presentation de la plaforme de Calcul Haute Performance</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/recap_pressees.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="description.html" title="Presentation de la plaforme de Calcul Haute Performance"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Plateforme Calcul Haute Performance de l’IQ"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation IQ-Plateforme-CHP </a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Récapitulatif et importants conseils pour les personnes préssées</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Moise Rousseau.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
