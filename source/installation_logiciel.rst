@@ -64,14 +64,11 @@ Qiskit
 
 .. code-block:: bash
 
-    module load StdEnv/2020 
-    module load python/3.9 scipy-stack/2022a symengine/0.9.0 flexiblas/3.0.4
+    module load StdEnv/2020
+    module load python/3.9 scipy-stack/2023b symengine/0.9.0
     virtualenv --no-download env_qiskit
     source env_qiskit/bin/activate
-    #manually download requests-ntlm because the precompiled version is problematic
-    wget https://files.pythonhosted.org/packages/03/4b/8b9a1afde8072c4d5710d9fa91433d504325821b038e00237dc8d6d833dc/requests_ntlm-1.1.0-py2.py3-none-any.whl
-    pip install ./requests_ntlm-1.1.0-py2.py3-none-any.whl
-    pip install qiskit==0.42.0 --no-index
+    pip install qiskit==0.44.2 qiskit-aer==0.12.2 --no-index
 
 
 A noter que cela installe le simulateur Qiskit AER avec prise en charge des GPUs.
