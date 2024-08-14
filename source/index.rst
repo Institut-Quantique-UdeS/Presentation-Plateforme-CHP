@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Plateforme Calcul Haute Performance de l'IQ
-===========================================
+Plateforme de calcul haute performance de l'Institut quantique
+==============================================================
 
 *Dernière mise à jour: 12 janvier 2024*
 
