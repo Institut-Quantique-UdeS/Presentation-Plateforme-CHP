@@ -33,3 +33,10 @@ Index
    installation_logiciel
    faq
 
+À propos
+========
+
+Cette documentation est gérée par le `Centre de calcul scientifique (CCS)
+<https://www.ccs.usherbrooke.ca/>`_ de l’`Université de Sherbrooke
+<https://www.usherbrooke.ca/>`_. L’auteur original est Moïse Rousseau. Le
+responsable actuel est `Olivier Fisette <olivier.fisette@usherbrooke.ca>`_.

@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'IQ-Plateforme-CHP'
-copyright = '2022, Moise Rousseau'
-author = 'Moise Rousseau'
+copyright = '2022-2024, CCS'
+author = 'CCS'
 
 
 # -- General configuration ---------------------------------------------------
