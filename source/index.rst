@@ -3,40 +3,96 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Plateforme de calcul haute performance de l'Institut quantique
+Plateforme de calcul haute performance de l’institut quantique
 ==============================================================
 
-*Dernière mise à jour: 12 janvier 2024*
+.. important::
 
-Cher étudiants et étudiantes, cher personnel de recherche et cher professeurs et professeures,
+   Les chercheurs pressés devraient au miminum lire cette page ainsi que le
+   :doc:`résumé <résumé>` avant de lancer leur première tâche.
 
-Bienvenus sur le site de la plateforme de Calcul Haute Performance (CHP) de l'IQ.
-La plateforme CHP a pour but d'encourager l'utilisation du calcul haute performance au sein de l'IQ, de sensibiliser la communauté de l'IQ à la programmation les machines haute performance et sert d'intermédiaire à haute disponibilité entre les calculs numériques sur les stations et les grappes de superordinateur de l'Alliance (anciennement Calcul Canada).
+   Les chercheurs débutants devraient consulter nos pages sur l’apprentissage de
+   :doc:`Linux <apprentissage/linux>` et du :doc:`calcul haute performance
+   <apprentissage/chp>`.
 
-Le présent site regroupe de la documentation technique pour assister les membres de l'IQ à son utilisation, des ressources pour la programmation puis différents liens vers des librairies et des codes optimisés et créés par la communauté.
+La plateforme de calcul haute performance (CHP) de l’`Institut quantique (IQ)
+<https://www.usherbrooke.ca/iq/>`_ est une grappe de calcul de petite taille
+réservée aux chercheurs de l’IQ et à leurs collaborateurs. Gérée par le `Centre
+de calcul scientifique (CCS) <https://www.ccs.usherbrooke.ca/>`_, elle est une
+extension de la grappe MP2 (Mammouth parallèle) de l’`Université de Sherbrooke
+<https://www.usherbrooke.ca/>`_. En plus de nœuds de calcul et d’un espace de
+stockage disponibles pour tous les chercheurs de l’IQ, la plateforme contient
+des nœuds contribués par des chercheurs spécifiques et dont l’utilisation est
+restreinte. Les chercheurs peuvent utiliser la plateforme sans limite et sans
+frais. Les coûts sont assumés grâce à une subvention de la Fondation canadienne
+pour l’innovation (FCI). 
 
-**/!\\ /!\\ /!\\** Pour les personnes pressées, veuillez prendre 2 minutes pour lire le :doc:`recap_pressees` pour prendre connaissance des spécificités des serveurs de calcul de l'IQ **/!\\ /!\\ /!\\**
+La configuration de la plateforme CHP-IQ est similaire à celle des grappes
+nationales gérées par l’Alliance de recherche numérique du Canada (anciennement
+Calcul Canada) : environnement Linux, logiciels disponibles, commandes pour
+lancer et gérer les tâches, etc. La `documentation technique de l’Alliance
+<https://docs.alliancecan.ca/wiki/Technical_documentation/fr>`_ s’applique donc
+également à la plateforme CHP-IQ et déplacer un calcul d’une grappe à une autre
+ne demande qu’un effort minime.
 
-
-Index
-=====
+La plateforme CHP-IQ sert de ressource intermédiaire et de tremplin vers les
+grappes de calcul plus puissantes de l’Alliance. Lorsqu’une station de travail
+individuelle n’est pas suffisante pour exécuter tous vos calculs ou stocker vos
+données, la plateforme CHP-IQ vous permet d’augmenter rapidement vos
+possibilités. Pour vos projets de recherche computationnelle de plus grande
+envergure, voyez le `guide de démarrage
+<https://docs.alliancecan.ca/wiki/Getting_started/fr>`_ de l’Alliance.
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
+   :hidden:
    
-   recap_pressees
-   description
-   mise_en_route
+   compte
+   connexion
+   stockage
+   nœuds
+   tâches
+   logiciels/index
+   résumé
+   
+.. toctree::
+   :caption: Aide
+   :maxdepth: 2
+   :titlesonly:
+   :hidden:
+
+   aide/faq
+   aide/support
+
+.. toctree::
+   :caption: Apprentissage
+   :maxdepth: 2
+   :titlesonly:
+   :hidden:
+
+   apprentissage/linux
+   apprentissage/chp
+
+.. toctree::
+   :caption: Liens externes
+   :hidden:
+
+   Documentation technique de l’Alliance <https://docs.alliancecan.ca/wiki/Technical_documentation/fr>
+   Portail CCDB <https://ccdb.alliancecan.ca/>
+
+.. toctree::
+   :caption: À réorganiser
+   :maxdepth: 2
+   :titlesonly:
+   :hidden:
+
    job
-   python
-   commandes_linux
-   installation_logiciel
-   faq
 
-À propos
-========
+.. note::
 
-Cette documentation est gérée par le `Centre de calcul scientifique (CCS)
-<https://www.ccs.usherbrooke.ca/>`_ de l’`Université de Sherbrooke
-<https://www.usherbrooke.ca/>`_. L’auteur original est Moïse Rousseau. Le
-responsable actuel est `Olivier Fisette <olivier.fisette@usherbrooke.ca>`_.
+   Cette documentation est gérée par le CCS. Son auteur original est Moïse
+   Rousseau, son responsable actuel `Olivier Fisette
+   <olivier.fisette@usherbrooke.ca>`_. Pour toute question ou commentaire ou
+   pour rapporter une erreur ou un problème, voyez notre :doc:`support technique
+   <aide/support>`.

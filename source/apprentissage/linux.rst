@@ -1,7 +1,5 @@
-.. commandes_linux:
-
-Rappel des commandes Linux basiques
-===================================
+Ligne de commande Linux
+=======================
 
 Navigation
 ##########
