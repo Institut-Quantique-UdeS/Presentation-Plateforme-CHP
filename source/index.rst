@@ -87,8 +87,6 @@ envergure, voyez le `guide de démarrage
    :titlesonly:
    :hidden:
 
-   job
-
 .. note::
 
    Cette documentation est gérée par le CCS. Son auteur original est Moïse
