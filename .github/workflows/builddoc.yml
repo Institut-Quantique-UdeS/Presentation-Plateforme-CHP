@@ -10,20 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
     
-    - name: Prerequisite
-      run: pip install sphinx sphinx_rtd_theme
+    - name: Install prerequisites
+      run: pip install sphinx==8.0.2 sphinx-intl furo==2024.8.6
     
-    - name: Sphinx build
+    - name: Build with Sphinx
       run: sphinx-build ./source _build
     
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      #if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        publish_branch: gh-pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
         publish_dir: _build/
         force_orphan: true
-
