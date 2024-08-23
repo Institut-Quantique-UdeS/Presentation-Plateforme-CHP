@@ -40,7 +40,7 @@ Résumé
     Le stockage des données de recherche de la plateforme CHP-IQ est accessible
     à partir de MP2 à ``/net/nfs-iq/data``.
 
-**Pile logicielle de l’Alliance**
+**Logiciels de l’Alliance**
     - Commande ``module`` pour les paquets logiciels
     - Commande ``avail_wheels`` pour les paquets Python
     - Environnement par défaut : ``StdEnv/2020``
