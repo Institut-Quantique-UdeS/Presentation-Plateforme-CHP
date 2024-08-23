@@ -79,6 +79,7 @@ envergure, voyez le `guide de démarrage
    :hidden:
 
    Documentation technique de l’Alliance <https://docs.alliancecan.ca/wiki/Technical_documentation/fr>
+   Formations de Calcul Québec <https://www.calculquebec.ca/services-aux-chercheurs/formation/>
    Portail CCDB <https://ccdb.alliancecan.ca/>
 
 .. toctree::

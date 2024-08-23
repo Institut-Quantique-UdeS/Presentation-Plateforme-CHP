@@ -1,8 +1,12 @@
 Support technique
 =================
 
-Le support technique est assuré par Olivier Fisette (analyste CIP) avec le
-support des autres membres de l’équipe du CCS.
+En plus de répondre à vos questions et de vous aider avec toute difficulté
+rencontrée avec la plateforme CHP-IQ et sa documentation, nous sommes
+disponibles si vous avez besoin de formation sur Linux, le CHP, etc.
+
+Le support technique est assuré par Olivier Fisette (analyste CIP) avec l’aide
+des autres membres de l’équipe du CCS. 
 
 Avant toute chose…
 ------------------

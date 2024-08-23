@@ -1,8 +1,25 @@
 Ligne de commande Linux
 =======================
 
+La plateforme CHP-IQ, les grappes de l’Alliance et tous les superordinateurs
+recensés dans le TOP500 utilisent le système d’exploitation Linux. Vous devez
+connaître les bases de la ligne de commande Linux/UNIX afin d’utiliser presque
+n’importe quelle système dédié au calcul haute performance.
+
+Si vous n’êtes pas déjà familier avec Linux ou si vous souhaitez rafraîchir vos
+connaissances, nous vous recommandons fortement les `formations de Calcul Québec
+<https://www.calculquebec.ca/services-aux-chercheurs/formation/>`_. Si aucune
+formation n’est organisée prochainement, n’hésitez pas à contacter notre
+:doc:`support technique <../aide/support>` pour des formations locales
+personnalisées. Finalement, la documentation technique de l’Alliance offre une
+courte `introduction à Linux
+<https://docs.alliancecan.ca/wiki/Linux_introduction/fr>`_.
+
+Aide-mémoire Linux
+------------------
+
 Navigation
-##########
+''''''''''
 
 Les commandes basiques pour la navigation dans le système de fichiers sont disponibles dans le tableau ci-dessous:
 
@@ -37,7 +54,7 @@ Finalement, ``~`` désigne le répertoire *home*, soit le répertoire d'arrivée
 
 
 Edition de fichier ASCII
-########################
+''''''''''''''''''''''''
 
 .. list-table::
    :widths: 30 70
@@ -57,9 +74,3 @@ Edition de fichier ASCII
      - Crée un fichier vide nommé `<file>``
    * - ``nano <file>``
      - Ouvre le fichier ``<file>`` dans un éditeur de fichier interactif. Appuyer sur `Crtl+O` pour sauvegarder et `Ctrl+X` pour quitter
-
-
-Autres ressources
-#################
-
-Pour une introduction plus profonde à la ligne de commande, il est possible de suivre l'autoformation d'introduction de Software Carpentry (disponible `ici <https://swcarpentry.github.io/shell-novice/>`_), ou les formations de Calcul Québec (voir la page `EventBrite dédiée <https://www.eventbrite.ca/o/calcul-quebec-8295332683>`_)
