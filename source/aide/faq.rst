@@ -1,22 +1,36 @@
 .. faq
 
-Problèmes courants
-------------------
+Foire aux questions
+===================
 
-Erreur Illegal instruction
-==========================
+Problèmes fréquents
+-------------------
 
-Votre tâche en batch ou interactive vous retourne une erreur de type ``Illegal instruction``, par example:
+« Illegal instruction » (``SIGILL``)
+''''''''''''''''''''''''''''''''
 
-.. code-block:: bash
+Votre tâche cause une erreur de type « Illegal instruction » ou ``SIGILL``, par
+example:
 
-   [moroub@ip09 ~]$ cat slurm-3304643.out 
+.. code-block:: console
+
+   [alice@ip09 ~]$ cat slurm-3304643.out 
    /var/spool/slurmd/job3304643/slurm_script: line 11: 25047 Illegal instruction   (core dumped) python my_script.py
 
-Cette erreur est causée par une instruction plus récente dans votre programme qui n'est pas supportée sur le processeur utilisé plus ancien.
-Vérifiez que vous avez bien soumis la tâche sur les serveurs de l'IQ avec l'option ``-p c-iq`` placé avant le nom du script de soumission (voir _taches_batch).
-Aussi, si vous avez compiler un programme vous-même, tentez de recompiler le programme directement sur les noeud de l'IQ ou remplacer l'option de compilation ``-march=native`` par ``-march=core-avx2`` (GCC) ou ``-xHost`` par ``-xCORE-AVX2`` (compilateur Intel).
+Cette erreur se produit lorsqu’un programme optimisé pour une classe de
+processeurs particuliers est exécuté sur un processeur qui n’est pas compatible.
 
+Vérifiez d’abord si vous avez bien soumis votre tâche aux nœuds de calcul de la
+plateforme CHP-IQ avec l’option ``--partition=c-iq``. Sinon, votre tâche sera
+exécutée sur les nœuds réguliers de la grappe MP2, dont les processeurs sont
+plus anciens et potentiellement incompatibles avec le code compilé sur ``ip09``.
+
+Si vous compilez votre code sur ``ip09`` avec GCC, utilisez l’option
+d’optimisation ``-march=core-avx2``. Si vous utilisez les compilateurs Intel,
+l’option correspondante est ``-xCORE-AVX2``. N’utilisez pas ``-march=native`` ou
+``-xHost``. Ces dernières tentent d’optimiser pour les processeurs Intel
+d’``ip09``. Le programme résultant peut être incompatible avec les processeurs
+AMD des nœuds de calcul.
 
 Erreur fichier introuvable mais bien présent
 ============================================

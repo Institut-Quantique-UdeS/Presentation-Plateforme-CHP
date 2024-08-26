@@ -149,11 +149,13 @@ Ces logiciels n’ont pas été compilés pour utiliser d’instructions plus r�
 telles qu’AVX512. C’est le meilleur choix pour supporter à la fois les
 processeurs Intel et AMD des nœuds de calcul tout en assurant une bonne
 performance. Si vous compilez votre code avec GCC, l’option d’optimisation
-correspondante est ``-march=core-avx2``.
+correspondante est ``-march=core-avx2``. Avec les compilateurs Intel, utilisez
+``-xCORE-AVX2``.
 
 Nous ne recommendons pas d’utiliser une architecture différente (e.g. ``module
 load arch/avx512``) ou de compiler votre code avec une option différente (e.g.
-``-march=native``) car cela peut mener à des problèmes de compatibilité.
+``-march=native`` ou ``-xHost``) car cela peut mener à des problèmes de
+compatibilité.
 
 Guides logiciels
 ----------------
