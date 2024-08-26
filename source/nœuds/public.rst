@@ -10,6 +10,7 @@
      - GPU
      - Propriétaire
      - Accès libre
+     - Limite de temps
      - Partition
    * - 3
      - CPU
@@ -20,6 +21,7 @@
      -  
      - IQ
      - Oui
+     - 7 jours
      - ``c-iq``
    * - 1
      - GPU
@@ -30,4 +32,5 @@
      - 2 x NVidia A40 48GB
      - IQ
      - Oui
+     - 7 jours
      - ``c-iq`` (nœud ``cp3705``)

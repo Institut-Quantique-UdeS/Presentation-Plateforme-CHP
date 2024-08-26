@@ -10,6 +10,7 @@
      - GPU
      - Propriétaire
      - Accès libre
+     - Limite de temps
      - Partition
    * - 1
      - CPU
@@ -20,6 +21,7 @@
      - 
      - Batiste Royer
      - Non
+     - 7 jours
      - ``c-royer``
    * - 1
      - CPU
@@ -30,6 +32,7 @@
      - 
      - Stefanos Kourtis
      - Non
+     - 7 jours
      - ``c-aphex``
    * - 1
      - CPU
@@ -40,6 +43,7 @@
      - 
      - David Sénéchal
      - Non
+     - 7 jours
      - ``c-fat3072``
    * - 4
      - CPU
@@ -50,6 +54,7 @@
      - 
      - David Sénéchal
      - Oui
+     - 7 jours
      - ``c-apc``
    * - 1
      - CPU
@@ -60,4 +65,5 @@
      - 
      - Alexandre Blais
      - Non
+     - 28 jours
      - ``c-blais``

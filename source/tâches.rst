@@ -58,6 +58,8 @@ Dans un script de tâche:
 
     ...
 
+La durée maximale des tâches est de sept jours.
+
 Tâches GPU
 ''''''''''
 
@@ -96,7 +98,8 @@ Pour lancer une tâche sur un ou plusieurs nœuds contribués auxquels vous avez
 accès, demandez la partition correspondante avec ``-p`` ``--partition``.
 Référez-vous au tableau des :ref:`nœuds de calcul contribués <contrib-label>`.
 Par exemple, vous pouvez soumettre une tâche aux nœuds APC de David Sénéchal
-avec ``--partition=c-apc``.
+avec ``--partition=c-apc``. La durée maximale des tâches varie selon la
+partition et est indiquée dans le tableau des nœuds.
 
 Gestion des tâches
 ------------------
