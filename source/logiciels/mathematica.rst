@@ -1,12 +1,33 @@
 Mathematica
 ===========
 
-Mathematica est un logiciel propriétaire de calcul formel et numérique développé par Wolfram Research.
-Mathematica version 12.1 est installé sur le NAS de l'IQ et les exécutables se trouvent sous ``/net/nfs-iq/data/software/Mathematica/12.1/Executables``.
-Les licences sont distribuées via un serveur de licence en ligne sur le réseau de du département de physique et de l'université de manière transparente.
-Néanmoins, il est de la responsabilité de l'usager de se renseigner quant aux politiques d'accès à ces licences (si elles existent)
+Mathematica est un logiciel commercial pour le calcul formel et numérique
+développé par Wolfram Research.
 
-Exemple d'utilisation de Mathematica en tâche batch:
+License
+-------
+
+Les licences Mathematica sont distribuées par un serveur du département de
+physique. Aucune configuration n’est requise mais chaque utilisateur est
+responsable de se renseigner quant aux politiques d’accès à ces licences.
+
+Utilisation
+-----------
+
+Pour voir les versions de Mathematica disponibles :
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ ls /net/nfs-iq/data/software/Mathematica/
+    12.1  14.0
+
+Pour ajouter Mathematica à votre environnement interactif :
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ PATH="$PATH:/net/nfs-iq/data/software/Mathematica/12.1/Executables"
+
+Pour utiliser Mathematica dans un script de tâche :
 
 .. code-block:: bash
     
@@ -15,4 +36,6 @@ Exemple d'utilisation de Mathematica en tâche batch:
     #SBATCH --cpus-per-task=2
     #SBATCH --mem=8G
     
-    /net/nfs-iq/data/software/Mathematica/12.1/Executables/wolframscript -file script.wls
+    PATH="$PATH:/net/nfs-iq/data/software/Mathematica/12.1/Executables"
+
+    wolframscript -file script.wls
