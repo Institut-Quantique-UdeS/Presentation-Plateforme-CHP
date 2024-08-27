@@ -52,6 +52,8 @@ l’option correspondante est ``-xCORE-AVX2``. N’utilisez pas ``-march=native`
 d’``ip09``. Le programme résultant peut être incompatible avec les processeurs
 AMD des nœuds de calcul.
 
+.. _calcul-lent-label:
+
 Mon calcul est beaucoup plus lent que sur mon portable
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -89,3 +91,9 @@ script de tâche avant l’exécution de votre programme :
 .. code-block:: bash
 
    export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-1}
+
+.. seealso::
+
+   - :ref:`Cette section <python-fils-label>` de notre guide Python traite du
+     problème des fils d’exécution dans le contexte de ce language de
+     programmation.
