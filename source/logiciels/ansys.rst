@@ -1,22 +1,43 @@
 Ansys
 =====
 
-La suite de logiciel Ansys est une suite commerciale et nécessite un accès à une licence, via la plateforme CMC Microsystems par exemple.
-La plateforme de calcul haute performance de l'IQ est doté d'un serveur de licence CMC pour Ansys dédié.
-La procédure pour charger Ansys sur la plateforme est la suivante:
+Ansys est une suite logicielle commerciale pour la conception 3D et la
+simulation.
 
-#. Créer le fichier de licence ``~/.licences/ansys.lic`` avec le contenu suivant :
+.. seealso::
 
-.. code-block:: bash
+   
+   `Ansys <https://docs.alliancecan.ca/wiki/Ansys/fr>`_ (documentation technique
+   de l’Alliance)
+
+License
+-------
+
+La plateforme CHP-IQ a un serveur de licence CMC Microsystems dédié pour Ansys.
+Chaque utilisateur doit configurer sa license :
+
+#. Créez le fichier ``~/.licences/ansys.lic`` avec ce contenu :
+
+.. code-block::
 
     setenv("ANSYSLMD_LICENSE_FILE", "6624@ip39.ccs.usherbrooke.ca")
     setenv("ANSYSLI_SERVERS", "2325@ip39.ccs.usherbrooke.ca")
     
-#. Envoyer un courriel à CMC Microsystems (``mcsupport@cmc.ca``) avec votre nom d'utilisateur sur les serveurs de l'IQ, votre nom, le nom de la personne qui vous fourni la licence et le nom du serveur de licence (``ip39.ccs.usherbrooke.ca``).
+#. Envoyez un courriel à CMC Microsystems (`mcsupport@cmc.ca`) avec votre nom
+   complet, le nom de la personne qui vous fournit la license, votre nom
+   d’utilisateur sur la plateforme CHP-IQ et l’adresse du serveur de licence
+   (``ip39.ccs.usherbrooke.ca``).
 
-#. CMC Microsystem active votre licence sur la plateforme de calcul de l'IQ sous quelques heures / jours.
+#. CMC Microsystem activera votre licence en quelques heures, au plus quelques
+   jours. Une fois cela fait, vous pourrez utiliser Ansys tel que décrit
+   ci-dessous.
 
-Les modules Ansys se chargent de la même manière que sur les grappes de l'Alliance, par exemple avec la commande ``module load ansysedt/2021R2``. 
-Vous pouvez aussi consulter la `documentation de l'Alliance <https://docs.alliancecan.ca/wiki/Ansys>`_  pour en savoir plus sur comment utiliser Ansys sur les serveurs de calcul.
+Modules
+-------
 
-Une version plus récente de AnsysEDT en version R2023.1 se trouve installer sur le NAS de l'IQ, sous ``/net/nfs-iq/data/software/AnsysEM/v231/``.
+Les modules Ansys sont les mêmes que sur les grappes de l’Alliance. Par
+exemple :
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ module load ansys/2023R2
