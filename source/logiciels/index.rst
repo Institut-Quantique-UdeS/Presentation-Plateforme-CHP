@@ -157,6 +157,15 @@ load arch/avx512``) ou de compiler votre code avec une option différente (e.g.
 ``-march=native`` ou ``-xHost``) car cela peut mener à des problèmes de
 compatibilité.
 
+Bibliothèques BLAS/LAPACK
+-------------------------
+
+Les logiciels de l’Alliance contiennent une variété d’implémentations des
+bibliothèques `BLAS et LAPACK
+<https://docs.alliancecan.ca/wiki/BLAS_and_LAPACK/fr>`_ pour l’algèbre
+vectorielle et linéaire. Intel MKL est utilisé par défaut sur la plateforme
+CHP-IQ et la plupart des grappes de l’Alliance.
+
 Guides logiciels
 ----------------
 

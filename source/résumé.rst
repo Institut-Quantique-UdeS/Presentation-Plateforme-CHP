@@ -20,7 +20,7 @@ Résumé
     - Données individuelles: ``/net/nfs-iq/data/$USER``
     - Données des groupes: ``/net/nfs-iq/data/def-$PARRAIN``
 
-**Nœuds de calcul (publics)**
+**Nœuds de calcul publics**
     .. include:: nœuds/public.rst
 
     - Les tâches doivent être soumises à la partition ``c-iq``.
@@ -45,3 +45,4 @@ Résumé
     - Commande ``avail_wheels`` pour les paquets Python
     - Environnement par défaut : ``StdEnv/2020``
     - Cible d’optimisation par défaut : AVX2
+    - Bibliothèques BLAS/LAPACK par défaut : Intel MKL
