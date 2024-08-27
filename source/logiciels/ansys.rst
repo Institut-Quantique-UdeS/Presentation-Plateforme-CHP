@@ -7,8 +7,8 @@ simulation.
 .. seealso::
 
    
-   `Ansys <https://docs.alliancecan.ca/wiki/Ansys/fr>`_ (documentation technique
-   de l’Alliance)
+   - `Ansys <https://docs.alliancecan.ca/wiki/Ansys/fr>`_ (documentation
+     technique de l’Alliance)
 
 License
 -------
