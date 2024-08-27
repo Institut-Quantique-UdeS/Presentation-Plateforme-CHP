@@ -109,6 +109,8 @@ tâches de tous les utilisateurs et celles soumises à la grappe MP2. Utilisez
 ``sq`` pour lister uniquement vos tâches. (Cette dernière commande est aussi
 disponible sur les grappes de l’Alliance.)
 
+.. _tâches-actives-label:
+
 Suivre les tâches actives
 '''''''''''''''''''''''''
 
