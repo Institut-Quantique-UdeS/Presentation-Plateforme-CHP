@@ -236,10 +236,47 @@ tâche qui utilise à la fois ``multiprocessing`` et ``eigsh``, 4096 fils
 d’exécution (64 × 64) seront lancés par défaut, même si la tâche n’a accès qu’à
 2, 4 ou 8 cœurs. La performance sera drastiquement réduite.
 
-Pour palier à ce problème, vous devez spécifier à ``multiprocessing``, Dask,
-SciPy, etc. le nombre de fils d’exécution à utiliser. La bibliothèque Python
-`ThreadPoolCtl <https://pypi.org/project/threadpoolctl/>`_ peut être utile à cet
-effet.
+Pour palier ce problème, vous devez spécifier à SciPy, ``multiprocessing``,
+Dask, etc. le nombre de fils d’exécution à utiliser. En ajoutant les
+instructions suivantes à votre script de tâche (avant votre calcul), vous
+désactiverez la parallélisation implicite de la plupart des fonctions, incluant
+celles de SciPy, qui utilise OpenMP ou Intel MKL en arrière-plan :
+
+.. code-block:: bash
+
+    export OMP_NUM_THREADS=1
+    export MKL_NUM_THREADS=1
+
+Pour contrôler le nombre de processus à lancer avec ``multiprocessing`` :
+
+.. code-block:: python
+
+    from multiprocessing import Pool
+    from os import environ
+
+    nprocesses = int(environ.get('SLURM_CPUS_PER_TASK', default=1))
+
+    pool = Pool(nprocesses)
+
+Avec Dask :
+
+.. code-block:: python
+
+    from os import environ
+    from dask.distributed import LocalCluster
+
+    nprocesses = int(environ.get('SLURM_CPUS_PER_TASK', default=1))
+
+    cluster = LocalCluster(n_workers=nprocesses)
+
+Si, au contraire, vous n’utilisez pas ``multiprocessing``, Dask, etc. mais que
+vous souhaitez plutôt prendre avantage des fonctions parallèles de SciPy,
+contrôlez le nombre de fils d’exécution avec :
+
+.. code-block:: bash
+
+    export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-1}
+    export MKL_NUM_THREADS=${SLURM_CPUS_PER_TASK:-1}
 
 .. seealso::
 

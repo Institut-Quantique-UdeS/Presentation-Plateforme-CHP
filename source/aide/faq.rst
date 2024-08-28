@@ -81,7 +81,8 @@ entre les fils.
 Dans la plupart des cas, le nombre de cœurs CPU alloués à une tâche devrait
 correspondre exactement au nombre de processus ou de fils exécutés par la tâche.
 Si une tâche exécute trop de fils ou de processus, ``htop`` montrera plus de
-fils d’exécution qu’attendu, et ces fils utiliseront moins de 100 % de temps CPU.
+fils d’exécution qu’attendu, et ces fils n’utiliseront pas tous 100 % de temps
+CPU comme ils le devraient.
 
 Pour les programmes parallèles qui utilisent des fils d’exécution OpenMP, le
 problème peut être corrigé en réglant le nombre de fils à exécuter pour qu’il
@@ -91,6 +92,21 @@ script de tâche avant l’exécution de votre programme :
 .. code-block:: bash
 
    export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-1}
+
+Certaines fonctions d’Intel MKL sont automatiquement parallélisées. En CHP, ce
+parallélisme automatisé est habituellement indésirable. Vous pouvez le
+désactiver avec :
+
+.. code-block:: bash
+
+   export MKL_NUM_THREADS=1
+
+Si vous souhaitez plutôt utiliser ces algorithmes parallèles, paramétrez le
+nombre de fils d’exécution avec :
+
+.. code-block:: bash
+
+   export MKL_NUM_THREADS=${SLURM_CPUS_PER_TASK:-1}
 
 .. seealso::
 
