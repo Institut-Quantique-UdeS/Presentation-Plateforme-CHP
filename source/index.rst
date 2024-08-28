@@ -28,7 +28,7 @@ frais. Les coûts sont assumés grâce à une subvention de la Fondation canadie
 pour l’innovation (FCI). 
 
 La configuration de la plateforme CHP-IQ est similaire à celle des grappes
-nationales gérées par l’Alliance de recherche numérique du Canada (anciennement
+nationales gérées par l’Alliance de recherche numérique du Canada (auparavant
 Calcul Canada) : environnement Linux, logiciels disponibles, commandes pour
 lancer et gérer les tâches, etc. La `documentation technique de l’Alliance
 <https://docs.alliancecan.ca/wiki/Technical_documentation/fr>`_ s’applique donc
@@ -92,5 +92,5 @@ envergure, voyez le `guide de démarrage
 
    Cette documentation est gérée par le CCS. Son auteur original est Moïse
    Rousseau, son responsable actuel Olivier Fisette. Pour toute question ou
-   commentaire ou pour rapporter une erreur ou un problème, voyez notre
+   commentaire ou pour rapporter une erreur ou un problème, consultez notre
    :doc:`support technique <aide/support>`.
