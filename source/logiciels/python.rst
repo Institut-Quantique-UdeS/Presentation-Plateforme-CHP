@@ -131,7 +131,7 @@ Ensuite, nous pouvons installer des paquets, par exemple QuTiP :
 
 .. code-block:: console
 
-    (qutip) [alice@ip09 ~]$ pip install --no-index 'qutip==4.7.2'
+    (qutip) [alice@ip09 ~]$ pip install --no-index qutip==4.7.2
 
 Finalement, l’environnement peut être désactivé :
 
@@ -169,7 +169,7 @@ Pour installer cette version pré-compilée dans un environnement virtuel actif�
 
 .. code-block:: console
 
-    (qiskit) [alice@ip09 ~]$ pip install --no-index 'qiskit==0.39.3'
+    (qiskit) [alice@ip09 ~]$ pip install --no-index qiskit==0.39.3
 
 La commande précédente ne cherche que dans l'environnement logiciel chargé (par
 défaut ``StdEnv/2020``). Des versions plus récentes de certains paquets sont
