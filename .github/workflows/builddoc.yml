@@ -18,8 +18,8 @@ jobs:
     - name: Install prerequisites
       run: pip install sphinx==8.0.2 sphinx-intl furo==2024.8.6
     
-    - name: Build with Sphinx
-      run: sphinx-build ./source _build
+    - name: Build French version with Sphinx
+      run: sphinx-build ./fr/source _build/fr
     
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
