@@ -82,12 +82,6 @@ envergure, voyez le `guide de démarrage
    Formations de Calcul Québec <https://www.calculquebec.ca/services-aux-chercheurs/formation/>
    Portail CCDB <https://ccdb.alliancecan.ca/>
 
-.. toctree::
-   :caption: À réorganiser
-   :maxdepth: 2
-   :titlesonly:
-   :hidden:
-
 .. note::
 
    Cette documentation est gérée par le CCS. Son auteur original est Moïse
