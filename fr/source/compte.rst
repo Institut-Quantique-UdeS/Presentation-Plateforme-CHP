@@ -10,7 +10,7 @@ Compte
 Obtenir l'accès à la plateforme CHP-IQ se fait en deux étapes :
 
 1. Créer un compte `CCDB <https://ccdb.alliancecan.ca/>`_.
-2. Remplir `l’annexe C de la politique d'accès au calculateurs
+2. Remplir `l’annexe C de la politique d'accès aux calculateurs
    <https://forms.office.com/r/UKb6yPneD1>`_.
 
 
