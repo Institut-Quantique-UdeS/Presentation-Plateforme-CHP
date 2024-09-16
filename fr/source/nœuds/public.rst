@@ -29,7 +29,7 @@
      - 48
      - 512G (DDR4)
      - 1T (NVMe)
-     - 2 x NVidia A40 48GB
+     - 2 x NVidia A40 48G
      - IQ
      - Oui
      - 7 jours
