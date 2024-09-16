@@ -160,11 +160,10 @@ compatibilité.
 Bibliothèques BLAS/LAPACK
 -------------------------
 
-Les logiciels de l’Alliance contiennent une variété d’implémentations des
-bibliothèques `BLAS et LAPACK
-<https://docs.alliancecan.ca/wiki/BLAS_and_LAPACK/fr>`_ pour l’algèbre
-vectorielle et linéaire. Intel MKL est utilisé par défaut sur la plateforme
-CHP-IQ et la plupart des grappes de l’Alliance.
+Les logiciels de l’Alliance offrent plusieurs implémentations des bibliothèques
+`BLAS et LAPACK <https://docs.alliancecan.ca/wiki/BLAS_and_LAPACK/fr>`_ pour
+l’algèbre linéaire. Intel MKL est utilisé par défaut sur la plateforme CHP-IQ et
+la plupart des grappes de l’Alliance.
 
 Guides logiciels
 ----------------
