@@ -16,8 +16,8 @@
      - CPU
      - 2 x AMD EPYC 7643
      - 96
-     - 512 GB (DDR4)
-     - 1 TB (NVMe)
+     - 512G (DDR4)
+     - 1T (NVMe)
      -  
      - IQ
      - Oui
@@ -27,8 +27,8 @@
      - GPU
      - 2 x Xeon Gold 6342
      - 48
-     - 512 (DDR4)
-     - 1 TB (NVMe)
+     - 512G (DDR4)
+     - 1T (NVMe)
      - 2 x NVidia A40 48GB
      - IQ
      - Oui
