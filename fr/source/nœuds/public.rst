@@ -4,9 +4,9 @@
    * - Nombre
      - Type
      - CPU
-     - Coeurs
+     - Cœurs
      - Mémoire
-     - Disque dur
+     - Stockage
      - GPU
      - Propriétaire
      - Accès libre
