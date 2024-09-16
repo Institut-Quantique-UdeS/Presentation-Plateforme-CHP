@@ -16,8 +16,8 @@
      - CPU
      - 2 x AMD EPYC 7742
      - 128
-     - 2 TB (DDR4)
-     - 6 TB (NVMe)
+     - 2T (DDR4)
+     - 6T (NVMe)
      - 
      - Batiste Royer
      - Non
@@ -27,8 +27,8 @@
      - CPU
      - 2 x AMD EPYC 7F72
      - 48
-     - 1 TB
-     - 3,4 TB
+     - 1T
+     - 3,4T
      - 
      - Stefanos Kourtis
      - Non
@@ -38,8 +38,8 @@
      - CPU
      - 4 x Xeon E7-8870 v3
      - 72
-     - 3 TB
-     - 3,5 TB
+     - 3T
+     - 3,5T
      - 
      - David Sénéchal
      - Non
@@ -49,8 +49,8 @@
      - CPU
      - 2 x AMD EPYC 7301
      - 32
-     - 256 GB (DDR4)
-     - 800 GB
+     - 256G (DDR4)
+     - 800G
      - 
      - David Sénéchal
      - Oui
@@ -60,8 +60,8 @@
      - CPU
      - 2 x AMD EPYC 9554
      - 128
-     - 1.5 TB (DDR5)
-     - 1 TB (NVMe)
+     - 1.5T (DDR5)
+     - 1T (NVMe)
      - 
      - Alexandre Blais
      - Non
