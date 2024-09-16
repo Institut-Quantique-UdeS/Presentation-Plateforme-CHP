@@ -124,7 +124,7 @@ votre tâche et exécutez la commande ``htop``, qui donne un aperçu de la
 consommation de CPU et de mémoire. Dans l’exemple suivant,
 ``alice`` utilise la sortie de ``sq`` pour identifier le nœud ``cp1433`` avant
 de s’y connecter. ``htop`` montre 4 processus à 100% CPU appartenant à Alice, ce
-qui correspond aux quatre CPU assignés à sa tâche.
+qui correspond aux 4 CPU assignés à sa tâche.
 
 .. code-block:: console
 
@@ -166,7 +166,7 @@ Tâches GPU
 """"""""""
 
 Pour les tâches GPU, il importe également de vérifier qu’elles utilisent
-adéquatement le ou les GPU qui lui ont été assignés. Pour ce faire,
+adéquatement le ou les GPU qui lui ont été alloués. Pour ce faire,
 connectez-vous au nœud de calcul et utilisez la commande ``nvidia-smi``, qui
 liste les GPU et les programmes qui les utilisent. Par exemple :
 
@@ -229,14 +229,14 @@ Par exemple :
 Typiquement, l’efficacité en CPU devrait être proche de 100%. Une efficacité
 plus basse indique que du temps CPU est perdu, possiblement parce que la tâche
 n’utilise pas toutes les ressources allouées. Si l’efficacité d’une de vos
-tâches en sous 70%, vous ne devriez pas soumettre d’autres tâches similaires
+tâches est sous 70%, vous ne devriez pas soumettre d’autres tâches similaires
 avant de régler ce problème.
 
 L’efficacité en mémoire, pour sa part, devrait être d’au moins 50%. Si une de
 vos tâches est sous ce seuil, réduisez la quantité de mémoire demandée pour les
 tâches similaires. (Si vous demandez la quantité de mémoire par défaut, 256M par
-cœur, ignorez l’efficacité mémoire puisque votre consommation est de toute façon
-très basse.)
+cœur, ignorez l’efficacité mémoire puisque votre consommation absolue est de
+toute façon très basse.)
 
 En surveillant l’efficacité de vos tâches, vous ne vous assurez pas seulement
 qu’elles soient plus rapides : vous permettez aussi à un plus grand
