@@ -25,10 +25,10 @@
      - ``c-royer``
    * - 1
      - CPU
-     - ?
+     - 2 x AMD EPYC 7F72
      - 48
-     - 1 TB (?)
-     - ?
+     - 1 TB
+     - 3,4 TB
      - 
      - Stefanos Kourtis
      - Non
@@ -38,8 +38,8 @@
      - CPU
      - 4 x Xeon E7-8870 v3
      - 72
-     - 3 TB (?)
-     - 2 TB (?)
+     - 3 TB
+     - 3,5 TB
      - 
      - David Sénéchal
      - Non
@@ -50,7 +50,7 @@
      - 2 x AMD EPYC 7301
      - 32
      - 256 GB (DDR4)
-     - 400 GB (?)
+     - 800 GB
      - 
      - David Sénéchal
      - Oui
