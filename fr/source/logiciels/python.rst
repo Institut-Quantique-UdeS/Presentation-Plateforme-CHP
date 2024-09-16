@@ -7,7 +7,7 @@ l’Alliance sur `Python <https://docs.alliancecan.ca/wiki/Python/fr>`_.
 Modules
 -------
 
-Pour voir les modules Python disponibles et en charger un :
+Pour chercher les modules Python et en charger un :
 
 .. code-block:: console
 
