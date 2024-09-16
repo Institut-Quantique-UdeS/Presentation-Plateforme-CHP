@@ -145,8 +145,8 @@ Cible d’optimisation
 
 Les logiciels de l’Alliance disponibles sur la plateforme CHP-IQ sont optimisés
 pour l’utilisation de processeurs x86 qui supportent le jeu d’instructions AVX2.
-Ces logiciels n’ont pas été compilés pour utiliser d’instructions plus récentes
-telles qu’AVX512. C’est le meilleur choix pour supporter à la fois les
+Ces logiciels n’ont pas été compilés pour utiliser de jeux d’instructions plus
+récents tels qu’AVX512. C’est le meilleur choix pour supporter à la fois les
 processeurs Intel et AMD des nœuds de calcul tout en assurant une bonne
 performance. Si vous compilez votre code avec GCC, l’option d’optimisation
 correspondante est ``-march=core-avx2``. Avec les compilateurs Intel, utilisez
