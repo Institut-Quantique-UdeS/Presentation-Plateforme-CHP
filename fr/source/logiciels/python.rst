@@ -55,10 +55,10 @@ Pour chercher les modules Python et en charger un :
 
     [alice@ip09 ~]$ module load python/3.10.2
 
-En plus de modules de base pour Python lui-même, les logiciels de l’Alliance
-contiennent ``scipy-stack``, un module pour `Scientific Python` fournissant
-``scipy`` lui-même mais aussi ``numpy``, ``pandas``, ``matplotlib``, etc. Une
-fois votre module de base pour Python lui-même chargé :
+En plus de modules pour Python lui-même, les logiciels de l’Alliance contiennent
+``scipy-stack``, des modules pour `Scientific Python` fournissant ``scipy`` mais
+aussi ``numpy``, ``pandas``, ``matplotlib``, etc. Une fois votre module pour
+Python lui-même chargé :
 
 .. code-block:: console
 
