@@ -10,7 +10,7 @@ grappes de la plateforme nationale, ce qui vous assure que vos tâches peuvent
 être exécutées de manière reproductible sur toutes les grappes.
 
 L’ajout de logiciels à votre environnement se fait principalement à l’aide de la
-commande ``module``. Si vous n’êtes pas familier avec son utilisation, voyez
+commande ``module``. Si vous n’êtes pas familier avec son utilisation, lisez
 d’abord comment `utiliser des modules
 <https://docs.alliancecan.ca/wiki/Utiliser_des_modules>`_. À titre d’exemple,
 vous pouvez lister les modules chargés avec ``module list``, chercher des
