@@ -121,7 +121,9 @@ Activons l’environnement :
 Vous remarquerez que l’invite de commande change pour indiquer l’environnement
 virtuel actif. Toutes les actions de la commande ``pip`` (installer,
 désinstaller, mettre à jour des paquets) cibleront désormais le répertoire
-``$HOME/venv/qutip``. La première chose à faire est de mettre à jour ``pip`` :
+``$HOME/venv/qutip``.
+
+La première chose à faire est de mettre à jour ``pip`` :
 
 .. code-block:: console
 
