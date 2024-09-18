@@ -94,8 +94,8 @@ script de tâche avant l’exécution de votre programme :
    export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-1}
 
 Certaines fonctions d’Intel MKL sont automatiquement parallélisées. En CHP, ce
-parallélisme automatisé est habituellement indésirable. Vous pouvez le
-désactiver avec :
+parallélisme implicite est habituellement indésirable. Vous pouvez le désactiver
+avec :
 
 .. code-block:: bash
 
