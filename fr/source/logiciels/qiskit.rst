@@ -1,7 +1,7 @@
 Qiskit
 ======
 
-Qiskit est une plateforme logicielle d’IBM pour l’informatique quantique.
+Qiskit est une plateforme logicielle d’IBM pour le calcul quantique.
 
 Installation
 ------------
