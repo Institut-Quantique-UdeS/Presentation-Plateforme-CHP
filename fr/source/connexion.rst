@@ -13,15 +13,34 @@ connexion :
 .. code-block:: console
 
    $ ssh alice@ip09.ccs.usherbrooke.ca
-   alice@ip09.ccs.usherbrooke.ca's password:
 
 Remplacez ``alice`` par votre nom d’utilisateur. (Si vous avez un compte
 restreint à la plateforme CHP-IQ, il débutera par ``iq-``, par exemple
 ``iq-alice``.)
 
+Lorsque vous vous connectez pour la première fois, votre programme affichera
+l’empreinte de la clé de chiffrement du serveur et vous demandera de confirmer
+que vous souhaiter vous connecter. Une fois cette confirmation donnée, votre
+programme enregistrera la clé d’``ip09`` dans la liste des hôtes auxquels vous
+faites confiance. Ce dialogue prendra la forme suivante :
+
+.. code-block:: console
+
+    The authenticity of host 'ip09.ccs.usherbrooke.ca (204.19.23.209)' can't be established.
+    ED25519 key fingerprint is SHA256:hVAo6KoqKOEbtOaBh6H6GYHAvsStPsDEcg4LXBQUP50.
+    Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+    Warning: Permanently added 'ip09.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
+
+L’empreinte de la clé serveur devrait correspondre à celle donnée dans l’exemple
+ci-haut.
+
 Entrez ensuite votre mot de passe CCDB (ou le mot de passe de votre compte
 restreint). Notez qu’aucun caractère ne s’affiche à l’écran pendant la saisie de
 votre mot de passe.
+
+.. code-block:: console
+
+   alice@ip09.ccs.usherbrooke.ca's password:
 
 .. seealso::
    - `SSH <https://docs.alliancecan.ca/wiki/SSH/fr>`_ (documentation technique
