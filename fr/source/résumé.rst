@@ -17,8 +17,8 @@ Résumé
     - Toujours utiliser pour les tâches (bonne performance entrée-sortie)
     - Capacité totale : 190T
     - Stockage redondant
-    - Données individuelles: ``/net/nfs-iq/data/$USER``
-    - Données des groupes: ``/net/nfs-iq/data/def-$PARRAIN``
+    - Données individuelles : ``/net/nfs-iq/data/$USER``
+    - Données des groupes : ``/net/nfs-iq/data/def-$PARRAIN``
 
 **Nœuds de calcul publics**
     .. include:: nœuds/public.rst
