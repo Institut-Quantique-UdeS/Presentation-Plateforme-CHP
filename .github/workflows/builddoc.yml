@@ -20,6 +20,9 @@ jobs:
     
     - name: Build French version with Sphinx
       run: sphinx-build ./fr/source _build/fr
+
+    - name: Build English version with Sphinx
+      run: sphinx-build ./en/source _build/en
     
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
