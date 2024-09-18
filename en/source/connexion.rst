@@ -12,13 +12,31 @@ to connect:
 .. code-block:: console
 
    $ ssh alice@ip09.ccs.usherbrooke.ca
-   alice@ip09.ccs.usherbrooke.ca's password:
 
 Replace ``alice`` by your username. (If you have a restricted IQ HPC account, it
 starts with ``iq-``, for instance ``iq-alice``.)
 
+When you connect for the first time, your program will show the server’s
+encryption key’s fingerprint and ask to confirm that you wish to connect. Once
+this confirmation is given, your program will store ``ip09``’s key in your
+trusted host list. This dialogue will look like:
+
+.. code-block:: console
+
+    The authenticity of host 'ip09.ccs.usherbrooke.ca (204.19.23.209)' can't be established.
+    ED25519 key fingerprint is SHA256:hVAo6KoqKOEbtOaBh6H6GYHAvsStPsDEcg4LXBQUP50.
+    Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+    Warning: Permanently added 'ip09.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
+
+The server’s encryption key’s fingerprint should match the one in the above
+example.
+
 Next, type in your CCDB password (or the password for your restricted account).
 Note that no characters are shown on the screen as you type.
+
+.. code-block:: console
+
+   alice@ip09.ccs.usherbrooke.ca's password:
 
 .. seealso::
    - `SSH <https://docs.alliancecan.ca/wiki/SSH/en>`_ (Alliance technical
