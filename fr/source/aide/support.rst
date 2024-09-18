@@ -32,7 +32,7 @@ commande et l’entièreté de son résultat à partir de votre terminal.
 de données et écrivez un script de tâche minimal qui, ensemble, reproduisent le
 problème.
 
-**Pour les grappes de l’Alliance (anciennement Calcul Canada)**, voyez plutôt le
+**Pour les grappes de l’Alliance (auparavant Calcul Canada)**, voyez plutôt le
 service de `support technique
 <https://docs.alliancecan.ca/wiki/Technical_support>`_ de l’Alliance. Si vous
 souhaitez que je traite votre requête (je suis aussi analyste à Calcul Québec),
