@@ -64,8 +64,8 @@ CHP-IQ mais il est beaucoup plus lent. Que se passe-t-il ?
 D’abord, assurez-vous d’utiliser le même nombre de cœurs CPU sur votre portable
 et dans votre tâche pour que la comparaison soit valide. Par exemple, si votre
 portable a 8 cœurs CPU et que votre programme les utilise tous, vous devriez
-aussi demander 8 cœurs CPU dans votre tâche. Si vous demandez moins de cœurs,
-voire un seul, il est normal que la performance soit moindre !
+demander 8 cœurs CPU dans votre tâche. Si vous demandez moins de cœurs, voire un
+seul, il est normal que la performance soit moindre !
 
 Si le problème persiste, vérifiez que votre tâche :ref:`utilise correctement les
 ressources <tâches-actives-label>` qui lui sont allouées. Un problème commun est
