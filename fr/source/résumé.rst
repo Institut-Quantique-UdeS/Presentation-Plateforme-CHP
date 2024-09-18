@@ -27,7 +27,9 @@ Résumé
         - Tâche interactive : ``salloc -p c-iq``
         - Script de tâche : ``#SBATCH --partition=c-iq``
     - Les GPU ne sont pas gérés par l’ordonnanceur de tâches.
-        - Demandez le nœud GPU avec ``-p c-iq -w cp3705``.
+        - Tâche interactive : ``-p c-iq -w cp3705``
+        - Script de tâche : ``#SBATCH --partition=c-iq``
+          ``#SBATCH --nodelist=cp3705``
         - Utilisez ``export CUDA_VISIBLE_DEVICES=[...]`` pour contrôler le ou
           les GPU à utiliser.
 
