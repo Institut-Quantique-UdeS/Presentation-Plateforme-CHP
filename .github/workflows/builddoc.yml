@@ -20,6 +20,7 @@ jobs:
     
     - name: Build French version with Sphinx
       run: sphinx-build ./fr/source _build/fr
+      run: cp ./redirect.html _build/index.html
 
     - name: Build English version with Sphinx
       run: sphinx-build ./en/source _build/en
