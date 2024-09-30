@@ -8,14 +8,13 @@ Plateforme de calcul haute performance de l’institut quantique
 
 .. important::
 
-   Les chercheurs pressés devraient au miminum lire cette page ainsi que le
-   :doc:`résumé <résumé>` avant de lancer leur première tâche.
-
-   Les chercheurs débutants devraient consulter nos pages sur l’apprentissage de
-   :doc:`Linux <apprentissage/linux>` et du :doc:`calcul haute performance
-   <apprentissage/chp>`.
-
-   This documentation is also available in `English <https://institut-quantique-udes.github.io/Presentation-Plateforme-CHP/en/>`_.
+   - Les chercheurs pressés devraient au miminum lire cette page ainsi que le
+     :doc:`résumé <résumé>` avant de lancer leur première tâche.
+   - Les chercheurs débutants devraient consulter nos pages sur l’apprentissage
+     de :doc:`Linux <apprentissage/linux>` et du :doc:`calcul haute performance
+     <apprentissage/chp>`.
+   - This documentation is also available in `English
+     <https://institut-quantique-udes.github.io/Presentation-Plateforme-CHP/en/>`_.
 
 La plateforme de calcul haute performance (CHP) de l’`Institut quantique (IQ)
 <https://www.usherbrooke.ca/iq/>`_ est une grappe de calcul de petite taille
