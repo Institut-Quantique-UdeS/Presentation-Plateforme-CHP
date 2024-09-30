@@ -48,6 +48,25 @@ optimisation option. If you use the Intel compilers, the corresponding option is
 to optimise for the Intel processors on ``ip09``. The resulting program can be
 incompatible with the compute nodes’ AMD processors.
 
+My interactive task on ``c-blais`` crashes on startup
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Interactive tasks started on the ``c-blais`` partition (Kerrcat workstation) are
+currently not working:
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ salloc -p c-blais
+    salloc: Granted job allocation 5810877
+    salloc: Waiting for resource configuration
+    salloc: Nodes cp3707 are ready for job
+    srun: error: _find_node_record(751): lookup failure for cp3707
+    srun: error: hostlist2bitmap: invalid node specified cp3707
+    srun: fatal: ROUTE: Failed to make bitmap from hostlist=cp3707.
+    salloc: Relinquishing job allocation 5810877
+
+Job scripts submitted with ``sbatch`` work normally.
+
 .. _calcul-lent-label:
 
 My computation is much slower than on my laptop
