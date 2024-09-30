@@ -52,6 +52,25 @@ l’option correspondante est ``-xCORE-AVX2``. N’utilisez pas ``-march=native`
 d’``ip09``. Le programme résultant peut être incompatible avec les processeurs
 AMD des nœuds de calcul.
 
+Ma tâche interactive sur ``c-blais`` plante au démarrage
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Les tâches interactives lancées sur la partition ``c-blais`` (station de travail
+Kerrcat) ne fonctionnent pas pour le moment :
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ salloc -p c-blais
+    salloc: Granted job allocation 5810877
+    salloc: Waiting for resource configuration
+    salloc: Nodes cp3707 are ready for job
+    srun: error: _find_node_record(751): lookup failure for cp3707
+    srun: error: hostlist2bitmap: invalid node specified cp3707
+    srun: fatal: ROUTE: Failed to make bitmap from hostlist=cp3707.
+    salloc: Relinquishing job allocation 5810877
+
+Les scripts de tâches lancés avec ``sbatch`` fonctionnent normalement.
+
 .. _calcul-lent-label:
 
 Mon calcul est beaucoup plus lent que sur mon portable
