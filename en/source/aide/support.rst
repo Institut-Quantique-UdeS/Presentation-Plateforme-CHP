@@ -58,5 +58,5 @@ by email or on Slack to plan a meeting.
 In-person meetings
 ''''''''''''''''''
 
-I am available on the main campus every Monday and, on appointment, on other
+I am available on the main campus every Monday and, by appointment, on other
 days. Contact me by email or on Slack to plan a meeting.
