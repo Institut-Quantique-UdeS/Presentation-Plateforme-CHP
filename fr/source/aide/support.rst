@@ -64,6 +64,6 @@ rencontre.
 Rencontres en personne
 ''''''''''''''''''''''
 
-Je suis disponible sur le campus principal tous les lundis et mercredis. Si cet
-horaire ne vous convient pas, nous pouvons choisir un autre jour. Contactez-moi
-par courrier électronique ou sur Slack pour planifier une rencontre.
+Je suis disponible sur le campus principal tous les lundis et, sur rendez-vous,
+les autres jours. Contactez-moi par courrier électronique ou sur Slack pour
+planifier une rencontre.
