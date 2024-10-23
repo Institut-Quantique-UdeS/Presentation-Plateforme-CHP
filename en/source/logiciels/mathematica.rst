@@ -21,12 +21,6 @@ To list available Mathematica versions:
     [alice@ip09 ~]$ ls /net/nfs-iq/data/software/Mathematica/
     12.1  14.0
 
-To add Mathematica to your interactive environment:
-
-.. code-block:: console
-
-    [alice@ip09 ~]$ PATH="$PATH:/net/nfs-iq/data/software/Mathematica/12.1/Executables"
-
 To use Mathematica in a job script:
 
 .. code-block:: bash
@@ -39,3 +33,25 @@ To use Mathematica in a job script:
     PATH="$PATH:/net/nfs-iq/data/software/Mathematica/12.1/Executables"
 
     wolframscript -file script.wls
+
+To use Mathematica in an interactive job:
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ salloc -p c-iq -t 2:00:00 -c 2 --mem=8G
+    salloc: Granted job allocation 5843885
+    salloc: Waiting for resource configuration
+    salloc: Nodes cp3702 are ready for job
+    [alice@cp3702 ~]$ PATH="$PATH:/net/nfs-iq/data/software/Mathematica/12.1/Executables"
+    [alice@cp3702 ~]$ wolfram
+    Mathematica 12.1.0 Kernel for Linux x86 (64-bit)
+    Copyright 1988-2020 Wolfram Research, Inc.
+
+    In[1]:=
+
+Graphics
+----------
+
+Mathematica cannot be used in graphics mode on the IQ HPC Platform. Jobs must be
+done in text mode, either with scripts (``wolframscript``) or interactively
+(``wolfram``).
