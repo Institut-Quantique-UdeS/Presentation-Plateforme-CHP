@@ -14,15 +14,15 @@
      - Partition
    * - 1
      - CPU
-     - 2 x AMD EPYC 7742
+     - 2 x AMD EPYC 9554
      - 128
-     - 2T (DDR4)
-     - 6T (NVMe)
+     - 1,5T (DDR5)
+     - 1T (NVMe)
      - 
-     - Batiste Royer
+     - Alexandre Blais
      - Non
-     - 7 jours
-     - ``c-royer``
+     - 28 jours
+     - ``c-blais``
    * - 1
      - CPU
      - 2 x AMD EPYC 7F72
@@ -34,6 +34,17 @@
      - Non
      - 7 jours
      - ``c-aphex``
+   * - 1
+     - CPU
+     - 2 x AMD EPYC 7742
+     - 128
+     - 2T (DDR4)
+     - 6T (NVMe)
+     - 
+     - Batiste Royer
+     - Non
+     - 7 jours
+     - ``c-royer``
    * - 1
      - CPU
      - 4 x Xeon E7-8870 v3
@@ -58,12 +69,12 @@
      - ``c-apc``
    * - 1
      - CPU
-     - 2 x AMD EPYC 9554
-     - 128
-     - 1.5T (DDR5)
-     - 1T (NVMe)
-     - 
-     - Alexandre Blais
+     - 2 x AMD EPYC 9654
+     - 192
+     - 2T
+     - 3,4T
+     -
+     - Maia Vergniory
      - Non
-     - 28 jours
-     - ``c-blais``
+     - 7 jours
+     - ``c-maiagv``
