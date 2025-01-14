@@ -1,11 +1,11 @@
-Support technique
+Soutien technique
 =================
 
 En plus de répondre à vos questions et de vous aider avec toute difficulté
 rencontrée avec la plateforme CHP-IQ et sa documentation, nous sommes
 disponibles si vous avez besoin de formation sur Linux, le CHP, etc.
 
-Le support technique est assuré par Olivier Fisette (analyste CIP) avec l’aide
+Le soutien technique est assuré par Olivier Fisette (analyste CIP) avec l’aide
 des autres membres de l’équipe du CCS. 
 
 Avant toute chose…
@@ -33,8 +33,8 @@ de données et écrivez un script de tâche minimal qui, ensemble, reproduisent 
 problème.
 
 **Pour les grappes de l’Alliance (auparavant Calcul Canada)**, voyez plutôt le
-service de `support technique
-<https://docs.alliancecan.ca/wiki/Technical_support>`_ de l’Alliance. Si vous
+service de `soutien technique
+<https://docs.alliancecan.ca/wiki/Technical_support/fr>`_ de l’Alliance. Si vous
 souhaitez que je traite votre requête (je suis aussi analyste à Calcul Québec),
 mentionnez-moi dans votre courrier.
 
