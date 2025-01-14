@@ -29,9 +29,9 @@ the command and its entire output instead.
 write a minimal job script that together reproduce your problem.
 
 **For alliance clusters (formerly Compute Canada)**, see the Alliance `technical
-support <https://docs.alliancecan.ca/wiki/Technical_support>`_ service instead.
-If you would like for me to handle your request (I am also an analyst for Calcul
-Québec), mention me in your email.
+support <https://docs.alliancecan.ca/wiki/Technical_support/en>`_ service
+instead. If you would like for me to handle your request (I am also an analyst
+for Calcul Québec), mention me in your email.
 
 How to contact us?
 ------------------
