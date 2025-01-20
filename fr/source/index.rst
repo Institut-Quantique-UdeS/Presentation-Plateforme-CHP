@@ -64,6 +64,7 @@ envergure, voyez le `guide de démarrage
    :hidden:
 
    aide/faq
+   aide/liste
    aide/support
 
 .. toctree::
