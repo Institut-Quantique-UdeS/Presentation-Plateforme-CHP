@@ -12,6 +12,7 @@ Getting access to the IQ HPC Platform is a two-step process:
 1. Create a `CCDB <https://ccdb.alliancecan.ca/>`_ account.
 2. Fill out the `annexe C de la politique d'accès aux calculateurs
    <https://forms.office.com/r/UKb6yPneD1>`_.
+3. Subscribe to our :doc:`mailing list <aide/liste>`.
 
 Creating a CCDB account
 -----------------------
