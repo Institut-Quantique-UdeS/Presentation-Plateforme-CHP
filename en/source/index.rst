@@ -61,6 +61,7 @@ research projects, see the Alliance `Getting Started
    :hidden:
 
    aide/faq
+   aide/liste
    aide/support
 
 .. toctree::
