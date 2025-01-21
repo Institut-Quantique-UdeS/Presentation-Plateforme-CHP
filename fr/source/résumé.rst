@@ -10,11 +10,12 @@ Résumé
 
 **Répertoire personnel**
     - Emplacement : ``/home/$USER``
-    - Ne pas utiliser pour les tâches (mauvaise performance entrée-sortie)
+    - Ne pas utiliser pour les données de recherche (mauvaise performance
+      entrée-sortie)
 
 **Données de recherche**
     - Emplacement : ``/net/nfs-iq/data``
-    - Toujours utiliser pour les tâches (bonne performance entrée-sortie)
+    - À utiliser pour les tâches (bonne performance entrée-sortie)
     - Capacité totale : 190T
     - Stockage redondant
     - Données individuelles : ``/net/nfs-iq/data/$USER``
@@ -34,10 +35,7 @@ Résumé
           les GPU à utiliser.
 
 **Accès à MP2**
-    La plupart des ressources de MP2 sont accessibles à partir de la plateforme
-    CHP-IQ. Cela inclut les partitions telles que ``c-apc``, ``c-aphex``,
-    ``c-royer``, etc. Les stockages ``/project`` et ``/scratch`` de MP2 ne sont
-    pas accessibles.
+    Les stockages ``/project`` et ``/scratch`` de MP2 ne sont pas accessibles.
 
 **Accès à partir de MP2**
     Le stockage des données de recherche de la plateforme CHP-IQ est accessible

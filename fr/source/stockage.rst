@@ -14,17 +14,17 @@ Votre répertoire personnel est accessible à ``$HOME``. Par exemple :
 C’est le bon emplacement pour vos fichiers de configuration, votre code et les
 logiciels que vous installez. Dû à sa capacité et à sa performance limitées, ce
 n’est pas le bon emplacement pour vos données de recherche et vous ne devriez
-pas l’utiliser pour lire et écrire des fichiers lorsque vous :doc:`exécutez des
-tâches <tâches>`.
+pas l’utiliser pour lire et écrire de telles données lorsque vous :doc:`exécutez
+des tâches <tâches>`.
 
 Données de recherche
 --------------------
 
 Les données de recherche sont stockées sur un serveur de 190T accessible à
-``/net/nfs-iq/data``. Assurez-vous de toujours utiliser cet emplacement pour
-lire et écrire des fichiers lorsque vous :doc:`exécutez des tâches <tâches>` ;
-il offre une bien meilleure performance entrée-sortie (« input/output, IO ») que
-votre répertoire personnel.
+``/net/nfs-iq/data``. Assurez-vous d’utiliser cet emplacement pour lire et
+écrire des données lorsque vous :doc:`exécutez des tâches <tâches>` ; il offre
+une meilleure performance entrée-sortie (« input/output, IO ») que votre
+répertoire personnel.
 
 Pour assurer leur sécurité en cas de défaillance d’un disque, les données de
 recherche sont redondantes, c’est-à-dire qu’elles sont stockées en deux
@@ -78,8 +78,8 @@ se termine.
    - `Stockage local sur les nœuds de calcul <https://docs.alliancecan.ca/wiki/Using_node-local_storage/fr>`_
      (documentation technique de l’Alliance)
 
-Interconnexion avec MP2
------------------------
+Interconnexion avec la grappe MP2
+---------------------------------
 
 Le stockage pour les données de recherche, ``/net/nfs-iq/data``, est
 accessible à partir des nœuds de connexion et de calcul de MP2. Les stockages

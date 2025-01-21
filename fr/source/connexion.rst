@@ -81,11 +81,3 @@ et installer la clé publique sur le serveur. Pour l’installation, suivez les
 instructions de la section `Par le fichier authorized_keys` plutôt que `Via
 CCDB` puisque la plateforme CHP-IQ n’utilise pas les clés SSH de votre compte
 CCDB.
-
-Accès par MP2
--------------
-
-Bien qu’il soit possible d’utiliser la plateforme CHP-IQ à partir d’un nœud de
-connexion régulier de MP2, nous ne le recommendons pas car les architectures des
-deux systèmes sont très différentes. Utiliser la plateforme CHP-IQ via MP2 mène
-à des problèmes de compatibilité logicielle.

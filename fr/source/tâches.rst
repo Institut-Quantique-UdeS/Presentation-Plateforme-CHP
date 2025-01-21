@@ -14,28 +14,27 @@ Nœuds de connexion
 ------------------
 
 Utilisez le nœud de connexion (``ip09``) pour préparer vos tâches. Il est
-toutefois interdit d’exécuter des tâches directement sur ce nœud ou sur les
-autres nœuds de connexion de MP2 ! Les nœuds de connexion ne disposent pas de la
-puissance de calcul nécessaire pour exécuter des tâches. De plus, exécuter une
-tâche sur un nœud de connexion peut le ralentir considérablement, ce qui nuit à
-tous les chercheurs connectés. Toutes les tâches doivent être soumises à
-l’ordonnanceur en utilisant les commandes appropriées : ``sbatch``, ``salloc``,
-``srun``.
+toutefois interdit d’exécuter des tâches directement sur ce nœud ! Les nœuds de
+connexion des grappes ne disposent pas de la puissance de calcul nécessaire pour
+exécuter des tâches. De plus, exécuter une tâche sur un nœud de connexion peut
+le ralentir considérablement, ce qui nuit à tous les chercheurs connectés.
+Toutes les tâches doivent être soumises à l’ordonnanceur en utilisant les
+commandes appropriées : ``sbatch``, ``salloc``, ``srun``.
 
 Lecture-écriture
 ----------------
 
-Utilisez toujours le stockage pour les données de recherche à
-``/net/nfs-iq/data`` pour lire et écrire des fichiers dans vos tâches. Cet
-emplacement offre une bien meilleure performance que votre répertoire personnel.
+Utilisez le stockage dans ``/net/nfs-iq/data`` pour lire et écrire des données
+de recherche dans vos tâches. Cet emplacement offre une bien meilleure
+performance que votre répertoire personnel.
 
 Nœuds publics
 -------------
 
-Les tâches doivent être soumises à la partition ``c-iq``. Sinon, elles seront
-exécutées sur les nœuds réguliers de la grappe MP2. Les commandes de soumission
-de tâches, ``sbatch``, ``salloc``, ``srun``, acceptent l’option ``--partition``
-et sa forme courte ``-p``. Pour une tâche interactive, utilisez par exemple :
+Les tâches doivent être soumises à la partition ``c-iq``. Les commandes de
+soumission de tâches, ``sbatch``, ``salloc``, ``srun``, acceptent l’option
+``--partition`` et sa forme courte ``-p``. Pour une tâche interactive, utilisez
+par exemple :
 
 .. code-block:: console
 
@@ -105,9 +104,9 @@ Gestion des tâches
 ------------------
 
 La commande ``squeue`` liste toutes les tâches dans l’ordonnanceur, incluant les
-tâches de tous les utilisateurs et celles soumises à la grappe MP2. Utilisez
-``sq`` pour lister uniquement vos tâches. (Cette dernière commande est aussi
-disponible sur les grappes de l’Alliance.)
+tâches de tous les utilisateurs. Utilisez ``sq`` pour lister uniquement vos
+tâches. (Cette dernière commande est aussi disponible sur les grappes de
+l’Alliance.)
 
 .. _tâches-actives-label:
 
@@ -206,10 +205,13 @@ On remarque que le processus ``gmx_mpi`` (id 14734) utilise les deux GPU.
 Statistiques des tâches terminées
 '''''''''''''''''''''''''''''''''
 
+.. important::
+
+   Dû à un problème de compatibilité logicielle, ``seff`` n’est temporairement
+   pas disponible sur ``ip09``.
+
 La commande ``seff`` affiche des statistiques pour les tâches terminées,
-incluant leur efficacité en CPU et en mémoire. Dû à un problème de compatibilité
-logicielle, ``seff`` n’est pas disponible sur ``ip09`` mais seulement sur MP2.
-Par exemple :
+incluant leur efficacité en CPU et en mémoire. Par exemple :
 
 .. code-block:: console
 

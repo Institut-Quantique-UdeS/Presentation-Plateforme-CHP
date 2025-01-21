@@ -18,15 +18,14 @@ Plateforme de calcul haute performance de l’Institut quantique
 
 La plateforme de calcul haute performance (CHP) de l’`Institut quantique (IQ)
 <https://www.usherbrooke.ca/iq/>`_ est une grappe de calcul de petite taille
-réservée aux chercheurs de l’IQ et à leurs collaborateurs. Gérée par le `Centre
-de calcul scientifique (CCS) <https://www.ccs.usherbrooke.ca/>`_, elle est une
-extension de la grappe MP2 (Mammouth parallèle) de l’`Université de Sherbrooke
-<https://www.usherbrooke.ca/>`_. En plus de nœuds de calcul et d’un espace de
-stockage disponibles pour tous les chercheurs de l’IQ, la plateforme contient
-des nœuds contribués par des chercheurs spécifiques et dont l’utilisation est
-restreinte. Les chercheurs peuvent utiliser la plateforme sans limite et sans
-frais. Les coûts sont assumés grâce à une subvention de la Fondation canadienne
-pour l’innovation (FCI). 
+réservée aux chercheurs de l’IQ et à leurs collaborateurs, gérée par le `Centre
+de calcul scientifique (CCS) <https://www.ccs.usherbrooke.ca/>`_ de
+l’`Université de Sherbrooke <https://www.usherbrooke.ca/>`_. En plus de nœuds de
+calcul et d’un espace de stockage disponibles pour tous les chercheurs de l’IQ,
+la plateforme contient des nœuds contribués par des chercheurs spécifiques et
+dont l’utilisation est restreinte. Les chercheurs peuvent utiliser la plateforme
+sans limite et sans frais. Les coûts sont assumés grâce à une subvention de la
+Fondation canadienne pour l’innovation (FCI). 
 
 La configuration de la plateforme CHP-IQ est similaire à celle des grappes
 nationales gérées par l’Alliance de recherche numérique du Canada (auparavant
