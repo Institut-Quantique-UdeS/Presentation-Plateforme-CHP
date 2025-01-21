@@ -8,11 +8,11 @@ Installation
 
 .. code-block:: bash
 
-    module load StdEnv/2020
-    module load python/3.9 scipy-stack/2023b symengine/0.9.0
+    module load StdEnv/2023
+    module load python/3.11.5 scipy-stack/2024b symengine/0.11.2
     virtualenv --no-download $HOME/venv/qiskit
     source $HOME/venv/qiskit/bin/activate
-    pip install --no-index qiskit==0.44.2 qiskit-aer==0.12.2
+    pip install --no-index qiskit==1.2.4 qiskit-aer==0.14.2
 
 A noter que cela installe le simulateur Qiskit AER avec prise en charge des GPU.
 Il n’est donc pas nécessaire d’installer ``qiskit-aer-gpu``.
