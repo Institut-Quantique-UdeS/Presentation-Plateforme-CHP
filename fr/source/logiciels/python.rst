@@ -7,53 +7,27 @@ l’Alliance sur `Python <https://docs.alliancecan.ca/wiki/Python/fr>`_.
 Modules
 -------
 
-Pour chercher les modules Python et en charger un :
+Pour charger une version de Python compatible avec l’environnement logiciel
+par défaut :
+
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ module spider python
+    [alice@ip09 ~]$ module avail python
+    ------------------------------------- Core Modules --------------------------------------
+       ipython-kernel/3.10              python-build-bundle/2024a (D)
+       ipython-kernel/3.11       (D)    python/3.10.13            (t,3.10)
+       ipython-kernel/3.12              python/3.11.5             (t,D:3.11)
+       python-build-bundle/2023b        python/3.12.4             (t)
 
-    --------------------------------------------------------------------------------------
-      python:
-    --------------------------------------------------------------------------------------
-        Description:
-          Python is a programming language that lets you work more quickly and integrate
-          your systems more effectively.
-
-         Versions:
-            python/2.7.18
-            python/3.6.10
-            python/3.7.7
-            python/3.7.9
-            python/3.8.2
-            python/3.8.10
-            python/3.9.6
-            python/3.10.2
-            python/3.10.13
-            python/3.11.2
-            python/3.11.5
-            python/3.12.4
     ...
 
-    [alice@ip09 ~]$ module spider python/3.10.2
+    [alice@ip09 ~]$ module load python/3.11.5
 
-    --------------------------------------------------------------------------------------
-      python: python/3.10.2
-    --------------------------------------------------------------------------------------
-        Description:
-          Python is a programming language that lets you work more quickly and integrate
-          your systems more effectively.
-
-        Propriétés:
-          Tools for development / Outils de développement
-
-        Vous devrez charger tous les modules de l'un des lignes suivantes avant de pouvoir
-        charger le module "python/3.10.2".
-
-          StdEnv/2020
-    ...
-
-    [alice@ip09 ~]$ module load python/3.10.2
+La version recommandée (module par défaut) est indiquée par ``(D)``. Si vous
+avez besoin d’une version qui n’est pas disponible dans l’environnement logiciel
+par défaut, utilisez ``module spider python`` pour afficher toutes les versions
+disponibles.
 
 En plus de modules pour Python lui-même, les logiciels de l’Alliance contiennent
 ``scipy-stack``, des modules pour `Scientific Python` fournissant ``scipy`` mais
@@ -65,11 +39,11 @@ Python lui-même chargé :
     [alice@ip09 ~]$ module avail scipy-stack
 
     ------------------------------------- Core Modules --------------------------------------
-       scipy-stack/2020a (math)    scipy-stack/2021a (math)    scipy-stack/2023a (math)
-       scipy-stack/2020b (math)    scipy-stack/2022a (math)    scipy-stack/2023b (L,math,D)
+       scipy-stack/2023b (math)    scipy-stack/2024a (math)    scipy-stack/2024b (math,D)
+
     ...
 
-    [alice@ip09 ~]$ module load scipy-stack/2023b
+    [alice@ip09 ~]$ module load scipy-stack/2024b
 
 Environnements virtuels
 -----------------------
@@ -103,14 +77,14 @@ chargeons les modules pour Python et `Scientific Python` :
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ module load python/3.10.2
-    [alice@ip09 ~]$ module load scipy-stack/2023b
+    [alice@ip09 ~]$ module load python/3.11.5
+    [alice@ip09 ~]$ module load scipy-stack/2024b
 
 Ensuite, créons un environnement virtuel :
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ virtualenv $HOME/venv/qutip
+    [alice@ip09 ~]$ virtualenv $HOME/venv/qutip --no-download
 
 Activons l’environnement :
 
@@ -133,7 +107,7 @@ Ensuite, nous pouvons installer des paquets, par exemple QuTiP :
 
 .. code-block:: console
 
-    (qutip) [alice@ip09 ~]$ pip install --no-index qutip==4.7.2
+    (qutip) [alice@ip09 ~]$ pip install --no-index qutip==5.0.1
 
 Finalement, l’environnement peut être désactivé :
 
@@ -148,8 +122,8 @@ construit ci-dessus peut être utilisé dans un script de tâche avec :
 .. code-block:: bash
 
    module purge
-   module load python/3.10.2
-   module load scipy-stack/2023b
+   module load python/3.11.5
+   module load scipy-stack/2024b
    source $HOME/venv/qutip/bin/activate
 
 Paquets Python précompilés
@@ -164,39 +138,14 @@ Par exemple, pour chercher Qiskit:
     [alice@ip09 ~]$ avail_wheels qiskit
     name    version    python    arch
     ------  ---------  --------  -------
-    qiskit  0.39.3     py3       generic
+    qiskit  1.2.4      cp38      generic
 
 Pour installer cette version pré-compilée dans un environnement virtuel actif :
 
 
 .. code-block:: console
 
-    (qiskit) [alice@ip09 ~]$ pip install --no-index qiskit==0.39.3
-
-La commande précédente ne cherche que dans l'environnement logiciel chargé (par
-défaut ``StdEnv/2020``). Des versions plus récentes de certains paquets sont
-disponibles dans les environnements plus récents :
-
-.. code-block:: console
-
-    [alice@ip09 ~]$ module load StdEnv/2020 && avail_wheels pyqcm --all
-    name    version    python    arch
-    ------  ---------  --------  ------
-    pyqcm   2.3.1      cp39      avx2
-    pyqcm   2.3.1      cp311     avx2
-    pyqcm   2.3.1      cp310     avx2
-    
-    [alice@ip09 ~]$ module load StdEnv/2023 && avail_wheels pyqcm --all
-    
-    The following have been reloaded with a version change:
-      1) StdEnv/2020 => StdEnv/2023          3) gentoo/2020 => gentoo/2023           5) libfabric/1.10.1 => libfabric/1.18.0     7) ucx/1.8.0 => ucx/1.14.1
-      2) gcccore/.9.3.0 => gcccore/.12.3     4) imkl/2020.1.217 => imkl/2023.2.0     6) openmpi/4.0.3 => openmpi/4.1.5
-
-    name    version    python    arch
-    ------  ---------  --------  ---------
-    pyqcm   2.4.3      cp311     x86-64-v3
-    pyqcm   2.4.3      cp310     x86-64-v3
-
+    (qiskit) [alice@ip09 ~]$ pip install --no-index qiskit==1.2.4
 
 Parallélisation avec Python
 ---------------------------
