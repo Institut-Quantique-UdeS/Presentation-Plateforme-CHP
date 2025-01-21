@@ -16,21 +16,23 @@ spider``, and add them to your environment with ``module load``. For instance:
 
 .. code-block:: console
 
-    [ofisette@ip09 ~]$ module list
+    [alice@ip09 ~]$ module list
 
     Currently Loaded Modules:
-      1) CCconfig             4) imkl/2020.1.217  (math)   7) libfabric/1.10.1
-      2) gentoo/2020    (S)   5) intel/2020.1.217 (t)      8) openmpi/4.0.3    (m)
-      3) gcccore/.9.3.0 (H)   6) ucx/1.8.0                 9) StdEnv/2020      (S)
+      1) CCconfig            6) ucx/1.14.1            11) flexiblas/3.3.1
+      2) gentoo/2023   (S)   7) libfabric/1.18.0      12) imkl/2023.2.0            (math)
+      3) gcccore/.12.3 (H)   8) pmix/4.2.4            13) StdEnv/2023              (S)
+      4) gcc/12.3      (t)   9) ucc/1.2.0             14) mii/1.1.2
+      5) hwloc/2.9.1        10) openmpi/4.1.5    (m)  15) slurm-completion/23.02.7
 
-      Où :
+      Where:
        S:     Module is Sticky, requires --force to unload or purge
        m:     MPI implementations / Implémentations MPI
        math:  Mathematical libraries / Bibliothèques mathématiques
        t:     Tools for development / Outils de développement
        H:                Hidden Module
 
-    [ofisette@ip09 ~]$ module spider gromacs
+    [alice@ip09 ~]$ module spider gromacs
 
     --------------------------------------------------------------------------------------
       gromacs:
@@ -38,7 +40,7 @@ spider``, and add them to your environment with ``module load``. For instance:
         Description:
           GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the
           Newtonian equations of motion for systems with hundreds to millions of
-          particles. This is a CPU only build, containing both MPI and threadMPI builds. 
+          particles.
 
          Versions:
             gromacs/2016.6
@@ -52,8 +54,10 @@ spider``, and add them to your environment with ``module load``. For instance:
             gromacs/2023
             gromacs/2023.2
             gromacs/2023.3
+            gromacs/2023.5
             gromacs/2024.1
-     Other possible modules matches:
+            gromacs/2024.4
+         Other possible modules matches:
             gromacs-colvars  gromacs-cp2k  gromacs-ls  gromacs-plumed  gromacs-ramd
             gromacs-swaxs
 
@@ -63,32 +67,31 @@ spider``, and add them to your environment with ``module load``. For instance:
           $ module -r spider '.*gromacs.*'
 
     --------------------------------------------------------------------------------------
-    For detailed information about a specific "gromacs" package (including how
-    to load the modules) use the module's full name. Note that names that have a
-    trailing (E) are extensions provided by other modules. For example:
+      For detailed information about a specific "gromacs" package (including how to load
+      the modules) use the module's full name. Note that names that have a trailing (E)
+      are extensions provided by other modules. For example:
 
-         $ module spider gromacs/2024.1
+         $ module spider gromacs/2024.4
     --------------------------------------------------------------------------------------
 
-    [ofisette@ip09 ~]$ module spider gromacs/2023.2
+    [alice@ip09 ~]$ module spider gromacs/2024.4
 
     --------------------------------------------------------------------------------------
-      gromacs: gromacs/2023.2
+      gromacs: gromacs/2024.4
     --------------------------------------------------------------------------------------
         Description:
           GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the
           Newtonian equations of motion for systems with hundreds to millions of
-          particles. This is a GPU enabled build, containing both MPI and threadMPI
-          builds. 
+          particles.
 
         Properties:
           Chemistry libraries/apps / Logiciels de chimie
 
-        You will need to load all module(s) on any one of the lines below before
-        the "gromacs/2023.2" module is available to load.
+        You will need to load all module(s) on any one of the lines below before the
+        "gromacs/2024.4" module is available to load.
 
-          StdEnv/2020  gcc/9.3.0  cuda/11.4  openmpi/4.0.3
-          StdEnv/2020  gcc/9.3.0  openmpi/4.0.3
+          StdEnv/2023  gcc/12.3  openmpi/4.1.5
+          StdEnv/2023  gcc/12.3  openmpi/4.1.5  cuda/12.2
      
         Help:
           Description
@@ -101,41 +104,52 @@ spider``, and add them to your environment with ``module load``. For instance:
           ================
            - Homepage: http://www.gromacs.org
 
-    [ofisette@ip09 ~]$ module load StdEnv/2020 gcc/9.3.0 openmpi/4.0.3
-
-    Lmod is automatically replacing "intel/2020.1.217" with "gcc/9.3.0".
-
-
-    Due to a MODULEPATH change, the following have been reloaded:
-      1) openmpi/4.0.3
-
-    [ofisette@ip09 ~]$ module load gromacs/2023.2
-    [ofisette@ip09 ~]$ module list
+    [alice@ip09 ~]$ module load StdEnv/2023 gcc/12.3 openmpi/4.1.5
+    [alice@ip09 ~]$ module load gromacs/2024.4
+    [alice@ip09 ~]$ module list
 
     Currently Loaded Modules:
-      1) CCconfig                 6) gcc/9.3.0        (t)  11) fftw-mpi/3.3.8  (math)
-      2) gentoo/2020     (S)      7) ucx/1.8.0             12) scalapack/2.1.0 (math)
-      3) imkl/2020.1.217 (math)   8) libfabric/1.10.1      13) gromacs/2023.2  (chem)
-      4) StdEnv/2020     (S)      9) openmpi/4.0.3    (m)
-      5) gcccore/.9.3.0  (H)     10) flexiblas/3.0.4
+      1) CCconfig                         10) hwloc/2.9.1
+      2) gentoo/2023              (S)     11) ucx/1.14.1
+      3) imkl/2023.2.0            (math)  12) libfabric/1.18.0
+      4) StdEnv/2023              (S)     13) pmix/4.2.4
+      5) mii/1.1.2                        14) ucc/1.2.0
+      6) slurm-completion/23.02.7         15) openmpi/4.1.5    (m)
+      7) gcc/12.3                 (t)     16) fftw/3.3.10      (math)
+      8) flexiblas/3.3.1                  17) gromacs/2024.4   (chem)
+      9) gcccore/.12.3            (H)
+
+      Where:
+       S:     Module is Sticky, requires --force to unload or purge
+       m:     MPI implementations / Implémentations MPI
+       math:  Mathematical libraries / Bibliothèques mathématiques
+       t:     Tools for development / Outils de développement
+       chem:  Chemistry libraries/apps / Logiciels de chimie
+       H:                Hidden Module
 
 Software environment version
 ----------------------------
 
 The Alliance team in charge of software periodically releases new versions of
-the environment, such as ``StdEnv/2020`` or ``StdEnv/2023``. On the IQ HPC
-Platform, ``StdEnv/2020`` is the environment initially loaded when you connect.
+the environment, such as ``StdEnv/2023`` or ``StdEnv/2020``. On the IQ HPC
+Platform, ``StdEnv/2023`` is the environment initially loaded when you connect.
 The other environments are available and can be loaded. For instance:
 
 .. code-block:: console
 
-    [ofisette@ip09 ~]$ module load StdEnv/2023
+    [alice@ip09 ~]$ module load StdEnv/2020
+
+    Inactive Modules:
+      1) slurm-completion
+
+    Due to MODULEPATH changes, the following have been reloaded:
+      1) mii/1.1.2
 
     The following have been reloaded with a version change:
-      1) StdEnv/2020 => StdEnv/2023           5) libfabric/1.10.1 => libfabric/1.18.0
-      2) gcccore/.9.3.0 => gcccore/.12.3      6) openmpi/4.0.3 => openmpi/4.1.5
-      3) gentoo/2020 => gentoo/2023           7) ucx/1.8.0 => ucx/1.14.1
-      4) imkl/2020.1.217 => imkl/2023.2.0
+      1) StdEnv/2023 => StdEnv/2020           5) libfabric/1.18.0 => libfabric/1.10.1
+      2) gcccore/.12.3 => gcccore/.9.3.0      6) openmpi/4.1.5 => openmpi/4.0.3
+      3) gentoo/2023 => gentoo/2020           7) ucx/1.14.1 => ucx/1.8.0
+      4) imkl/2023.2.0 => imkl/2020.1.217
 
 Optimisation target
 -------------------
