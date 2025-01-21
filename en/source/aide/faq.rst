@@ -6,24 +6,6 @@ Frequently asked questions
 Frequent problems
 -----------------
 
-Missing file in a job
-'''''''''''''''''''''
-
-Did you submit a job script that cannot find one or more files from your home
-directory? Did you start an interactive job but do not see your home directory
-files?
-
-This is “normal”. Your home directory on the compute nodes is the one from the
-MP2 cluster, not the one from the IQ HPC Platform, unless your user account was
-created recently. Files you put in your home directory when connected to
-``ip09`` are therefore not accessible from your jobs.
-
-There are two solutions. The first is to move your files to
-``/net/nfs-iq/data``. This location should be used for all research data anyway
-since it offers better performance. The second is to change your home directory
-on the compute nodes to use the one from the IQ HPC Platform rather than the one
-from MP2. :doc:`Contact us <support>` to make that change.
-
 “Illegal instruction” (``SIGILL``)
 ''''''''''''''''''''''''''''''''''''
 
@@ -37,16 +19,11 @@ Your job causes an “illegal instruction” or ``SIGILL`` error, for instance:
 Such errors happen when a program was optimised for a specific class of
 processors but is being run on an incompatible processor.
 
-First, check if you really submitted your job to the IQ HPC Platform compute
-nodes using the ``--partition=c-iq`` option. Otherwise, your job will run on the
-regular MP2 nodes, which have older processors that can be incompatible with
-code compiled on ``ip09``.
-
 If you compile your code on ``ip09`` with GCC, use the ``-march=core-avx2``
 optimisation option. If you use the Intel compilers, the corresponding option is
 ``-xCORE-AVX2``. Do not use ``-march=native`` or ``-xHost``. The latter attempt
 to optimise for the Intel processors on ``ip09``. The resulting program can be
-incompatible with the compute nodes’ AMD processors.
+incompatible with some compute nodes’ AMD processors.
 
 My interactive task on ``c-blais`` crashes on startup
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -66,6 +43,20 @@ currently not working:
     salloc: Relinquishing job allocation 5810877
 
 Job scripts submitted with ``sbatch`` work normally.
+
+If you wish to run interactive jobs on ``c-blais``, use the ``--no-shell``
+option as follows, and cancel your job explicitely once you have finished:
+
+.. code-block:: console
+
+   [alice@ip09 ~]$ salloc -p c-blais --no-shell
+   salloc: Granted job allocation 5944655
+   salloc: Waiting for resource configuration
+   salloc: Nodes cp3707 are ready for job
+   [alice@ip09 ~]$ ssh cp3707
+   [alice@cp3707-mp2 ~]$ ...
+   [alice@cp3707-mp2 ~]$ exit
+   [alice@ip09 ~]$ scancel 5944655
 
 .. _calcul-lent-label:
 

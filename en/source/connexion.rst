@@ -74,11 +74,3 @@ Alliance technical documentation explains how to generate a key pair and install
 the public key on the server. To install the key, follow the instructions in the
 `Using the authorized_keys file` section rather than `Using CCDB` since the IQ
 HPC Platform does not use the SSH keys in your CCDB account.
-
-Access through MP2
-------------------
-
-While it is possible to use the IQ HPC Platform from a regular MP2 login node,
-we advise against it since the architecture of the two systems are very
-different. Using the IQ HPC Platform via MP2 leads to software compatibility
-problems.

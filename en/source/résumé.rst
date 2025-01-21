@@ -10,11 +10,11 @@ Summary
 
 **Home directory**
     - Location: ``/home/$USER``
-    - Do not use for jobs (bad input/output performance)
+    - Do not use for research data (bad input/output performance)
 
 **Research data**
     - Location: ``/net/nfs-iq/data``
-    - Toujours utiliser pour les tâches (bonne performance entrée-sortie)
+    - Use in jobs (good input/output performance)
     - Total capacity: 190T
     - Redundant storage
     - Individual data: ``/net/nfs-iq/data/$USER``
@@ -33,9 +33,7 @@ Summary
           use.
 
 **MP2 access**
-    Most MP2 resources are accessible from the IQ HPC Platform. This includes
-    partitions such as ``c-apc``, ``c-aphex``, ``c-royer``, etc. MP2
-    ``/project`` and ``/scratch`` storage are not accessible.
+    MP2 ``/project`` and ``/scratch`` storage are not accessible.
 
 **Access from MP2**
     The IQ HPC Platform’s research data storage is accessible from MP2 at

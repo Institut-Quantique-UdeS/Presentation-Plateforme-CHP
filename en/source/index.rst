@@ -18,13 +18,13 @@ Institut Quantique High Performance Computing Platform
 
 The `Institut quantique (IQ) <https://www.usherbrooke.ca/iq/>`_ High Performance
 Computing Platform is a small-scale cluster for IQ researchers and their
-collaborators. Managed by the `Centre de calcul scientifique (CCS)
-<https://www.ccs.usherbrooke.ca/>`_, it is an extension of `Université de
-Sherbrooke <https://www.usherbrooke.ca/>`_’s MP2 cluster (Mammouth parallèle).
-In addition to compute nodes and storage space available to all IQ researchers,
-the platform hosts contributed hardware from a number of research groups, access
-to which is restricted. There are no usage limitations or fees. Costs are
-assumed through a Canada Foundation for Innovation (CFI) grant.
+collaborators, managed by the `Centre de calcul scientifique (CCS)
+<https://www.ccs.usherbrooke.ca/>`_ at the `Université de Sherbrooke
+<https://www.usherbrooke.ca/>`_. In addition to compute nodes and storage space
+available to all IQ researchers, the platform hosts contributed hardware from a
+number of research groups, access to which is restricted. There are no usage
+limitations or fees. Costs are assumed through a Canada Foundation for
+Innovation (CFI) grant.
 
 The IQ HPC Platform is configured similarly to the national clusters managed by
 the Digital Research Alliance of Canada (formerly Compute Canada): Linux

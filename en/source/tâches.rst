@@ -14,26 +14,24 @@ Login nodes
 -----------
 
 Use the login node (``ip09``) to prepare your jobs. It is however forbidden to
-run jobs directly on this node or on other MP2 login nodes! Login nodes do not
-have the necessary computing power to run jobs. In addition, running a job on a
-login node can slow it down considerably, which negatively impacts all connected
-researchers. All jobs must be submitted to the scheduler using the appropriate
-commands: ``sbatch``, ``salloc``, ``srun``.
+run jobs directly on this node! Cluster login nodes do not have the necessary
+computing power to run jobs. In addition, running a job on a login node can slow
+it down considerably, which negatively impacts all connected researchers. All
+jobs must be submitted to the scheduler using the appropriate commands:
+``sbatch``, ``salloc``, ``srun``.
 
 Input/output
 ------------
 
-Always use the research data storage at ``/net/nfs-iq/data`` to read and write
-files in your jobs. This location offers much better performance than your home
-directory.
+Use the storage at ``/net/nfs-iq/data`` to read and write research data in your
+jobs. This location offers better performance than your home directory.
 
 Public nodes
 ------------
 
-Jobs must be submitted to the ``c-iq`` partition. Otherwise, they will run on
-regular MP2 nodes. Job submission commands, de tâches, ``sbatch``, ``salloc``,
-``srun``, accept the ``--partition`` option and its short form ``-p``. For an
-interactive job, use for instance:
+Jobs must be submitted to the ``c-iq`` partition. The job submission commands,
+``sbatch``, ``salloc``, ``srun``, accept the ``--partition`` option and its
+short form ``-p``. For an interactive job, use for instance:
 
 .. code-block:: console
 
@@ -100,9 +98,9 @@ duration varies depending on the partition and is noted in the node table.
 Job management
 --------------
 
-The ``squeue`` command lists all jobs in the scheduler, including all users’ and
-those submitted to the MP2 cluster. Use ``sq`` to list only your own jobs. (This
-last command is also available on Alliance clusters.)
+The ``squeue`` command lists all jobs in the scheduler, including all users’.
+Use ``sq`` to list only your own jobs. (This last command is also available on
+Alliance clusters.)
 
 .. _tâches-actives-label:
 
@@ -199,9 +197,13 @@ We notice that process ``gmx_mpi`` (id 14734) is using both GPUs.
 Statistics for finished jobs
 ''''''''''''''''''''''''''''
 
+.. important::
+
+   Due to a software compatibility problem, ``seff`` is temporarily
+   unavailable on ``ip09``.
+
 The ``seff`` command shows statistics about finished jobs, including their CPU
-and memory efficiency. Due to a software compatibility problem, ``seff`` is not
-available on ``ip09``, only on MP2. For example:
+and memory efficiency. For example:
 
 .. code-block:: console
 

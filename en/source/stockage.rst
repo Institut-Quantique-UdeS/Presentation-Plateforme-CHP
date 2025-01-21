@@ -13,16 +13,15 @@ Your home directory is accessible et ``$HOME``. For instance:
 
 This is the right location for configuration files, your code, and software that
 you install. Due to limited capacity and performance, it is not the right
-location for research data and you should not use it to read and write files
+location for research data and you should not use it to read and write such data
 when :doc:`running jobs <tâches>`.
 
 Research data
 -------------
 
-Research data is stored on a 190T server accessible at ``/net/nfs-iq/data``.
-Make sure to always use this locaton to read and write files when :doc:`running
-jobs <tâches>`; it offers much better IO (input/output) performance than your
-home directory.
+Research data is stored on a 190T server accessible at ``/net/nfs-iq/data``. Use
+this locaton to read and write data when :doc:`running jobs <tâches>`; it offers
+better IO (input/output) performance than your home directory.
 
 To ensure safety in case of a drive failure, research data is redundant,
 that is to say that two copies are stored. (The total physical capacity of the
@@ -73,8 +72,8 @@ network storage before your job ends.
    - `Using node-local storage <https://docs.alliancecan.ca/wiki/Using_node-local_storage/en>`_
      (Alliance technical documentation)
 
-MP2 interconnection
--------------------
+MP2 cluster interconnection
+---------------------------
 
 Research data storage in ``/net/nfs-iq/data`` is accessible from the MP2 login
 and compute nodes. MP2’s ``/project`` and ``/scratch`` storage are not
