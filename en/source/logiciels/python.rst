@@ -8,53 +8,24 @@ documentation.
 Modules
 -------
 
-To search for Python modules and load one:
+To load a Python version compatible with the default software environment:
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ module spider python
+    [alice@ip09 ~]$ module avail python
+    ------------------------------------- Core Modules --------------------------------------
+       ipython-kernel/3.10              python-build-bundle/2024a (D)
+       ipython-kernel/3.11       (D)    python/3.10.13            (t,3.10)
+       ipython-kernel/3.12              python/3.11.5             (t,D:3.11)
+       python-build-bundle/2023b        python/3.12.4             (t)
 
-    --------------------------------------------------------------------------------------
-      python:
-    --------------------------------------------------------------------------------------
-        Description:
-          Python is a programming language that lets you work more quickly and integrate
-          your systems more effectively.
-
-         Versions:
-            python/2.7.18
-            python/3.6.10
-            python/3.7.7
-            python/3.7.9
-            python/3.8.2
-            python/3.8.10
-            python/3.9.6
-            python/3.10.2
-            python/3.10.13
-            python/3.11.2
-            python/3.11.5
-            python/3.12.4
     ...
 
-    [alice@ip09 ~]$ module spider python/3.10.2
+    [alice@ip09 ~]$ module load python/3.11.5
 
-    --------------------------------------------------------------------------------------
-      python: python/3.10.2
-    --------------------------------------------------------------------------------------
-        Description:
-          Python is a programming language that lets you work more quickly and integrate
-          your systems more effectively.
-
-        Properties:
-          Tools for development / Outils de développement
-
-        You will need to load all module(s) on any one of the lines below before
-        the "python/3.10.2" module is available to load.
-
-          StdEnv/2020
-    ...
-
-    [alice@ip09 ~]$ module load python/3.10.2
+The recommended version (default module) is indicated by ``(D)``. If you need a
+version which is not available in the default software environment, use `module
+spider python` to list all available versions.
 
 In addition to modules for Python itself, the Alliance software contains modules
 for `Scientific Python`. Named ``scipy-stack``, they provide ``scipy`` but also
@@ -66,11 +37,11 @@ is loaded:
     [alice@ip09 ~]$ module avail scipy-stack
 
     ------------------------------------- Core Modules --------------------------------------
-       scipy-stack/2020a (math)    scipy-stack/2021a (math)    scipy-stack/2023a (math)
-       scipy-stack/2020b (math)    scipy-stack/2022a (math)    scipy-stack/2023b (L,math,D)
+       scipy-stack/2023b (math)    scipy-stack/2024a (math)    scipy-stack/2024b (math,D)
+
     ...
 
-    [alice@ip09 ~]$ module load scipy-stack/2023b
+    [alice@ip09 ~]$ module load scipy-stack/2024b
 
 Virtual environments
 --------------------
@@ -102,14 +73,14 @@ the modules for Python and `Scientific Python`:
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ module load python/3.10.2
-    [alice@ip09 ~]$ module load scipy-stack/2023b
+    [alice@ip09 ~]$ module load python/3.11.5
+    [alice@ip09 ~]$ module load scipy-stack/2024b
 
 Then, create a virtual environment:
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ virtualenv $HOME/venv/qutip
+    [alice@ip09 ~]$ virtualenv $HOME/venv/qutip --no-download
 
 Activate the environment:
 
@@ -131,7 +102,7 @@ Then, install packages, such as QuTiP :
 
 .. code-block:: console
 
-    (qutip) [alice@ip09 ~]$ pip install --no-index qutip==4.7.2
+    (qutip) [alice@ip09 ~]$ pip install --no-index qutip==5.0.1
 
 Finally, deactivate the environment.
 
@@ -146,8 +117,8 @@ environment can be used in a job script with:
 .. code-block:: bash
 
    module purge
-   module load python/3.10.2
-   module load scipy-stack/2023b
+   module load python/3.11.5
+   module load scipy-stack/2024b
    source $HOME/venv/qutip/bin/activate
 
 Precompiled Python packages
@@ -162,38 +133,13 @@ search for Qiskit:
     [alice@ip09 ~]$ avai l_wheels qiskit
     name    version    python    arch
     ------  ---------  --------  -------
-    qiskit  0.39.3     py3       generic
+    qiskit  1.2.4      cp38      generic
 
 To install this precompiled version in an active virtual environment:
 
 .. code-block:: console
 
-    (qiskit) [alice@ip09 ~]$ pip install --no-index qiskit==0.39.3
-
-The above command will only search the loaded software environment (by default
-``StdEnv/2020``). More recent versions of some packages are available in more
-recent environments:
-
-.. code-block:: console
-
-    [alice@ip09 ~]$ module load StdEnv/2020 && avail_wheels pyqcm --all
-    name    version    python    arch
-    ------  ---------  --------  ------
-    pyqcm   2.3.1      cp39      avx2
-    pyqcm   2.3.1      cp311     avx2
-    pyqcm   2.3.1      cp310     avx2
-    
-    [alice@ip09 ~]$ module load StdEnv/2023 && avail_wheels pyqcm --all
-    
-    The following have been reloaded with a version change:
-      1) StdEnv/2020 => StdEnv/2023          3) gentoo/2020 => gentoo/2023           5) libfabric/1.10.1 => libfabric/1.18.0     7) ucx/1.8.0 => ucx/1.14.1
-      2) gcccore/.9.3.0 => gcccore/.12.3     4) imkl/2020.1.217 => imkl/2023.2.0     6) openmpi/4.0.3 => openmpi/4.1.5
-
-    name    version    python    arch
-    ------  ---------  --------  ---------
-    pyqcm   2.4.3      cp311     x86-64-v3
-    pyqcm   2.4.3      cp310     x86-64-v3
-
+    (qiskit) [alice@ip09 ~]$ pip install --no-index qiskit==1.2.4
 
 Parallel computing with Python
 ------------------------------
