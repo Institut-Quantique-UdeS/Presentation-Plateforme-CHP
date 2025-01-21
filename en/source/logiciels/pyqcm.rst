@@ -12,6 +12,7 @@ Pyqcm is available as a precompiled Python package:
     module load python/3.11.5 scipy-stack/2024b
     virtualenv $HOME/venv/qcm --no-download
     source $HOME/venv/qcm/bin/activate
+    pip install --no-index --upgrade pip
     pip install --no-index pyqcm==2.4.3
 
 For a custom installation, for instance a development version or to experiment
@@ -26,6 +27,7 @@ with options:
     module load flexiblas/3.3.1 eigen/3.4.0 cuba/4.2.2 primme/3.2
     virtualenv $HOME/venv/qcm --no-download
     source $HOME/venv/qcm/bin/activate
+    pip install --no-index --upgrade pip
     export CMAKE_ARGS="-DEIGEN_HAMILTONIAN=1 -DWITH_PRIMME=1 -DBLA_VENDOR=FlexiBLAS -DPRIMME_DIR=$EBROOTPRIMME -DCUBA_DIR=$EBROOTCUBA -DWITH_GF_OPT_KERNEL=1"
     pip install . --no-index
 
