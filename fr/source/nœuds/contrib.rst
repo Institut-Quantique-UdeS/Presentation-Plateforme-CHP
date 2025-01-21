@@ -16,7 +16,7 @@
      - CPU
      - 2 x AMD EPYC 9554
      - 128
-     - 1,5T (DDR5)
+     - 1508G (1,47T)
      - 1T (NVMe)
      - 
      - Alexandre Blais
@@ -27,7 +27,7 @@
      - CPU
      - 2 x AMD EPYC 7F72
      - 48
-     - 1T
+     - 1004G (0,98T)
      - 3,4T
      - 
      - Stefanos Kourtis
@@ -38,7 +38,7 @@
      - CPU
      - 2 x AMD EPYC 7742
      - 128
-     - 2T (DDR4)
+     - 2000G (1,95T)
      - 6T (NVMe)
      - 
      - Batiste Royer
@@ -49,7 +49,7 @@
      - CPU
      - 4 x Xeon E7-8870 v3
      - 72
-     - 3T
+     - 3020G (2,94T)
      - 3,5T
      - 
      - David Sénéchal
@@ -60,7 +60,7 @@
      - CPU
      - 2 x AMD EPYC 7301
      - 32
-     - 256G (DDR4)
+     - 248G (0,24T)
      - 800G
      - 
      - David Sénéchal
@@ -71,7 +71,7 @@
      - CPU
      - 2 x AMD EPYC 9654
      - 192
-     - 2T
+     - 2264G (2,21T)
      - 3,4T
      -
      - Maia Vergniory
