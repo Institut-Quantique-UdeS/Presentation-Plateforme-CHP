@@ -84,7 +84,7 @@ Ensuite, créons un environnement virtuel :
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ virtualenv $HOME/venv/qutip --no-download
+    [alice@ip09 ~]$ virtualenv --no-download $HOME/venv/qutip
 
 Activons l’environnement :
 
