@@ -15,7 +15,7 @@ Installation
     module load python/3.9 scipy-stack/2023a
     virtualenv --no-download $HOME/venv/quspin
     source $HOME/venv/quspin/bin/activate
-    # Installation des dépendances :
+    # Install dependencies:
     pip install --no-index dill==0.3.7 numba==0.57.0 numexpr==2.8.4 joblib==1.3.2 gmpy2==2.1.5
-    # Installation à partir d’un paquet local :
+    # Install from a local package:
     pip install --no-index /net/nfs-iq/data/software/QuSpin/quspin-0.3.7-cp39-cp39-linux_x86_64.whl
