@@ -62,7 +62,7 @@ La durée maximale des tâches est de sept jours.
 Tâches GPU
 ''''''''''
 
-Pour le moment, les GPU ne sont pas gérés par l’ordonnanceur de tâche. Vous ne
+Pour le moment, les GPU ne sont pas gérés par l’ordonnanceur de tâches. Vous ne
 pouvez donc pas demander de GPU avec les options habituelles telles que
 ``--gpus-per-node``, ``--gpus-per-task``, ``--gres``. À la place, vous devez
 d’abord demander explicitement le nœud GPU avec ``--nodelist`` ou sa forme
