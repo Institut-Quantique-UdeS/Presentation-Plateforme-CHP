@@ -17,7 +17,7 @@ Summary
     - Total capacity: 190T
     - Redundant storage
     - Individual data: ``/net/nfs-iq/data/$USER``
-    - Group data: ``/net/nfs-iq/data/def-$PARRAIN``
+    - Group data: ``/net/nfs-iq/data/def-$SPONSOR``
 
 **Public compute nodes**
     .. include:: nœuds/public.rst
