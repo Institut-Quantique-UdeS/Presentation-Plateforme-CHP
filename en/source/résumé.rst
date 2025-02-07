@@ -41,6 +41,6 @@ Summary
 **Alliance software**
     - Use the ``module`` command for software packages
     - Use the ``avail_wheels`` command for Python packages
-    - Default environment: ``StdEnv/2020``
+    - Default environment: ``StdEnv/2023``
     - Default optimisation target: AVX2
     - Default BLAS/LAPACK libraries: Intel MKL

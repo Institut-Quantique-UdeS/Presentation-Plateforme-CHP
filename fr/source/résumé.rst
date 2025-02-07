@@ -44,6 +44,6 @@ Résumé
 **Logiciels de l’Alliance**
     - Commande ``module`` pour les paquets logiciels
     - Commande ``avail_wheels`` pour les paquets Python
-    - Environnement par défaut : ``StdEnv/2020``
+    - Environnement par défaut : ``StdEnv/2023``
     - Cible d’optimisation par défaut : AVX2
     - Bibliothèques BLAS/LAPACK par défaut : Intel MKL
