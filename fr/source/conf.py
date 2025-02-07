@@ -59,9 +59,13 @@ html_title = project
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_css_files = [
+    'https://fonts.googleapis.com/css?family=Lato'
+]
+
 html_theme_options = {
-    "light_css_variables": {
-        "font-stack": "Lato, serif",
-        "font-stack--headings": "Lato, serif",
+    'light_css_variables': {
+        'font-stack': 'Lato, sans-serif',
+        'font-stack--headings': 'Lato, sans-serif',
     }
 }
