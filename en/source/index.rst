@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Institut Quantique High Performance Computing Platform
+Institut Quantique High-Performance Computing Platform
 ======================================================
 
 .. important::
@@ -16,7 +16,7 @@ Institut Quantique High Performance Computing Platform
    - Cette documentation est également disponible en `français
      <https://institut-quantique-udes.github.io/Presentation-Plateforme-CHP/fr/>`_.
 
-The `Institut quantique (IQ) <https://www.usherbrooke.ca/iq/>`_ High Performance
+The `Institut quantique (IQ) <https://www.usherbrooke.ca/iq/>`_ High-Performance
 Computing Platform is a small-scale cluster for IQ researchers and their
 collaborators, managed by the `Centre de calcul scientifique (CCS)
 <https://www.ccs.usherbrooke.ca/>`_ at the `Université de Sherbrooke
