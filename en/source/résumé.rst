@@ -2,8 +2,7 @@ Summary
 =======
 
 **Account**
-    Use your Utilisez `CCDB <https://ccdb.alliancecan.ca/>`_ username and
-    password.
+    Use your `CCDB <https://ccdb.alliancecan.ca/>`_ username and password.
 
 **Login node**
     SSH: ``ip09.ccs.usherbrooke.ca``
