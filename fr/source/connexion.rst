@@ -49,9 +49,9 @@ votre mot de passe.
 Clients SSH alternatifs
 -----------------------
 
-Bien qu’un client SSH soit maintenant inclus avec Windows (depuis la version
-10 1803), certains chercheurs préfèrent utiliser un client tierce partie
-pour bénéficier de fonctions supplémentaires ou simplement par habitude. Des
+Bien qu’un client SSH soit maintenant inclus avec Windows (depuis la version 10
+1803), certains chercheurs préfèrent utiliser un client tierce partie pour
+bénéficier de fonctionnalités supplémentaires ou simplement par habitude. Des
 choix populaires sont :
 
 * `MobaXterm <https://mobaxterm.mobatek.net/>`_
