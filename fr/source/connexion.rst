@@ -49,8 +49,8 @@ votre mot de passe.
 Clients SSH alternatifs
 -----------------------
 
-Bien qu’un client SSH soit maintenant inclut avec Windows (depuis la version
-10 1803), certains chercheurs préfèrent utiliser un client tierce partie,
+Bien qu’un client SSH soit maintenant inclus avec Windows (depuis la version
+10 1803), certains chercheurs préfèrent utiliser un client tierce partie
 pour bénéficier de fonctions supplémentaires ou simplement par habitude. Des
 choix populaires sont :
 
@@ -60,7 +60,7 @@ choix populaires sont :
 
 Nous recommandons MobaXterm aux nouveaux utilisateurs plutôt que PuTTY puisque
 le premier offre davantage de fonctionnalités. Pour sa part, WSL n’est pas un
-client SSH proprement dit, mais plutôt un système Linux virtuel installé à
+client SSH proprement dit mais plutôt un système Linux virtuel installé à
 l’intérieur de Windows. WSL donne accès aux commandes Linux de base, incluant
 les commandes pour SSH.
 
