@@ -31,8 +31,8 @@ faites confiance. Ce dialogue prendra la forme suivante :
     Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
     Warning: Permanently added 'ip09.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
 
-L’empreinte de la clé serveur devrait correspondre à celle donnée dans l’exemple
-ci-haut.
+L’empreinte de la clé du serveur devrait correspondre à celle donnée dans
+l’exemple ci-haut.
 
 Entrez ensuite votre mot de passe CCDB (ou le mot de passe de votre compte
 restreint). Notez qu’aucun caractère ne s’affiche à l’écran pendant la saisie de
