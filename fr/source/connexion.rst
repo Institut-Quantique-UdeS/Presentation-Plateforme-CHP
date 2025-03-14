@@ -20,7 +20,7 @@ restreint à la plateforme CHP-IQ, il débutera par ``iq-``, par exemple
 
 Lorsque vous vous connectez pour la première fois, votre programme affichera
 l’empreinte de la clé de chiffrement du serveur et vous demandera de confirmer
-que vous souhaiter vous connecter. Une fois cette confirmation donnée, votre
+que vous souhaitez vous connecter. Une fois cette confirmation donnée, votre
 programme enregistrera la clé d’``ip09`` dans la liste des hôtes auxquels vous
 faites confiance. Ce dialogue prendra la forme suivante :
 
