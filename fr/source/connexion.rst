@@ -35,8 +35,8 @@ L’empreinte de la clé du serveur devrait correspondre à celle donnée dans
 l’exemple ci-haut.
 
 Entrez ensuite votre mot de passe CCDB (ou le mot de passe de votre compte
-restreint). Notez qu’aucun caractère ne s’affiche à l’écran pendant la saisie de
-votre mot de passe.
+restreint). Notez qu’aucun caractère ne s’affichera à l’écran pendant la saisie
+de votre mot de passe.
 
 .. code-block:: console
 
