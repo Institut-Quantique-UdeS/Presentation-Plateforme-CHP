@@ -69,6 +69,17 @@
      - ``c-apc``
    * - 1
      - CPU
+     - 2 x AMD EPYC 9754
+     - 256
+     - 752G (0.73T)
+     - 1.7T
+     -
+     - André-Marie Tremblay
+     - No
+     - 7 days
+     - ``c-tremblay``
+   * - 1
+     - CPU
      - 2 x AMD EPYC 9654
      - 192
      - 2264G (2.21T)
