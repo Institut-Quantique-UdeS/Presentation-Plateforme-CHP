@@ -33,4 +33,4 @@
      - IQ
      - Oui
      - 7 jours
-     - ``c-iq`` (nœud ``cp3705``)
+     - ``c-iq``

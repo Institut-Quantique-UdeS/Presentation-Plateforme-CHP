@@ -13,50 +13,51 @@ Your job causes an “illegal instruction” or ``SIGILL`` error, for instance:
 
 .. code-block:: console
 
-   [alice@ip09 ~]$ cat slurm-3304643.out 
+   [alice@ip10 ~]$ cat slurm-3304643.out 
    /var/spool/slurmd/job3304643/slurm_script: line 11: 25047 Illegal instruction   (core dumped) python my_script.py
 
 Such errors happen when a program was optimised for a specific class of
 processors but is being run on an incompatible processor.
 
-If you compile your code on ``ip09`` with GCC, use the ``-march=core-avx2``
+If you compile your code on ``ip10`` with GCC, use the ``-march=core-avx2``
 optimisation option. If you use the Intel compilers, the corresponding option is
 ``-xCORE-AVX2``. Do not use ``-march=native`` or ``-xHost``. The latter attempt
-to optimise for the Intel processors on ``ip09``. The resulting program can be
+to optimise for the Intel processors on ``ip10``. The resulting program can be
 incompatible with some compute nodes’ AMD processors.
 
-My interactive task on ``c-blais`` crashes on startup
-'''''''''''''''''''''''''''''''''''''''''''''''''''''
+..
+    My interactive task on ``c-blais`` crashes on startup
+    '''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Interactive tasks started on the ``c-blais`` partition (Kerrcat workstation) are
-currently not working:
+    Interactive tasks started on the ``c-blais`` partition (Kerrcat workstation) are
+    currently not working:
 
-.. code-block:: console
+    .. code-block:: console
 
-    [alice@ip09 ~]$ salloc -p c-blais
-    salloc: Granted job allocation 5810877
-    salloc: Waiting for resource configuration
-    salloc: Nodes cp3707 are ready for job
-    srun: error: _find_node_record(751): lookup failure for cp3707
-    srun: error: hostlist2bitmap: invalid node specified cp3707
-    srun: fatal: ROUTE: Failed to make bitmap from hostlist=cp3707.
-    salloc: Relinquishing job allocation 5810877
+        [alice@ip10 ~]$ salloc -p c-blais
+        salloc: Granted job allocation 5810877
+        salloc: Waiting for resource configuration
+        salloc: Nodes cp3707 are ready for job
+        srun: error: _find_node_record(751): lookup failure for cp3707
+        srun: error: hostlist2bitmap: invalid node specified cp3707
+        srun: fatal: ROUTE: Failed to make bitmap from hostlist=cp3707.
+        salloc: Relinquishing job allocation 5810877
 
-Job scripts submitted with ``sbatch`` work normally.
+    Job scripts submitted with ``sbatch`` work normally.
 
-If you wish to run interactive jobs on ``c-blais``, use the ``--no-shell``
-option as follows, and cancel your job explicitely once you have finished:
+    If you wish to run interactive jobs on ``c-blais``, use the ``--no-shell``
+    option as follows, and cancel your job explicitely once you have finished:
 
-.. code-block:: console
+    .. code-block:: console
 
-   [alice@ip09 ~]$ salloc -p c-blais --no-shell
-   salloc: Granted job allocation 5944655
-   salloc: Waiting for resource configuration
-   salloc: Nodes cp3707 are ready for job
-   [alice@ip09 ~]$ ssh cp3707
-   [alice@cp3707-mp2 ~]$ ...
-   [alice@cp3707-mp2 ~]$ exit
-   [alice@ip09 ~]$ scancel 5944655
+       [alice@ip10 ~]$ salloc -p c-blais --no-shell
+       salloc: Granted job allocation 5944655
+       salloc: Waiting for resource configuration
+       salloc: Nodes cp3707 are ready for job
+       [alice@ip10 ~]$ ssh cp3707
+       [alice@cp3707-mp2 ~]$ ...
+       [alice@cp3707-mp2 ~]$ exit
+       [alice@ip10 ~]$ scancel 5944655
 
 .. _calcul-lent-label:
 

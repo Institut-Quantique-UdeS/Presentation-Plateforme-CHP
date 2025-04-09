@@ -33,4 +33,4 @@
      - IQ
      - Yes
      - 7 days
-     - ``c-iq`` (node ``cp3705``)
+     - ``c-iq``

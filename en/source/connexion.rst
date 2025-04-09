@@ -1,8 +1,8 @@
 Connecting
 ==========
 
-Access the IQ HPC Platform through SSH (Secure Shell). The login node address is
-``ip09.ccs.usherbrooke.ca``.
+Access the IQ HPC Platform is through SSH (Secure Shell). The login node address
+is ``ip10.ccs.usherbrooke.ca``.
 
 Récent operating systems (Linux, MacOS, Windows 11) typically include an SSH
 client. To connect to the platform in command line mode, first open a terminal
@@ -11,32 +11,63 @@ to connect:
 
 .. code-block:: console
 
-   $ ssh alice@ip09.ccs.usherbrooke.ca
+   $ ssh alice@ip10.ccs.usherbrooke.ca
 
-Replace ``alice`` by your username. (If you have a restricted IQ HPC account, it
-starts with ``iq-``, for instance ``iq-alice``.)
+Replace ``alice`` by your username.
 
 When you connect for the first time, your program will show the server’s
 encryption key’s fingerprint and ask to confirm that you wish to connect. Once
-this confirmation is given, your program will store ``ip09``’s key in your
-trusted host list. This dialogue will look like:
+this confirmation is given, your program will store ``ip10``’s key in your
+known host list. This dialogue will look like:
 
 .. code-block:: console
 
-    The authenticity of host 'ip09.ccs.usherbrooke.ca (204.19.23.209)' can't be established.
+    The authenticity of host 'ip10.ccs.usherbrooke.ca (204.19.23.210)' can't be established.
     ED25519 key fingerprint is SHA256:hVAo6KoqKOEbtOaBh6H6GYHAvsStPsDEcg4LXBQUP50.
     Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-    Warning: Permanently added 'ip09.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
+    Warning: Permanently added 'ip10.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
 
 The server’s encryption key’s fingerprint should match the one in the above
 example.
 
-Next, type in your CCDB password (or the password for your restricted account).
-Note that no characters are shown on the screen as you type.
+Next, type in your CCDB password. Note that no characters are shown on the
+screen as you type.
 
 .. code-block:: console
 
-   alice@ip09.ccs.usherbrooke.ca's password:
+   alice@ip10.ccs.usherbrooke.ca's password:
+
+Use a second authentication factor to complete the login process. This prompt
+will change according to the device(s) you registered in CCDB. In the following
+example, Alice registered an Android phone:
+
+.. code-block:: console
+
+    (alice@ip10.ccs.usherbrooke.ca) Duo two-factor login for alice
+
+    Enter a passcode or select one of the following options:
+
+     1. Duo Push to Samsung S23 Alice (Android)
+
+    Passcode or option (1-1):
+
+By pressing ``1``, Alice would get a notification on her phone.
+
+Finally, you will get a message indicating that the connection was successful:
+
+.. code-block:: console
+
+    Success. Logging you in...
+    Last login: Wed Apr  9 10:45:16 2025 from 24.203.57.88
+    ################################################################################
+      _____ ____
+     |_   _/ __ \   Plateforme CHP-IQ / IQ HPC Platform
+       | || |  | |
+       | || |  | |  Documentation fr: https://institut-quantique-udes.github.io/fr
+      _| || |__| |                en: https://institut-quantique-udes.github.io/en
+     |_____\___\_\     Support fr/en: olivier.fisette@usherbrooke.ca
+
+    [...]
 
 .. seealso::
    - `SSH <https://docs.alliancecan.ca/wiki/SSH/en>`_ (Alliance technical
