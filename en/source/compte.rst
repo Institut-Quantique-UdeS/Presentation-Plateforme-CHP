@@ -30,16 +30,17 @@ You need this information to identify your sponsor when you register.
      <https://docs.alliancecan.ca/wiki/Frequently_Asked_Questions_about_the_CCDB/en>`_
      (Alliance technical documentation)
 
-Alternative: restricted account
--------------------------------
+..
+    Alternative: restricted account
+    -------------------------------
 
-If you cannot create a CCDB account (no sponsor can give you access), you can
-get a restricted IQ HPC account instead. To do so, write to our :doc:`technical
-support <aide/support>`, including the following information:
+    If you cannot create a CCDB account (no sponsor can give you access), you can
+    get a restricted IQ HPC account instead. To do so, write to our :doc:`technical
+    support <aide/support>`, including the following information:
 
-- Full name
-- Desired username
-- Public SSH key (optional)
+    - Full name
+    - Desired username
+    - Public SSH key (optional)
 
-We will create your account with a temporary password that you must change when
-you connect to the platform for the first time.
+    We will create your account with a temporary password that you must change when
+    you connect to the platform for the first time.

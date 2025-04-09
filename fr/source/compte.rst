@@ -32,17 +32,18 @@ cette information pour identifier votre parrain lors de votre inscription.
      <https://docs.alliancecan.ca/wiki/Frequently_Asked_Questions_about_the_CCDB/fr>`_
      (documentation technique de l’Alliance)
 
-Alternative : compte restreint
-------------------------------
+..
+    Alternative : compte restreint
+    ------------------------------
 
-S’il vous est impossible d’obtenir un compte CCDB (aucun parrain ne peut vous
-donner accès), vous pouvez obtenir un compte restreint à la plateforme CHP-IQ.
-Pour ce faire, écrivez à notre :doc:`support technique <aide/support>` en
-incluant les informations suivantes :
+    S’il vous est impossible d’obtenir un compte CCDB (aucun parrain ne peut vous
+    donner accès), vous pouvez obtenir un compte restreint à la plateforme CHP-IQ.
+    Pour ce faire, écrivez à notre :doc:`support technique <aide/support>` en
+    incluant les informations suivantes :
 
-- Nom complet
-- Nom d’utilisateur désiré
-- Clé SSH publique (optionnel)
+    - Nom complet
+    - Nom d’utilisateur désiré
+    - Clé SSH publique (optionnel)
 
-Nous créerons un compte pour vous avec un mot de passe temporaire que vous
-devrez changer lors de votre première connexion.
+    Nous créerons un compte pour vous avec un mot de passe temporaire que vous
+    devrez changer lors de votre première connexion.
