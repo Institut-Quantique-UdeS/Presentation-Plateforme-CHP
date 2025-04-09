@@ -27,39 +27,40 @@ l’option correspondante est ``-xCORE-AVX2``. N’utilisez pas ``-march=native`
 d’``ip10``. Le programme résultant peut être incompatible avec les processeurs
 AMD de certains nœuds de calcul.
 
-Ma tâche interactive sur ``c-blais`` plante au démarrage
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+..
+    Ma tâche interactive sur ``c-blais`` plante au démarrage
+    ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Les tâches interactives lancées sur la partition ``c-blais`` (station de travail
-Kerrcat) ne fonctionnent pas pour le moment :
+    Les tâches interactives lancées sur la partition ``c-blais`` (station de travail
+    Kerrcat) ne fonctionnent pas pour le moment :
 
-.. code-block:: console
+    .. code-block:: console
 
-    [alice@ip10 ~]$ salloc -p c-blais
-    salloc: Granted job allocation 5810877
-    salloc: Waiting for resource configuration
-    salloc: Nodes cp3707 are ready for job
-    srun: error: _find_node_record(751): lookup failure for cp3707
-    srun: error: hostlist2bitmap: invalid node specified cp3707
-    srun: fatal: ROUTE: Failed to make bitmap from hostlist=cp3707.
-    salloc: Relinquishing job allocation 5810877
+        [alice@ip10 ~]$ salloc -p c-blais
+        salloc: Granted job allocation 5810877
+        salloc: Waiting for resource configuration
+        salloc: Nodes cp3707 are ready for job
+        srun: error: _find_node_record(751): lookup failure for cp3707
+        srun: error: hostlist2bitmap: invalid node specified cp3707
+        srun: fatal: ROUTE: Failed to make bitmap from hostlist=cp3707.
+        salloc: Relinquishing job allocation 5810877
 
-Les scripts de tâches lancés avec ``sbatch`` fonctionnent normalement.
+    Les scripts de tâches lancés avec ``sbatch`` fonctionnent normalement.
 
-Si vous souhaitez lancer des tâches interactives sur ``c-blais``, utilisez
-l’option ``--no-shell`` comme suit, et annulez explicitement la tâche lorsque
-vous avez terminé :
+    Si vous souhaitez lancer des tâches interactives sur ``c-blais``, utilisez
+    l’option ``--no-shell`` comme suit, et annulez explicitement la tâche lorsque
+    vous avez terminé :
 
-.. code-block:: console
+    .. code-block:: console
 
-   [alice@ip10 ~]$ salloc -p c-blais --no-shell
-   salloc: Granted job allocation 5944655
-   salloc: Waiting for resource configuration
-   salloc: Nodes cp3707 are ready for job
-   [alice@ip10 ~]$ ssh cp3707
-   [alice@cp3707-mp2 ~]$ ...
-   [alice@cp3707-mp2 ~]$ exit
-   [alice@ip10 ~]$ scancel 5944655
+       [alice@ip10 ~]$ salloc -p c-blais --no-shell
+       salloc: Granted job allocation 5944655
+       salloc: Waiting for resource configuration
+       salloc: Nodes cp3707 are ready for job
+       [alice@ip10 ~]$ ssh cp3707
+       [alice@cp3707-mp2 ~]$ ...
+       [alice@cp3707-mp2 ~]$ exit
+       [alice@ip10 ~]$ scancel 5944655
 
 .. _calcul-lent-label:
 

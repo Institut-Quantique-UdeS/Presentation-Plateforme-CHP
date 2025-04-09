@@ -22,15 +22,6 @@ Summary
 **Public compute nodes**
     .. include:: nœuds/public.rst
 
-    - Jobs must be submitted to the ``c-iq`` partition.
-        - Interactive job: ``salloc -p c-iq``
-        - In a job script: ``#SBATCH --partition=c-iq``
-    - GPUs are not managed by the job scheduler.
-        - Interactive job: ``-p c-iq -w cp3705``
-        - Job script: ``#SBATCH --partition=c-iq`` ``#SBATCH --nodelist=cp3705``
-        - Use ``export CUDA_VISIBLE_DEVICES=[...]`` to control which GPU(s) to
-          use.
-
 **MP2 access**
     MP2 ``/project`` and ``/scratch`` storage are not accessible.
 
