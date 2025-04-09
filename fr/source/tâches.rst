@@ -13,7 +13,7 @@ Lancer des tâches
 Nœuds de connexion
 ------------------
 
-Utilisez le nœud de connexion (``ip09``) pour préparer vos tâches. Il est
+Utilisez le nœud de connexion (``ip10``) pour préparer vos tâches. Il est
 toutefois interdit d’exécuter des tâches directement sur ce nœud ! Les nœuds de
 connexion des grappes ne disposent pas de la puissance de calcul nécessaire pour
 exécuter des tâches. De plus, exécuter une tâche sur un nœud de connexion peut
@@ -38,7 +38,7 @@ par exemple :
 
 .. code-block:: console
 
-    [jean@ip09 def-alice]$ salloc -p c-iq
+    [jean@ip10 def-alice]$ salloc -p c-iq
 
 .. tip::
 
@@ -74,7 +74,7 @@ Pour utiliser le premier GPU dans une tâche interactive, utilisez par exemple 
 
 .. code-block:: console
 
-    [jean@ip09 def-alice]$ salloc -p c-iq -w cp3705
+    [jean@ip10 def-alice]$ salloc -p c-iq -w cp3705
     [jean@cp3705 def-alice]$ export CUDA_VISIBLE_DEVICES=0
 
 Pour utiliser les deux GPU dans un script de tâche :
@@ -127,11 +127,11 @@ qui correspond aux 4 CPU assignés à sa tâche.
 
 .. code-block:: console
 
-   [alice@ip09 ~]$ sq
+   [alice@ip10 ~]$ sq
              JOBID     USER      ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS       GRES MIN_MEM NODELIST (REASON) 
            5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)    256M cp1433 (None) 
-   [alice@ip09 ~]$ ssh cp1433
-   Last login: Wed Aug 21 11:16:34 2024 from ip09.m
+   [alice@ip10 ~]$ ssh cp1433
+   Last login: Wed Aug 21 11:16:34 2024 from ip10.m
    [alice@cp1433-mp2 ~]$ htop
 
        0[||||||||100.0%]    8[          0.0%]    16[          0.0%]   24[          0.0%]
@@ -171,8 +171,8 @@ liste les GPU et les programmes qui les utilisent. Par exemple :
 
 .. code-block:: console
 
-   [alice@ip09 ~]$ ssh cp3705
-   Last login: Wed Aug 21 13:47:44 2024 from ip09.m
+   [alice@ip10 ~]$ ssh cp3705
+   Last login: Wed Aug 21 13:47:44 2024 from ip10.m
    [alice@cp3705-mp2 ~]$ nvidia-smi
    Wed Aug 21 13:52:41 2024       
    +-----------------------------------------------------------------------------------------+
@@ -208,7 +208,7 @@ Statistiques des tâches terminées
 .. important::
 
    Dû à un problème de compatibilité logicielle, ``seff`` n’est temporairement
-   pas disponible sur ``ip09``.
+   pas disponible sur ``ip10``.
 
 La commande ``seff`` affiche des statistiques pour les tâches terminées,
 incluant leur efficacité en CPU et en mémoire. Par exemple :

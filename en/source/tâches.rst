@@ -13,7 +13,7 @@ Running jobs
 Login nodes
 -----------
 
-Use the login node (``ip09``) to prepare your jobs. It is however forbidden to
+Use the login node (``ip10``) to prepare your jobs. It is however forbidden to
 run jobs directly on this node! Cluster login nodes do not have the necessary
 computing power to run jobs. In addition, running a job on a login node can slow
 it down considerably, which negatively impacts all connected researchers. All
@@ -35,7 +35,7 @@ short form ``-p``. For an interactive job, use for instance:
 
 .. code-block:: console
 
-    [jean@ip09 def-alice]$ salloc -p c-iq
+    [jean@ip10 def-alice]$ salloc -p c-iq
 
 .. tip::
 
@@ -70,7 +70,7 @@ To use the first GPU in an interactive job, use for instance:
 
 .. code-block:: console
 
-    [jean@ip09 def-alice]$ salloc -p c-iq -w cp3705
+    [jean@ip10 def-alice]$ salloc -p c-iq -w cp3705
     [jean@cp3705 def-alice]$ export CUDA_VISIBLE_DEVICES=0
 
 To use both GPUs in a job script:
@@ -120,11 +120,11 @@ and belonging to Alice, which matches the 4 CPUs allocated to her job.
 
 .. code-block:: console
 
-   [alice@ip09 ~]$ sq
+   [alice@ip10 ~]$ sq
              JOBID     USER      ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS       GRES MIN_MEM NODELIST (REASON) 
            5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)    256M cp1433 (None) 
-   [alice@ip09 ~]$ ssh cp1433
-   Last login: Wed Aug 21 11:16:34 2024 from ip09.m
+   [alice@ip10 ~]$ ssh cp1433
+   Last login: Wed Aug 21 11:16:34 2024 from ip10.m
    [alice@cp1433-mp2 ~]$ htop
 
        0[||||||||100.0%]    8[          0.0%]    16[          0.0%]   24[          0.0%]
@@ -163,8 +163,8 @@ and the programs using them. For example:
 
 .. code-block:: console
 
-   [alice@ip09 ~]$ ssh cp3705
-   Last login: Wed Aug 21 13:47:44 2024 from ip09.m
+   [alice@ip10 ~]$ ssh cp3705
+   Last login: Wed Aug 21 13:47:44 2024 from ip10.m
    [alice@cp3705-mp2 ~]$ nvidia-smi
    Wed Aug 21 13:52:41 2024       
    +-----------------------------------------------------------------------------------------+
@@ -200,7 +200,7 @@ Statistics for finished jobs
 .. important::
 
    Due to a software compatibility problem, ``seff`` is temporarily
-   unavailable on ``ip09``.
+   unavailable on ``ip10``.
 
 The ``seff`` command shows statistics about finished jobs, including their CPU
 and memory efficiency. For example:

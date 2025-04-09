@@ -14,17 +14,17 @@ example:
 
 .. code-block:: console
 
-   [alice@ip09 ~]$ cat slurm-3304643.out 
+   [alice@ip10 ~]$ cat slurm-3304643.out 
    /var/spool/slurmd/job3304643/slurm_script: line 11: 25047 Illegal instruction   (core dumped) python my_script.py
 
 Cette erreur se produit lorsqu’un programme optimisé pour une classe de
 processeurs particuliers est exécuté sur un processeur qui n’est pas compatible.
 
-Si vous compilez votre code sur ``ip09`` avec GCC, utilisez l’option
+Si vous compilez votre code sur ``ip10`` avec GCC, utilisez l’option
 d’optimisation ``-march=core-avx2``. Si vous utilisez les compilateurs Intel,
 l’option correspondante est ``-xCORE-AVX2``. N’utilisez pas ``-march=native`` ou
 ``-xHost``. Ces dernières tentent d’optimiser pour les processeurs Intel
-d’``ip09``. Le programme résultant peut être incompatible avec les processeurs
+d’``ip10``. Le programme résultant peut être incompatible avec les processeurs
 AMD de certains nœuds de calcul.
 
 Ma tâche interactive sur ``c-blais`` plante au démarrage
@@ -35,7 +35,7 @@ Kerrcat) ne fonctionnent pas pour le moment :
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ salloc -p c-blais
+    [alice@ip10 ~]$ salloc -p c-blais
     salloc: Granted job allocation 5810877
     salloc: Waiting for resource configuration
     salloc: Nodes cp3707 are ready for job
@@ -52,14 +52,14 @@ vous avez terminé :
 
 .. code-block:: console
 
-   [alice@ip09 ~]$ salloc -p c-blais --no-shell
+   [alice@ip10 ~]$ salloc -p c-blais --no-shell
    salloc: Granted job allocation 5944655
    salloc: Waiting for resource configuration
    salloc: Nodes cp3707 are ready for job
-   [alice@ip09 ~]$ ssh cp3707
+   [alice@ip10 ~]$ ssh cp3707
    [alice@cp3707-mp2 ~]$ ...
    [alice@cp3707-mp2 ~]$ exit
-   [alice@ip09 ~]$ scancel 5944655
+   [alice@ip10 ~]$ scancel 5944655
 
 .. _calcul-lent-label:
 

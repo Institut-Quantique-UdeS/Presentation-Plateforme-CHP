@@ -8,7 +8,7 @@ Your home directory is accessible et ``$HOME``. For instance:
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ echo $HOME
+    [alice@ip10 ~]$ echo $HOME
     /home/alice
 
 This is the right location for configuration files, your code, and software that
@@ -36,9 +36,9 @@ Each user has their own individual space for research data, accessible at
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ echo $USER
+    [alice@ip10 ~]$ echo $USER
     alice
-    [alice@ip09 ~]$ cd /net/nfs-iq/data/alice
+    [alice@ip10 ~]$ cd /net/nfs-iq/data/alice
 
 Group data
 ''''''''''
@@ -50,9 +50,9 @@ instance:
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ echo $USER
+    [alice@ip10 ~]$ echo $USER
     alice
-    [alice@ip09 ~]$ cd /net/nfs-iq/data/def-alice
+    [alice@ip10 ~]$ cd /net/nfs-iq/data/def-alice
 
 Local storage on compute nodes
 --------------------------------------
