@@ -29,22 +29,14 @@ jobs. This location offers better performance than your home directory.
 Public nodes
 ------------
 
-Jobs must be submitted to the ``c-iq`` partition. The job submission commands,
-``sbatch``, ``salloc``, ``srun``, accept the ``--partition`` option and its
-short form ``-p``. For an interactive job, use for instance:
+Les tâches doivent être soumises à la partition ``c-iq``, qui est aussi la
+partition par défaut. Aucune option n’est donc nécessaire, mais la partition
+peut néanmoins être indiquée explicitement avec l’option ``--partition`` ou sa
+forme courte ``-p`` si désiré. Par exemple, dans un script de tâche :
 
-.. code-block:: console
-
-    [jean@ip10 def-alice]$ salloc -p c-iq
-
-.. tip::
-
-   To avoid specifying the ``c-iq`` partition every time you use ``salloc``, you
-   can define the partition to use by adding ``export SALLOC_PARTITION="c-iq"``
-   to your ``~/.bashrc`` file. You will still be able to specify a different
-   partition with the ``-p`` option.
-
-In a job script:
+Jobs must be submitted to the ``c-iq`` partition, which is the default. The
+partition can nevertheless be explicited using the ``--partition`` option or its
+short form ``-p``. For example, in a job script:
 
 .. code-block:: bash
 
@@ -59,19 +51,15 @@ Maximum job duration is seven days.
 GPU jobs
 ''''''''
 
-For now, GPUs are not managed by the job scheduler. You therefore cannot request
-GPUs with the usual options such as ``--gpus-per-node``, ``--gpus-per-task``,
-``--gres``. Instead, you must first explicitly ask for the GPU node with
-``--nodelist`` or its short form courte ``-w``, then choose which GPU(s) to use
-with the ``CUDA_VISIBLE_DEVICES`` environment variable, which must be set to one
-of these three possible values: ``0``, ``1``, ``0,1``.
+The IQ HPC Platform offers one GPU compute node with two Nvidia A40 GPUs, which
+can be requested with the ``--gpus-per-node``, ``--gpus-per-task``, and
+``--gres`` options.
 
-To use the first GPU in an interactive job, use for instance:
+For example, to use one GPU in an interactive job:
 
 .. code-block:: console
 
-    [jean@ip10 def-alice]$ salloc -p c-iq -w cp3705
-    [jean@cp3705 def-alice]$ export CUDA_VISIBLE_DEVICES=0
+    [alice@ip10 ~]$ salloc --gres=gpu
 
 To use both GPUs in a job script:
 
@@ -80,9 +68,7 @@ To use both GPUs in a job script:
     #!/bin/bash
     #SBATCH --job-name=my-job
     #SBATCH --partition=c-iq
-    #SBATCH --nodelist=cp3705
-
-    export CUDA_VISIBLE_DEVICES=0,1
+    #SBATCH --gpus-per-node=nvidia_a40:2
 
     ...
 
@@ -196,11 +182,6 @@ We notice that process ``gmx_mpi`` (id 14734) is using both GPUs.
 
 Statistics for finished jobs
 ''''''''''''''''''''''''''''
-
-.. important::
-
-   Due to a software compatibility problem, ``seff`` is temporarily
-   unavailable on ``ip10``.
 
 The ``seff`` command shows statistics about finished jobs, including their CPU
 and memory efficiency. For example:
