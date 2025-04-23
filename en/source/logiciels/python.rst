@@ -12,7 +12,7 @@ To load a Python version compatible with the default software environment:
 
 .. code-block:: console
 
-    [alice@ip10 ~]$ module avail python
+    [alice@ip11 ~]$ module avail python
     ------------------------------------- Core Modules --------------------------------------
        ipython-kernel/3.10              python-build-bundle/2024a (D)
        ipython-kernel/3.11       (D)    python/3.10.13            (t,3.10)
@@ -21,7 +21,7 @@ To load a Python version compatible with the default software environment:
 
     ...
 
-    [alice@ip10 ~]$ module load python/3.11.5
+    [alice@ip11 ~]$ module load python/3.11.5
 
 The recommended version (default module) is indicated by ``(D)``. If you need a
 version which is not available in the default software environment, use `module
@@ -34,14 +34,14 @@ is loaded:
 
 .. code-block:: console
 
-    [alice@ip10 ~]$ module avail scipy-stack
+    [alice@ip11 ~]$ module avail scipy-stack
 
     ------------------------------------- Core Modules --------------------------------------
        scipy-stack/2023b (math)    scipy-stack/2024a (math)    scipy-stack/2024b (math,D)
 
     ...
 
-    [alice@ip10 ~]$ module load scipy-stack/2024b
+    [alice@ip11 ~]$ module load scipy-stack/2024b
 
 Virtual environments
 --------------------
@@ -73,20 +73,20 @@ the modules for Python and `Scientific Python`:
 
 .. code-block:: console
 
-    [alice@ip10 ~]$ module load python/3.11.5
-    [alice@ip10 ~]$ module load scipy-stack/2024b
+    [alice@ip11 ~]$ module load python/3.11.5
+    [alice@ip11 ~]$ module load scipy-stack/2024b
 
 Then, create a virtual environment:
 
 .. code-block:: console
 
-    [alice@ip10 ~]$ virtualenv --no-download $HOME/venv/qutip
+    [alice@ip11 ~]$ virtualenv --no-download $HOME/venv/qutip
 
 Activate the environment:
 
 .. code-block:: console
 
-    [alice@ip10 ~]$ source $HOME/venv/qutip/bin/activate
+    [alice@ip11 ~]$ source $HOME/venv/qutip/bin/activate
 
 Notice that the command prompt changes to show the active virtual environment.
 All actions performed by the ``pip`` command (installing, uninstalling, updating
@@ -96,19 +96,19 @@ The first thing to do is update ``pip``:
 
 .. code-block:: console
 
-    (qutip) [alice@ip10 ~]$ pip install --no-index --upgrade pip    
+    (qutip) [alice@ip11 ~]$ pip install --no-index --upgrade pip    
 
 Then, install packages, such as QuTiP :
 
 .. code-block:: console
 
-    (qutip) [alice@ip10 ~]$ pip install --no-index qutip==5.0.1
+    (qutip) [alice@ip11 ~]$ pip install --no-index qutip==5.0.1
 
 Finally, deactivate the environment.
 
 .. code-block:: console
 
-    (qutip) [alice@ip10 ~]$ deactivate
+    (qutip) [alice@ip11 ~]$ deactivate
 
 Once the environment has been created, it can be reused simply by activating it
 again; there is no need to reinstall any packages. For example, the above
@@ -130,7 +130,7 @@ search for Qiskit:
 
 .. code-block:: console
 
-    [alice@ip10 ~]$ avai l_wheels qiskit
+    [alice@ip11 ~]$ avai l_wheels qiskit
     name    version    python    arch
     ------  ---------  --------  -------
     qiskit  1.2.4      cp38      generic
@@ -139,7 +139,7 @@ To install this precompiled version in an active virtual environment:
 
 .. code-block:: console
 
-    (qiskit) [alice@ip10 ~]$ pip install --no-index qiskit==1.2.4
+    (qiskit) [alice@ip11 ~]$ pip install --no-index qiskit==1.2.4
 
 Parallel computing with Python
 ------------------------------
