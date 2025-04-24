@@ -1,8 +1,8 @@
 .. list-table::
    :header-rows: 1
+   :width: 960px
 
    * - Nombre
-     - Type
      - CPU
      - Cœurs
      - Mémoire
@@ -13,8 +13,7 @@
      - Limite de temps
      - Partition
    * - 3
-     - CPU
-     - 2 x AMD EPYC 7643
+     - 2 x AMD EPYC 7643 ``milan``
      - 96
      - 500G (0,48T)
      - 1T (NVMe)
@@ -24,12 +23,11 @@
      - 7 jours
      - ``c-iq``
    * - 1
-     - GPU
-     - 2 x Xeon Gold 6342
+     - 2 x Xeon Gold 6342 ``icelake``
      - 48
      - 500G (0,48T)
      - 1T (NVMe)
-     - 2 x NVidia A40 48G
+     - 2 x NVidia A40 48G ``nvidia_a40``
      - IQ
      - Oui
      - 7 jours
