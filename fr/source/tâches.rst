@@ -13,7 +13,7 @@ Lancer des tâches
 Nœuds de connexion
 ------------------
 
-Utilisez le nœud de connexion (``ip11``) pour préparer vos tâches. Il est
+Utilisez le nœud de connexion (``ip09``) pour préparer vos tâches. Il est
 toutefois interdit d’exécuter des tâches directement sur ce nœud ! Les nœuds de
 connexion des grappes ne disposent pas de la puissance de calcul nécessaire pour
 exécuter des tâches. De plus, exécuter une tâche sur un nœud de connexion peut
@@ -57,7 +57,7 @@ Par exemple, pour utiliser un GPU dans une tâche interactive :
 
 .. code-block:: console
 
-    [alice@ip11 ~]$ salloc --gres=gpu
+    [alice@ip09 ~]$ salloc --gres=gpu
 
 Pour utiliser les deux GPU dans un script de tâche :
 
@@ -107,11 +107,11 @@ qui correspond aux 4 CPU assignés à sa tâche.
 
 .. code-block:: console
 
-   [alice@ip11 ~]$ sq
+   [alice@ip09 ~]$ sq
              JOBID     USER      ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS       GRES MIN_MEM NODELIST (REASON) 
            5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)    256M cp1433 (None) 
-   [alice@ip11 ~]$ ssh cp1433
-   Last login: Wed Aug 21 11:16:34 2024 from ip11.m
+   [alice@ip09 ~]$ ssh cp1433
+   Last login: Wed Aug 21 11:16:34 2024 from ip09.m
    [alice@cp1433-mp2 ~]$ htop
 
        0[||||||||100.0%]    8[          0.0%]    16[          0.0%]   24[          0.0%]
@@ -151,8 +151,8 @@ liste les GPU et les programmes qui les utilisent. Par exemple :
 
 .. code-block:: console
 
-   [alice@ip11 ~]$ ssh cp3705
-   Last login: Wed Aug 21 13:47:44 2024 from ip11.m
+   [alice@ip09 ~]$ ssh cp3705
+   Last login: Wed Aug 21 13:47:44 2024 from ip09.m
    [alice@cp3705-mp2 ~]$ nvidia-smi
    Wed Aug 21 13:52:41 2024       
    +-----------------------------------------------------------------------------------------+

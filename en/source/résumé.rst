@@ -5,7 +5,7 @@ Summary
     Use your `CCDB <https://ccdb.alliancecan.ca/>`_ username and password.
 
 **Login node**
-    SSH: ``ip11.ccs.usherbrooke.ca``
+    SSH: ``ip09.ccs.usherbrooke.ca``
 
 **Home directory**
     - Location: ``/home/$USER``

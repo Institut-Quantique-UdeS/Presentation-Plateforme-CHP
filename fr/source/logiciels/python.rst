@@ -13,7 +13,7 @@ par défaut :
 
 .. code-block:: console
 
-    [alice@ip11 ~]$ module avail python
+    [alice@ip09 ~]$ module avail python
     ------------------------------------- Core Modules --------------------------------------
        ipython-kernel/3.10              python-build-bundle/2024a (D)
        ipython-kernel/3.11       (D)    python/3.10.13            (t,3.10)
@@ -22,7 +22,7 @@ par défaut :
 
     ...
 
-    [alice@ip11 ~]$ module load python/3.11.5
+    [alice@ip09 ~]$ module load python/3.11.5
 
 La version recommandée (module par défaut) est indiquée par ``(D)``. Si vous
 avez besoin d’une version qui n’est pas disponible dans l’environnement logiciel
@@ -36,14 +36,14 @@ Python lui-même chargé :
 
 .. code-block:: console
 
-    [alice@ip11 ~]$ module avail scipy-stack
+    [alice@ip09 ~]$ module avail scipy-stack
 
     ------------------------------------- Core Modules --------------------------------------
        scipy-stack/2023b (math)    scipy-stack/2024a (math)    scipy-stack/2024b (math,D)
 
     ...
 
-    [alice@ip11 ~]$ module load scipy-stack/2024b
+    [alice@ip09 ~]$ module load scipy-stack/2024b
 
 Environnements virtuels
 -----------------------
@@ -77,20 +77,20 @@ chargeons les modules pour Python et `Scientific Python` :
 
 .. code-block:: console
 
-    [alice@ip11 ~]$ module load python/3.11.5
-    [alice@ip11 ~]$ module load scipy-stack/2024b
+    [alice@ip09 ~]$ module load python/3.11.5
+    [alice@ip09 ~]$ module load scipy-stack/2024b
 
 Ensuite, créons un environnement virtuel :
 
 .. code-block:: console
 
-    [alice@ip11 ~]$ virtualenv --no-download $HOME/venv/qutip
+    [alice@ip09 ~]$ virtualenv --no-download $HOME/venv/qutip
 
 Activons l’environnement :
 
 .. code-block:: console
 
-    [alice@ip11 ~]$ source $HOME/venv/qutip/bin/activate
+    [alice@ip09 ~]$ source $HOME/venv/qutip/bin/activate
 
 Vous remarquerez que l’invite de commande change pour indiquer l’environnement
 virtuel actif. Toutes les actions de la commande ``pip`` (installer,
@@ -101,19 +101,19 @@ La première chose à faire est de mettre à jour ``pip`` :
 
 .. code-block:: console
 
-    (qutip) [alice@ip11 ~]$ pip install --no-index --upgrade pip    
+    (qutip) [alice@ip09 ~]$ pip install --no-index --upgrade pip
 
 Ensuite, nous pouvons installer des paquets, par exemple QuTiP :
 
 .. code-block:: console
 
-    (qutip) [alice@ip11 ~]$ pip install --no-index qutip==5.0.1
+    (qutip) [alice@ip09 ~]$ pip install --no-index qutip==5.0.1
 
 Finalement, l’environnement peut être désactivé :
 
 .. code-block:: console
 
-    (qutip) [alice@ip11 ~]$ deactivate
+    (qutip) [alice@ip09 ~]$ deactivate
 
 Une fois l’environnement créé, il peut être réutilisé simplement en l’activant à
 nouveau ; nul besoin de réinstaller les paquets. Par exemple, l’environnement
@@ -135,7 +135,7 @@ Par exemple, pour chercher Qiskit:
 
 .. code-block:: console
 
-    [alice@ip11 ~]$ avail_wheels qiskit
+    [alice@ip09 ~]$ avail_wheels qiskit
     name    version    python    arch
     ------  ---------  --------  -------
     qiskit  1.2.4      cp38      generic
@@ -145,7 +145,7 @@ Pour installer cette version pré-compilée dans un environnement virtuel actif�
 
 .. code-block:: console
 
-    (qiskit) [alice@ip11 ~]$ pip install --no-index qiskit==1.2.4
+    (qiskit) [alice@ip09 ~]$ pip install --no-index qiskit==1.2.4
 
 Parallélisation avec Python
 ---------------------------

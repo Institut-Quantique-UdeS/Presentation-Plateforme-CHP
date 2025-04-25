@@ -2,7 +2,7 @@ Connexion
 =========
 
 L’accès à la plateforme CHP-IQ se fait par SSH (Secure Shell). L’adresse du nœud
-de connexion est ``ip11.ccs.usherbrooke.ca``.
+de connexion est ``ip09.ccs.usherbrooke.ca``.
 
 Les systèmes d’exploitation récents (Linux, MacOS, Windows 11) incluent
 habituellement un client SSH. Pour vous connecter à la plateforme en mode ligne
@@ -12,22 +12,22 @@ connexion :
 
 .. code-block:: console
 
-   $ ssh alice@ip11.ccs.usherbrooke.ca
+   $ ssh alice@ip09.ccs.usherbrooke.ca
 
 Remplacez ``alice`` par votre nom d’utilisateur.
 
 Lorsque vous vous connectez pour la première fois, votre programme affichera
 l’empreinte de la clé de chiffrement du serveur et vous demandera de confirmer
 que vous souhaitez vous connecter. Une fois cette confirmation donnée, votre
-programme enregistrera la clé d’``ip11`` dans la liste des hôtes connus. Ce
+programme enregistrera la clé d’``ip09`` dans la liste des hôtes connus. Ce
 dialogue prendra la forme suivante :
 
 .. code-block:: console
 
-    The authenticity of host 'ip11.ccs.usherbrooke.ca (204.19.23.210)' can't be established.
+    The authenticity of host 'ip09.ccs.usherbrooke.ca (204.19.23.210)' can't be established.
     ED25519 key fingerprint is SHA256:hVAo6KoqKOEbtOaBh6H6GYHAvsStPsDEcg4LXBQUP50.
     Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-    Warning: Permanently added 'ip11.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
+    Warning: Permanently added 'ip09.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
 
 L’empreinte de la clé du serveur devrait correspondre à celle donnée dans
 l’exemple ci-haut.
@@ -37,7 +37,7 @@ Entrez ensuite votre mot de passe CCDB. Notez qu’aucun caractère ne s’affic
 
 .. code-block:: console
 
-   alice@ip11.ccs.usherbrooke.ca's password:
+   alice@ip09.ccs.usherbrooke.ca's password:
 
 Utilisez un second facteur d’authentification pour compléter le processus de
 connexion. Cette invite différera selon le ou les appareils que vous avez
@@ -46,7 +46,7 @@ Android :
 
 .. code-block:: console
 
-    (alice@ip11.ccs.usherbrooke.ca) Duo two-factor login for alice
+    (alice@ip09.ccs.usherbrooke.ca) Duo two-factor login for alice
 
     Enter a passcode or select one of the following options:
 

@@ -37,4 +37,4 @@ The Ansys modules are the same as on Alliance clusters. For example:
 
 .. code-block:: console
 
-    [alice@ip11 ~]$ module load ansys/2023R2
+    [alice@ip09 ~]$ module load ansys/2023R2
