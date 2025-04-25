@@ -63,7 +63,7 @@ Editing ASCII files
      - Description
    * - ``cat <file>``
      - Show the content of ``<file>``
-   * - ``head -n X <file>`` 
+   * - ``head -n X <file>``
      - Show the first X lines of ``<file>``
    * - ``tail -n X <file>``
      - Show the last X lines of ``<file>``

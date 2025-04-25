@@ -45,7 +45,7 @@ research projects, see the Alliance `Getting Started
    :maxdepth: 2
    :titlesonly:
    :hidden:
-   
+
    compte
    connexion
    stockage
@@ -53,7 +53,7 @@ research projects, see the Alliance `Getting Started
    tâches
    logiciels/index
    résumé
-   
+
 .. toctree::
    :caption: Help
    :maxdepth: 2

@@ -17,7 +17,7 @@
      - 128
      - 1508G (1.47T)
      - 1T (NVMe)
-     - 
+     -
      - Alexandre Blais
      - No
      - 28 days
@@ -27,7 +27,7 @@
      - 48
      - 1004G (0.98T)
      - 3.4T
-     - 
+     -
      - Stefanos Kourtis
      - No
      - 7 days
@@ -37,7 +37,7 @@
      - 128
      - 2000G (1.95T)
      - 6T (NVMe)
-     - 
+     -
      - Batiste Royer
      - No
      - 7 days
@@ -47,7 +47,7 @@
      - 72
      - 3020G (2.94T)
      - 3.5T
-     - 
+     -
      - David Sénéchal
      - Yes
      - 7 days
@@ -57,7 +57,7 @@
      - 32
      - 248G (0.24T)
      - 800G
-     - 
+     -
      - David Sénéchal
      - Yes
      - 7 days

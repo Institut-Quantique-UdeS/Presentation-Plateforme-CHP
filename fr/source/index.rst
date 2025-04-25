@@ -25,7 +25,7 @@ calcul et d’un espace de stockage disponibles pour tous les chercheurs de l’
 la plateforme contient des nœuds contribués par des chercheurs spécifiques et
 dont l’utilisation est restreinte. Les chercheurs peuvent utiliser la plateforme
 sans limite et sans frais. Les coûts sont assumés grâce à une subvention de la
-Fondation canadienne pour l’innovation (FCI). 
+Fondation canadienne pour l’innovation (FCI).
 
 La configuration de la plateforme CHP-IQ est similaire à celle des grappes
 nationales gérées par l’Alliance de recherche numérique du Canada (auparavant
@@ -47,7 +47,7 @@ envergure, voyez le `guide de démarrage
    :maxdepth: 2
    :titlesonly:
    :hidden:
-   
+
    compte
    connexion
    stockage
@@ -55,7 +55,7 @@ envergure, voyez le `guide de démarrage
    tâches
    logiciels/index
    résumé
-   
+
 .. toctree::
    :caption: Aide
    :maxdepth: 2

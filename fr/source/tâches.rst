@@ -108,8 +108,8 @@ qui correspond aux 4 CPU assignés à sa tâche.
 .. code-block:: console
 
    [alice@ip09 ~]$ sq
-             JOBID     USER      ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS       GRES MIN_MEM NODELIST (REASON) 
-           5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)    256M cp1433 (None) 
+             JOBID     USER      ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS       GRES MIN_MEM NODELIST (REASON)
+           5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)    256M cp1433 (None)
    [alice@ip09 ~]$ ssh cp1433
    Last login: Wed Aug 21 11:16:34 2024 from ip09.m
    [alice@cp1433-mp2 ~]$ htop
@@ -123,7 +123,7 @@ qui correspond aux 4 CPU assignés à sa tâche.
        6[          0.0%]   14[          0.0%]    22[          0.0%]   30[          0.0%]
        7[          0.0%]   15[          0.0%]    23[|         0.7%]   31[          0.0%]
      Mem[|||                      6.82G/252G]   Tasks: 63, 174 thr; 5 running
-     Swp[                              0K/0K]   Load average: 2.40 0.71 1.22 
+     Swp[                              0K/0K]   Load average: 2.40 0.71 1.22
                                              Uptime: 1 day, 20:53:58
 
       PID USER      PRI  NI  VIRT   RES   SHR S CPU%▽MEM%   TIME+  Command
@@ -154,7 +154,7 @@ liste les GPU et les programmes qui les utilisent. Par exemple :
    [alice@ip09 ~]$ ssh cp3705
    Last login: Wed Aug 21 13:47:44 2024 from ip09.m
    [alice@cp3705-mp2 ~]$ nvidia-smi
-   Wed Aug 21 13:52:41 2024       
+   Wed Aug 21 13:52:41 2024
    +-----------------------------------------------------------------------------------------+
    | NVIDIA-SMI 550.54.15              Driver Version: 550.54.15      CUDA Version: 12.4     |
    |-----------------------------------------+------------------------+----------------------+
@@ -170,7 +170,7 @@ liste les GPU et les programmes qui les utilisent. Par exemple :
    |  0%   29C    P0             70W /  300W |     276MiB /  46068MiB |      0%      Default |
    |                                         |                        |                  N/A |
    +-----------------------------------------+------------------------+----------------------+
-                                                                                         
+
    +-----------------------------------------------------------------------------------------+
    | Processes:                                                                              |
    |  GPU   GI   CI        PID   Type   Process name                              GPU Memory |

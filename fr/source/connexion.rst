@@ -97,7 +97,7 @@ les commandes pour SSH.
 
 .. seealso::
    - Documentation technique de l’Alliance :
-       - `Connexion à un serveur avec MobaXterm <https://docs.alliancecan.ca/wiki/Connecting_with_MobaXTerm/fr>`_  
+       - `Connexion à un serveur avec MobaXterm <https://docs.alliancecan.ca/wiki/Connecting_with_MobaXTerm/fr>`_
        - `Connexion à un serveur avec PuTTY <https://docs.alliancecan.ca/wiki/Connecting_with_PuTTY/fr>`_
 
 Clés SSH

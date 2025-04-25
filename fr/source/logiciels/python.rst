@@ -2,7 +2,7 @@ Python
 ======
 
 L’informations ci-dessous est complémentaire à la documentation technique de
-l’Alliance sur `Python <https://docs.alliancecan.ca/wiki/Python/fr>`_. 
+l’Alliance sur `Python <https://docs.alliancecan.ca/wiki/Python/fr>`_.
 
 Modules
 -------

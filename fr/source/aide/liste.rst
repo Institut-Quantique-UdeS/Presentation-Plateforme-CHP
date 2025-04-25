@@ -6,7 +6,7 @@ liste de diffusion, ccs-nouvelles-iq@listes.usherbrooke.ca. Par exemple :
 
 - Nouvelles fonctionnalités
 - Arrêts planifiés et réductions de service
-- Formations à venir 
+- Formations à venir
 
 Bien que cela soit optionnel, nous recommandons à tous les utilisateurs actifs
 de s’inscrire. La fréquence des messages est basse et vous pouvez toujours vous

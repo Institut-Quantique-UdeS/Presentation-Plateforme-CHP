@@ -24,12 +24,12 @@ To list available Mathematica versions:
 To use Mathematica in a job script:
 
 .. code-block:: bash
-    
+
     #!/bin/bash
     #SBATCH --time=02:00:00
     #SBATCH --cpus-per-task=2
     #SBATCH --mem=8G
-    
+
     PATH="$PATH:/net/nfs-iq/data/software/Mathematica/12.1/Executables"
 
     wolframscript -file script.wls
