@@ -32,7 +32,7 @@ Si vous n’êtes pas familier avec le CHP, nous vous recommandons fortement de
 suivre une ou plusieurs des `formations offertes par Calcul Québec
 <https://www.calculquebec.ca/services-aux-chercheurs/formation/>`_. Si aucune
 formation n’est organisée prochainement, n’hésitez pas à contacter notre
-:doc:`support technique <../aide/support>` pour des formations locales
+:doc:`soutien technique <../aide/support>` pour des formations locales
 personnalisées. De plus, le `guide de démarrage
 <https://docs.alliancecan.ca/wiki/Getting_started/fr>`_ de l’Alliance couvre une
 variété de sujets liés au CHP : utiliser les logiciels, exécuter des tâches,

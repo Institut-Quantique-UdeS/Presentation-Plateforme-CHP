@@ -10,7 +10,7 @@ Si vous n’êtes pas déjà familier avec Linux ou si vous souhaitez rafraîchi
 connaissances, nous vous recommandons fortement les `formations de Calcul Québec
 <https://www.calculquebec.ca/services-aux-chercheurs/formation/>`_. Si aucune
 formation n’est organisée prochainement, n’hésitez pas à contacter notre
-:doc:`support technique <../aide/support>` pour des formations locales
+:doc:`soutien technique <../aide/support>` pour des formations locales
 personnalisées. Finalement, la documentation technique de l’Alliance offre une
 courte `introduction à Linux
 <https://docs.alliancecan.ca/wiki/Linux_introduction/fr>`_.

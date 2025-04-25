@@ -86,5 +86,5 @@ envergure, voyez le `guide de démarrage
 .. note::
 
    Cette documentation est gérée par le CCS. Pour toute question ou commentaire
-   ou pour rapporter une erreur ou un problème, consultez notre :doc:`support
+   ou pour rapporter une erreur ou un problème, consultez notre :doc:`soutien
    technique <aide/support>`.
