@@ -85,7 +85,6 @@ envergure, voyez le `guide de démarrage
 
 .. note::
 
-   Cette documentation est gérée par le CCS. Son auteur original est Moïse
-   Rousseau, son responsable actuel Olivier Fisette. Pour toute question ou
-   commentaire ou pour rapporter une erreur ou un problème, consultez notre
-   :doc:`support technique <aide/support>`.
+   Cette documentation est gérée par le CCS. Pour toute question ou commentaire
+   ou pour rapporter une erreur ou un problème, consultez notre :doc:`support
+   technique <aide/support>`.

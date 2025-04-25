@@ -83,7 +83,6 @@ research projects, see the Alliance `Getting Started
 
 .. note::
 
-   This documentation is managed by the CCS. The original author is Moïse
-   Rousseau, the current maintainer Olivier Fisette. For any question or comment
-   or to report a mistake or an issue, see our :doc:`technical support
+   This documentation is managed by the CCS. For any question or comment or to
+   report a mistake or an issue, see our :doc:`technical support
    <aide/support>`.
