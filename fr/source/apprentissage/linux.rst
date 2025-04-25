@@ -48,7 +48,7 @@ Les commandes basiques pour la navigation dans le système de fichiers sont disp
 
 À noter que ``./`` designe l'emplacement actuelle.
 Par example, ``cd ./`` demande à la ligne de commande d'aller dans le répertoire actuel (donc ne fait rien), ou encore, ``cp folder1/foo.txt ./`` copie le fichier `foo.txt` situé dans le dossier `folder1` dans le répertoire actuel (d'où est appelé la commande ``cp``).
-Aussi ``..`` désigne le répertoire parent. 
+Aussi ``..`` désigne le répertoire parent.
 Par exemple ``cd ..`` signifie retourner dans le répertoire précédent.
 Finalement, ``~`` désigne le répertoire *home*, soit le répertoire d'arrivée juste après la connexion par SSH.
 
@@ -64,7 +64,7 @@ Edition de fichier ASCII
      - Description
    * - ``cat <file>``
      - Affiche le contenu du fichier ``<file>`` dans le terminal
-   * - ``head -n X <file>`` 
+   * - ``head -n X <file>``
      - Affiche les X premières lignes du fichier ``<file>`` dans le terminal
    * - ``tail -n X <file>``
      - Affiche les X dernières lignes du fichier ``<file>`` dans le terminal

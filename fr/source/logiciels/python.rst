@@ -2,7 +2,7 @@ Python
 ======
 
 L’informations ci-dessous est complémentaire à la documentation technique de
-l’Alliance sur `Python <https://docs.alliancecan.ca/wiki/Python/fr>`_. 
+l’Alliance sur `Python <https://docs.alliancecan.ca/wiki/Python/fr>`_.
 
 Modules
 -------
@@ -101,7 +101,7 @@ La première chose à faire est de mettre à jour ``pip`` :
 
 .. code-block:: console
 
-    (qutip) [alice@ip09 ~]$ pip install --no-index --upgrade pip    
+    (qutip) [alice@ip09 ~]$ pip install --no-index --upgrade pip
 
 Ensuite, nous pouvons installer des paquets, par exemple QuTiP :
 

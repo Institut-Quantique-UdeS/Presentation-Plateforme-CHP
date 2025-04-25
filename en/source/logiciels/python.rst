@@ -96,7 +96,7 @@ The first thing to do is update ``pip``:
 
 .. code-block:: console
 
-    (qutip) [alice@ip09 ~]$ pip install --no-index --upgrade pip    
+    (qutip) [alice@ip09 ~]$ pip install --no-index --upgrade pip
 
 Then, install packages, such as QuTiP :
 

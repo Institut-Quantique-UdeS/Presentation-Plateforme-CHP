@@ -14,16 +14,16 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    
+
     - name: Install prerequisites
       run: pip install sphinx==8.0.2 sphinx-intl furo==2024.8.6
-    
+
     - name: Build French version with Sphinx
       run: sphinx-build ./fr/source _build/fr
 
     - name: Build English version with Sphinx
       run: sphinx-build ./en/source _build/en
-    
+
     - name: Add redirection
       run: cp ./redirect.html _build/index.html
 

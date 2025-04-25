@@ -14,19 +14,17 @@ connexion :
 
    $ ssh alice@ip09.ccs.usherbrooke.ca
 
-Remplacez ``alice`` par votre nom d’utilisateur. (Si vous avez un compte
-restreint à la plateforme CHP-IQ, il débutera par ``iq-``, par exemple
-``iq-alice``.)
+Remplacez ``alice`` par votre nom d’utilisateur.
 
 Lorsque vous vous connectez pour la première fois, votre programme affichera
 l’empreinte de la clé de chiffrement du serveur et vous demandera de confirmer
 que vous souhaitez vous connecter. Une fois cette confirmation donnée, votre
-programme enregistrera la clé d’``ip09`` dans la liste des hôtes auxquels vous
-faites confiance. Ce dialogue prendra la forme suivante :
+programme enregistrera la clé d’``ip09`` dans la liste des hôtes connus. Ce
+dialogue prendra la forme suivante :
 
 .. code-block:: console
 
-    The authenticity of host 'ip09.ccs.usherbrooke.ca (204.19.23.209)' can't be established.
+    The authenticity of host 'ip09.ccs.usherbrooke.ca (204.19.23.210)' can't be established.
     ED25519 key fingerprint is SHA256:hVAo6KoqKOEbtOaBh6H6GYHAvsStPsDEcg4LXBQUP50.
     Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
     Warning: Permanently added 'ip09.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
@@ -34,13 +32,46 @@ faites confiance. Ce dialogue prendra la forme suivante :
 L’empreinte de la clé du serveur devrait correspondre à celle donnée dans
 l’exemple ci-haut.
 
-Entrez ensuite votre mot de passe CCDB (ou le mot de passe de votre compte
-restreint). Notez qu’aucun caractère ne s’affichera à l’écran pendant la saisie
-de votre mot de passe.
+Entrez ensuite votre mot de passe CCDB. Notez qu’aucun caractère ne s’affichera
+à l’écran pendant la saisie de votre mot de passe.
 
 .. code-block:: console
 
    alice@ip09.ccs.usherbrooke.ca's password:
+
+Utilisez un second facteur d’authentification pour compléter le processus de
+connexion. Cette invite différera selon le ou les appareils que vous avez
+enregistrés dans CCDB. Dans l’exemple suivant, Alice a enregistré un téléphone
+Android :
+
+.. code-block:: console
+
+    (alice@ip09.ccs.usherbrooke.ca) Duo two-factor login for alice
+
+    Enter a passcode or select one of the following options:
+
+     1. Duo Push to Samsung S23 Alice (Android)
+
+    Passcode or option (1-1):
+
+En tapant ``1``, Alice obtiendrait une notification sur son téléphone.
+
+Finalement, vous obtiendrez un message indiquant que la connexion a été
+établie :
+
+.. code-block:: console
+
+    Success. Logging you in...
+    Last login: Wed Apr  9 10:45:16 2025 from 24.203.57.88
+    ################################################################################
+      _____ ____
+     |_   _/ __ \   Plateforme CHP-IQ / IQ HPC Platform
+       | || |  | |
+       | || |  | |  Documentation fr: https://institut-quantique-udes.github.io/fr
+      _| || |__| |                en: https://institut-quantique-udes.github.io/en
+     |_____\___\_\     Support fr/en: olivier.fisette@usherbrooke.ca
+
+    [...]
 
 .. seealso::
    - `SSH <https://docs.alliancecan.ca/wiki/SSH/fr>`_ (documentation technique
@@ -66,7 +97,7 @@ les commandes pour SSH.
 
 .. seealso::
    - Documentation technique de l’Alliance :
-       - `Connexion à un serveur avec MobaXterm <https://docs.alliancecan.ca/wiki/Connecting_with_MobaXTerm/fr>`_  
+       - `Connexion à un serveur avec MobaXterm <https://docs.alliancecan.ca/wiki/Connecting_with_MobaXTerm/fr>`_
        - `Connexion à un serveur avec PuTTY <https://docs.alliancecan.ca/wiki/Connecting_with_PuTTY/fr>`_
 
 Clés SSH

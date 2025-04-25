@@ -24,16 +24,6 @@ Résumé
 **Nœuds de calcul publics**
     .. include:: nœuds/public.rst
 
-    - Les tâches doivent être soumises à la partition ``c-iq``.
-        - Tâche interactive : ``salloc -p c-iq``
-        - Script de tâche : ``#SBATCH --partition=c-iq``
-    - Les GPU ne sont pas gérés par l’ordonnanceur de tâches.
-        - Tâche interactive : ``-p c-iq -w cp3705``
-        - Script de tâche : ``#SBATCH --partition=c-iq``
-          ``#SBATCH --nodelist=cp3705``
-        - Utilisez ``export CUDA_VISIBLE_DEVICES=[...]`` pour contrôler le ou
-          les GPU à utiliser.
-
 **Accès à MP2**
     Les stockages ``/project`` et ``/scratch`` de MP2 ne sont pas accessibles.
 

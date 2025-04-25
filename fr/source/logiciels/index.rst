@@ -94,18 +94,18 @@ modules avec ``module spider`` et les ajouter à votre environnement avec
 
           StdEnv/2023  gcc/12.3  openmpi/4.1.5
           StdEnv/2023  gcc/12.3  openmpi/4.1.5  cuda/12.2
-     
+
         Help:
           Description
           ===========
           GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the
           Newtonian equations of motion for systems with hundreds to millions of
           particles.
-          
+
           More information
           ================
            - Homepage: http://www.gromacs.org
-          
+
     [alice@ip09 ~]$ module load StdEnv/2023 gcc/12.3 openmpi/4.1.5
     [alice@ip09 ~]$ module load gromacs/2024.4
     [alice@ip09 ~]$ module list

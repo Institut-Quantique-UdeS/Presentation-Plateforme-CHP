@@ -5,7 +5,7 @@ Ansys is a software suite for engineering simulation and 3D design.
 
 .. seealso::
 
-   
+
    - `Ansys <https://docs.alliancecan.ca/wiki/Ansys/en>`_ (Alliance technical
      documentation)
 
@@ -21,7 +21,7 @@ Each user must configure their license:
 
     setenv("ANSYSLMD_LICENSE_FILE", "6624@ip39.ccs.usherbrooke.ca")
     setenv("ANSYSLI_SERVERS", "2325@ip39.ccs.usherbrooke.ca")
-    
+
 #. Send an email to CMC Microsystems (`mcsupport@cmc.ca`) with your full name,
    the name of the person providing you withe the license, your username on the
    IQ HPC Platform, and the address of the license server

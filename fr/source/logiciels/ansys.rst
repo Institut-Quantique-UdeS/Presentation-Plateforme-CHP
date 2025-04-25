@@ -6,7 +6,7 @@ simulation.
 
 .. seealso::
 
-   
+
    - `Ansys <https://docs.alliancecan.ca/wiki/Ansys/fr>`_ (documentation
      technique de l’Alliance)
 
@@ -22,7 +22,7 @@ Chaque utilisateur doit configurer sa license :
 
     setenv("ANSYSLMD_LICENSE_FILE", "6624@ip39.ccs.usherbrooke.ca")
     setenv("ANSYSLI_SERVERS", "2325@ip39.ccs.usherbrooke.ca")
-    
+
 #. Envoyez un courriel à CMC Microsystems (`mcsupport@cmc.ca`) avec votre nom
    complet, le nom de la personne qui vous fournit la license, votre nom
    d’utilisateur sur la plateforme CHP-IQ et l’adresse du serveur de licence

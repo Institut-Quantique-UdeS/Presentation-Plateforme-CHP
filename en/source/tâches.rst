@@ -29,22 +29,14 @@ jobs. This location offers better performance than your home directory.
 Public nodes
 ------------
 
-Jobs must be submitted to the ``c-iq`` partition. The job submission commands,
-``sbatch``, ``salloc``, ``srun``, accept the ``--partition`` option and its
-short form ``-p``. For an interactive job, use for instance:
+Les tâches doivent être soumises à la partition ``c-iq``, qui est aussi la
+partition par défaut. Aucune option n’est donc nécessaire, mais la partition
+peut néanmoins être indiquée explicitement avec l’option ``--partition`` ou sa
+forme courte ``-p`` si désiré. Par exemple, dans un script de tâche :
 
-.. code-block:: console
-
-    [jean@ip09 def-alice]$ salloc -p c-iq
-
-.. tip::
-
-   To avoid specifying the ``c-iq`` partition every time you use ``salloc``, you
-   can define the partition to use by adding ``export SALLOC_PARTITION="c-iq"``
-   to your ``~/.bashrc`` file. You will still be able to specify a different
-   partition with the ``-p`` option.
-
-In a job script:
+Jobs must be submitted to the ``c-iq`` partition, which is the default. The
+partition can nevertheless be explicited using the ``--partition`` option or its
+short form ``-p``. For example, in a job script:
 
 .. code-block:: bash
 
@@ -59,19 +51,15 @@ Maximum job duration is seven days.
 GPU jobs
 ''''''''
 
-For now, GPUs are not managed by the job scheduler. You therefore cannot request
-GPUs with the usual options such as ``--gpus-per-node``, ``--gpus-per-task``,
-``--gres``. Instead, you must first explicitly ask for the GPU node with
-``--nodelist`` or its short form courte ``-w``, then choose which GPU(s) to use
-with the ``CUDA_VISIBLE_DEVICES`` environment variable, which must be set to one
-of these three possible values: ``0``, ``1``, ``0,1``.
+The IQ HPC Platform offers one GPU compute node with two Nvidia A40 GPUs, which
+can be requested with the ``--gpus-per-node``, ``--gpus-per-task``, and
+``--gres`` options.
 
-To use the first GPU in an interactive job, use for instance:
+For example, to use one GPU in an interactive job:
 
 .. code-block:: console
 
-    [jean@ip09 def-alice]$ salloc -p c-iq -w cp3705
-    [jean@cp3705 def-alice]$ export CUDA_VISIBLE_DEVICES=0
+    [alice@ip09 ~]$ salloc --gres=gpu
 
 To use both GPUs in a job script:
 
@@ -80,9 +68,7 @@ To use both GPUs in a job script:
     #!/bin/bash
     #SBATCH --job-name=my-job
     #SBATCH --partition=c-iq
-    #SBATCH --nodelist=cp3705
-
-    export CUDA_VISIBLE_DEVICES=0,1
+    #SBATCH --gpus-per-node=nvidia_a40:2
 
     ...
 
@@ -121,8 +107,8 @@ and belonging to Alice, which matches the 4 CPUs allocated to her job.
 .. code-block:: console
 
    [alice@ip09 ~]$ sq
-             JOBID     USER      ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS       GRES MIN_MEM NODELIST (REASON) 
-           5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)    256M cp1433 (None) 
+             JOBID     USER      ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS       GRES MIN_MEM NODELIST (REASON)
+           5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)    256M cp1433 (None)
    [alice@ip09 ~]$ ssh cp1433
    Last login: Wed Aug 21 11:16:34 2024 from ip09.m
    [alice@cp1433-mp2 ~]$ htop
@@ -136,7 +122,7 @@ and belonging to Alice, which matches the 4 CPUs allocated to her job.
        6[          0.0%]   14[          0.0%]    22[          0.0%]   30[          0.0%]
        7[          0.0%]   15[          0.0%]    23[|         0.7%]   31[          0.0%]
      Mem[|||                      6.82G/252G]   Tasks: 63, 174 thr; 5 running
-     Swp[                              0K/0K]   Load average: 2.40 0.71 1.22 
+     Swp[                              0K/0K]   Load average: 2.40 0.71 1.22
                                              Uptime: 1 day, 20:53:58
 
       PID USER      PRI  NI  VIRT   RES   SHR S CPU%▽MEM%   TIME+  Command
@@ -166,7 +152,7 @@ and the programs using them. For example:
    [alice@ip09 ~]$ ssh cp3705
    Last login: Wed Aug 21 13:47:44 2024 from ip09.m
    [alice@cp3705-mp2 ~]$ nvidia-smi
-   Wed Aug 21 13:52:41 2024       
+   Wed Aug 21 13:52:41 2024
    +-----------------------------------------------------------------------------------------+
    | NVIDIA-SMI 550.54.15              Driver Version: 550.54.15      CUDA Version: 12.4     |
    |-----------------------------------------+------------------------+----------------------+
@@ -182,7 +168,7 @@ and the programs using them. For example:
    |  0%   29C    P0             70W /  300W |     276MiB /  46068MiB |      0%      Default |
    |                                         |                        |                  N/A |
    +-----------------------------------------+------------------------+----------------------+
-                                                                                         
+
    +-----------------------------------------------------------------------------------------+
    | Processes:                                                                              |
    |  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
@@ -196,11 +182,6 @@ We notice that process ``gmx_mpi`` (id 14734) is using both GPUs.
 
 Statistics for finished jobs
 ''''''''''''''''''''''''''''
-
-.. important::
-
-   Due to a software compatibility problem, ``seff`` is temporarily
-   unavailable on ``ip09``.
 
 The ``seff`` command shows statistics about finished jobs, including their CPU
 and memory efficiency. For example:
