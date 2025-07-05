@@ -129,8 +129,8 @@ construit ci-dessus peut être utilisé dans un script de tâche avec :
 Installer hors d’un environnement virtuel
 '''''''''''''''''''''''''''''''''''''''''
 
-Si vous essayez d’installer des paquets Python sans activer un environnement
-virtuel, vous obtiendrez l’erreur suivante :
+Si vous essayez d’installer des paquets Python sans d’abord activer un
+environnement virtuel, vous obtiendrez l’erreur suivante :
 
 .. code-block:: console
 
