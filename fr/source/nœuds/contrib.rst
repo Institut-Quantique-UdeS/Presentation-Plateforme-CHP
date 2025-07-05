@@ -69,7 +69,7 @@
      - 1,7T
      -
      - André-Marie Tremblay
-     - Oui
+     - Non
      - 7 jours
      - ``c-tremblay``
    * - 1

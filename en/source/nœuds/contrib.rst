@@ -69,7 +69,7 @@
      - 1.7T
      -
      - André-Marie Tremblay
-     - Yes
+     - No
      - 7 days
      - ``c-tremblay``
    * - 1
