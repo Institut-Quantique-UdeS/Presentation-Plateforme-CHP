@@ -126,6 +126,30 @@ construit ci-dessus peut être utilisé dans un script de tâche avec :
    module load scipy-stack/2024b
    source $HOME/venv/qutip/bin/activate
 
+Installer hors d’un environnement virtuel
+'''''''''''''''''''''''''''''''''''''''''
+
+Si vous essayez d’installer des paquets Python sans activer un environnement
+virtuel, vous obtiendrez l’erreur suivante :
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ pip install --no-index numpy
+    ERROR: Could not find an activated virtualenv (required).
+
+Si vous souhaitez néanmoins installer un paquet à l’extérieur d’un environnement
+virtuel, vous pouvez le faire avec :
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ PIP_REQUIRE_VIRTUALENV=false pip install --no-index numpy
+
+.. note::
+
+    Ce comportement est différent de celui des grappes de l’Alliance, où il est
+    possible par défaut d’installer des paquets Python à l’extérieur d’un
+    environnement virtuel.
+
 Paquets Python précompilés
 --------------------------
 
