@@ -179,7 +179,7 @@ programming library such as OpenMP. Another is to use the distributed memory
 model with multiple Python processes. To do so, you can use the
 ``multiprocessing`` module, or a library such as `mpi4py
 <https://mpi4py.readthedocs.io/en/stable/>`_ (message passing) or `Dask
-<https://www.dask.org/>`_ (data parallelism).
+<https://www.dask.org/>`_ (distributed computing).
 
 .. _python-fils-label:
 

@@ -188,7 +188,7 @@ Une autre est d’utiliser le modèle de mémoire distribué avec de multiple
 processus Python. Pour ce faire, vous pouvez utiliser le module
 ``multiprocessing``, ou encore une bibliothèque telle que `mpi4py
 <https://mpi4py.readthedocs.io/en/stable/>`_ (passage de messages) ou `Dask
-<https://www.dask.org/>`_ (parallélisme des données).
+<https://www.dask.org/>`_ (calcul distribué).
 
 .. _python-fils-label:
 
