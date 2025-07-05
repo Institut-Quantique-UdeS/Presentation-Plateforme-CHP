@@ -121,6 +121,29 @@ environment can be used in a job script with:
    module load scipy-stack/2024b
    source $HOME/venv/qutip/bin/activate
 
+Installing outside a virtual environment
+''''''''''''''''''''''''''''''''''''''''
+
+If you try to install Python packages without first activating a virtual
+environment, you will get the following error:
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ pip install --no-index numpy
+    ERROR: Could not find an activated virtualenv (required).
+
+If you nonetheless wish to install a package outside a virtual environment, you
+can do it with:
+
+.. code-block:: console
+
+    [alice@ip09 ~]$ PIP_REQUIRE_VIRTUALENV=false pip install --no-index numpy
+
+.. note::
+
+    This behaviour differs from that of Alliance clusters, where it is possible
+    by default to install Python packages outside a virtual environment.
+
 Precompiled Python packages
 ---------------------------
 
