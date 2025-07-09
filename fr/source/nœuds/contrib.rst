@@ -63,6 +63,16 @@
      - 7 jours
      - ``c-apc``
    * - 1
+     - 2 x AMD EPYC 9965 ``turin``
+     - 384
+     - 1508G (1,47T)
+     - 800G
+     -
+     - David Sénéchal, André-Marie Tremblay
+     - Non
+     - 7 jours
+     - ``c-softcorr``
+   * - 1
      - 2 x AMD EPYC 9754 ``bergamo``
      - 256
      - 752G (0,73T)
