@@ -108,7 +108,7 @@ and belonging to Alice, which matches the 4 CPUs allocated to her job.
 
    [alice@ip09 ~]$ sq
              JOBID     USER      ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS       GRES MIN_MEM NODELIST (REASON)
-           5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)    256M cp1433 (None)
+           5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)      1G cp1433 (None)
    [alice@ip09 ~]$ ssh cp1433
    Last login: Wed Aug 21 11:16:34 2024 from ip09.m
    [alice@cp1433-mp2 ~]$ htop
@@ -199,7 +199,7 @@ and memory efficiency. For example:
    CPU Efficiency: 99.59% of 01:00:24 core-walltime
    Job Wall-clock time: 00:15:06
    Memory Utilized: 353.91 MB (estimated maximum)
-   Memory Efficiency: 34.56% of 1.00 GB (256.00 MB/core)
+   Memory Efficiency: 8.64% of 4.00 GB (1.00 GB/core)
 
 Typically, CPU efficiency should be close to 100%. A lower efficiency indicates
 that CPU time is wasted, possibly because the job is not using all allocated
@@ -208,7 +208,7 @@ submit other similar jobs before fixing this problem.
 
 Memory efficiency should be at least 50%. If one of your jobs is under this
 treshold, reduce the amount of requested memory for similar jobs. (If you ask
-for the default amount of memory, 256M per CPU core, ignore memory efficiency
+for the default amount of memory, 1G per CPU core, ignore memory efficiency
 since your absolute usage is very low anyway.)
 
 By monitoring job efficiency, you not only ensure that they run faster: you also

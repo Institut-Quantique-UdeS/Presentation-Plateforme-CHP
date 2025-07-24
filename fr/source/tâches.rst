@@ -109,7 +109,7 @@ qui correspond aux 4 CPU assignés à sa tâche.
 
    [alice@ip09 ~]$ sq
              JOBID     USER      ACCOUNT           NAME  ST  TIME_LEFT NODES CPUS       GRES MIN_MEM NODELIST (REASON)
-           5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)    256M cp1433 (None)
+           5623630 alice    def-alice         md-job.sh   R      14:56     1    4     (null)      1G cp1433 (None)
    [alice@ip09 ~]$ ssh cp1433
    Last login: Wed Aug 21 11:16:34 2024 from ip09.m
    [alice@cp1433-mp2 ~]$ htop
@@ -201,7 +201,7 @@ incluant leur efficacité en CPU et en mémoire. Par exemple :
    CPU Efficiency: 99.59% of 01:00:24 core-walltime
    Job Wall-clock time: 00:15:06
    Memory Utilized: 353.91 MB (estimated maximum)
-   Memory Efficiency: 34.56% of 1.00 GB (256.00 MB/core)
+   Memory Efficiency: 8.64% of 4.00 GB (1.00 GB/core)
 
 Typiquement, l’efficacité en CPU devrait être proche de 100%. Une efficacité
 plus basse indique que du temps CPU est perdu, possiblement parce que la tâche
@@ -211,7 +211,7 @@ avant de régler ce problème.
 
 L’efficacité en mémoire, pour sa part, devrait être d’au moins 50%. Si une de
 vos tâches est sous ce seuil, réduisez la quantité de mémoire demandée pour les
-tâches similaires. (Si vous demandez la quantité de mémoire par défaut, 256M par
+tâches similaires. (Si vous demandez la quantité de mémoire par défaut, 1G par
 cœur, ignorez l’efficacité mémoire puisque votre consommation absolue est de
 toute façon très basse.)
 
