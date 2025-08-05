@@ -42,6 +42,14 @@ with options:
 
     To avoid this problem, compile Pyqcm with the FlexiBLAS interface.
 
+.. warning::
+
+    If you use local CPU-specific optimisations (e.g. ``-march-native`` or
+    ``-xHost``) or if you enable ``-DWITH_GF_OPT_KERNEL=1``, make sure to
+    compile in an interactive job on the same compute node where you will use
+    Pyqcm. A compilation done on the login node might be incompatible with some
+    compute nodes, resulting in “illegal instruction” errors.
+
 .. note::
 
     The Pyqcm authors `report low performance with BLIS

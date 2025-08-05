@@ -28,7 +28,7 @@ pour expérimenter avec des options :
     virtualenv --no-download $HOME/venv/qcm-dev
     source $HOME/venv/qcm-dev/bin/activate
     pip install --no-index --upgrade pip
-    export CMAKE_ARGS="-DEIGEN_HAMILTONIAN=1 -DWITH_PRIMME=1 -DBLA_VENDOR=FlexiBLAS -DPRIMME_DIR=$EBROOTPRIMME -DCUBA_DIR=$EBROOTCUBA -DWITH_GF_OPT_KERNEL=1"
+    export CMAKE_ARGS="-DEIGEN_HAMILTONIAN=1 -DWITH_PRIMME=1 -DBLA_VENDOR=FlexiBLAS -DPRIMME_DIR=$EBROOTPRIMME -DCUBA_DIR=$EBROOTCUBA -DWITH_GF_OPT_KERNEL=0"
     pip install . --no-index
 
 .. warning::
@@ -42,6 +42,16 @@ pour expérimenter avec des options :
     cause un ralentissement important des calculs.
 
     Pour éviter ce problème, compilez Pyqcm avec l’interface FlexiBLAS.
+
+.. warning::
+
+    Si vous utilisez des optimisations spécifiques au CPU local (e.g.
+    ``-march=native`` ou ``-xHost``) ou si vous activez
+    ``-DWITH_GF_OPT_KERNEL=1``, assurez-vous de faire la compilation dans une
+    tâche interactive sur le même nœud de calcul où vous utiliserez Pyqcm. Une
+    compilation faite sur le nœud de connexion pourrait être incompatible avec
+    certains nœuds de calcul, générant des erreurs de type « illegal
+    instruction ».
 
 .. note::
 
