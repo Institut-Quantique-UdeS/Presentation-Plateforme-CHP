@@ -43,6 +43,16 @@
      - 7 days
      - ``c-royer``
    * - 1
+     - 1 x AMD EPYC 9124 ``genoa``
+     - 16
+     - 374G (0.36T)
+     - 375G (NVMe)
+     - 1 x Nvidia L40S 48G ``nvidia_l40s``
+     - Batiste Royer
+     - No
+     - 7 days
+     - ``c-royer-gpu``
+   * - 1
      - 4 x Xeon E7-8870 v3 ``haswell``
      - 72
      - 3020G (2.94T)
