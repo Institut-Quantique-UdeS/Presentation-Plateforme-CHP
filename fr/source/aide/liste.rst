@@ -5,7 +5,7 @@ Les nouvelles importantes liées à la plateforme CHP-IQ sont annoncée sur notr
 liste de diffusion, ccs-nouvelles-iq@listes.usherbrooke.ca. Par exemple :
 
 - Nouvelles fonctionnalités
-- Arrêts planifiés et réductions de service
+- Pannes, maintenance planifiée et réductions de service
 - Formations à venir
 
 Bien que cela soit optionnel, nous recommandons à tous les utilisateurs actifs

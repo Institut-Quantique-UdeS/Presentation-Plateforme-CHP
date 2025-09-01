@@ -5,7 +5,7 @@ Important news about the IQ-HPC platform are announced on our mailing list,
 ccs-nouvelles-iq@listes.usherbrooke.ca. For example:
 
 - New features
-- Planned outages and service reductions
+- Outages, planned maintenance and service reductions
 - Upcoming workshops
 
 Although it is optional, we recommend that all active users subscribe. Message
