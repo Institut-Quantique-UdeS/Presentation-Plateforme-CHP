@@ -62,7 +62,7 @@
      - Oui
      - 7 jours
      - ``c-fat3072``
-   * - 4
+   * - 2
      - 2 x AMD EPYC 7301 ``naples``
      - 32
      - 248G (0,24T)
