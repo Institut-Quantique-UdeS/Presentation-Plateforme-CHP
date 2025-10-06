@@ -44,6 +44,14 @@ envergure, voyez le `guide de démarrage
 <https://docs.alliancecan.ca/wiki/Getting_started/fr>`_ de l’Alliance.
 
 .. toctree::
+   :caption: Langue | Language
+   :hidden:
+
+   English <https://institut-quantique-udes.github.io/en/>
+   Français <https://institut-quantique-udes.github.io/fr/>
+
+.. toctree::
+   :caption: Documentation
    :maxdepth: 2
    :titlesonly:
    :hidden:

@@ -42,6 +42,14 @@ research projects, see the Alliance `Getting Started
 <https://docs.alliancecan.ca/wiki/Getting_started/fr>`_ guide.
 
 .. toctree::
+   :caption: Language | Langue
+   :hidden:
+
+   English <https://institut-quantique-udes.github.io/en/>
+   Français <https://institut-quantique-udes.github.io/fr/>
+
+.. toctree::
+   :caption: Documentation
    :maxdepth: 2
    :titlesonly:
    :hidden:
