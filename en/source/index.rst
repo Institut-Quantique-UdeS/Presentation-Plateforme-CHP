@@ -14,7 +14,7 @@ Institut Quantique High-Performance Computing Platform
      <apprentissage/linux>` and :doc:`high-performance computing
      <apprentissage/chp>`.
    - Cette documentation est également disponible en `français
-     <https://institut-quantique-udes.github.io/Presentation-Plateforme-CHP/fr/>`_.
+     <https://institut-quantique-udes.github.io/fr/>`_.
 
 The `Institut quantique (IQ) <https://www.usherbrooke.ca/iq/>`_ High-Performance
 Computing Platform is a small-scale cluster for IQ researchers and their
