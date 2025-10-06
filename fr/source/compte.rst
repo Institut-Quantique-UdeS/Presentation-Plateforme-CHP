@@ -1,19 +1,11 @@
 Compte
 ======
 
-.. important::
-
-   L’accès à la plateforme CHP-IQ est régi par la `politique d'accès aux
-   calculateurs
-   <https://www.usherbrooke.ca/iq/wp-content/uploads/2022/06/Politiques-Calculateurs-haute-performance-HPC-2022-06-02.pdf>`_.
-
 Pour obtenir l'accès à la plateforme CHP-IQ :
 
 1. Créez un compte `CCDB <https://ccdb.alliancecan.ca/>`_.
 2. Activez l’authentification multifacteur dans CCDB.
-3. Remplissez `l’annexe C de la politique d'accès aux calculateurs
-   <https://forms.office.com/r/UKb6yPneD1>`_.
-4. Abonnez-vous à notre :doc:`liste de diffusion <aide/liste>`.
+3. Abonnez-vous à notre :doc:`liste de diffusion <aide/liste>`.
 
 Créer un compte CCDB
 --------------------

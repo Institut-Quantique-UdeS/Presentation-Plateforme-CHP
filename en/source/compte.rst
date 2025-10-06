@@ -1,19 +1,11 @@
 Account
 =======
 
-.. important::
-
-   Access to the IQ HPC Platform is governed by the `politique d'accès aux
-   calculateurs
-   <https://www.usherbrooke.ca/iq/wp-content/uploads/2022/06/Politiques-Calculateurs-haute-performance-HPC-2022-06-02.pdf>`_.
-
 To get access to the IQ HPC Platform:
 
 1. Create a `CCDB <https://ccdb.alliancecan.ca/>`_ account.
 2. Activate multifactor authentification in CCDB.
-3. Fill out the `annexe C de la politique d'accès aux calculateurs
-   <https://forms.office.com/r/UKb6yPneD1>`_.
-4. Subscribe to our :doc:`mailing list <aide/liste>`.
+3. Subscribe to our :doc:`mailing list <aide/liste>`.
 
 Creating a CCDB account
 -----------------------
