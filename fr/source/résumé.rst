@@ -5,8 +5,8 @@ Résumé
     Utilisez votre nom d’utilisateur et votre mot de passe `CCDB
     <https://ccdb.alliancecan.ca/>`_.
 
-**Nœud de connexion**
-    SSH: ``ip09.ccs.usherbrooke.ca``
+**Adresse**
+    SSH: ``iq-hpc.ccs.usherbrooke.ca``
 
 **Répertoire personnel**
     - Emplacement : ``/home/$USER``
