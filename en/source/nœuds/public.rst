@@ -2,7 +2,7 @@
    :header-rows: 1
    :width: 960px
 
-   * - Count
+   * - Node(s)
      - CPU
      - Cores
      - Memory
@@ -12,7 +12,7 @@
      - Open access
      - Time limit
      - Partition
-   * - 3
+   * - ``cp370[2-4]``
      - 2 x AMD EPYC 7643 ``milan``
      - 96
      - 500G (0.48T)
@@ -22,7 +22,7 @@
      - Yes
      - 7 days
      - ``c-iq``
-   * - 1
+   * - ``cp3705``
      - 2 x Xeon Gold 6342 ``icelake``
      - 48
      - 500G (0.48T)

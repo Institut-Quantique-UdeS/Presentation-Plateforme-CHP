@@ -2,7 +2,7 @@
    :header-rows: 1
    :width: 960px
 
-   * - Count
+   * - Node(s)
      - CPU
      - Cores
      - Memory
@@ -12,7 +12,7 @@
      - Open access
      - Time limit
      - Partition
-   * - 1
+   * - ``cp3707``
      - 2 x AMD EPYC 9554 ``genoa``
      - 128
      - 1508G (1.47T)
@@ -22,7 +22,7 @@
      - No
      - 28 days
      - ``c-blais``
-   * - 1
+   * - ``cp3701``
      - 2 x AMD EPYC 7F72 ``rome``
      - 48
      - 1004G (0.98T)
@@ -32,7 +32,7 @@
      - No
      - 7 days
      - ``c-aphex``
-   * - 1
+   * - ``cp3706``
      - 2 x AMD EPYC 7742 ``rome``
      - 128
      - 2000G (1.95T)
@@ -42,7 +42,7 @@
      - No
      - 7 days
      - ``c-royer``
-   * - 1
+   * - ``cp3711``
      - 1 x AMD EPYC 9124 ``genoa``
      - 16
      - 374G (0.36T)
@@ -52,7 +52,7 @@
      - No
      - 7 days
      - ``c-royer-gpu``
-   * - 1
+   * - ``cp3710``
      - 2 x AMD EPYC 9965 ``turin``
      - 384
      - 1508G (1,47T)
@@ -62,7 +62,7 @@
      - No
      - 7 days
      - ``c-softcorr``
-   * - 1
+   * - ``cp3708``
      - 2 x AMD EPYC 9754 ``bergamo``
      - 256
      - 752G (0.73T)
@@ -72,7 +72,7 @@
      - No
      - 7 days
      - ``c-tremblay``
-   * - 1
+   * - ``cp3709``
      - 2 x AMD EPYC 9654 ``genoa``
      - 192
      - 2264G (2.21T)
