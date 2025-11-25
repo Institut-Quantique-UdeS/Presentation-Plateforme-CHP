@@ -2,33 +2,33 @@
    :header-rows: 1
    :width: 960px
 
-   * - Nœud(s)
-     - CPU
+   * - Partition
+     - Nœud(s)
      - Nombre de cœurs
      - Mémoire
-     - Stockage
+     - CPU
      - GPU
-     - Propriétaire(s)
-     - Accès libre
+     - Stockage
      - Limite de temps
-     - Partition
-   * - ``cp370[2-4]``
-     - 2 x AMD EPYC 7643 ``milan``
+     - Accès libre
+     - Propriétaire(s)
+   * - ``c-iq``
+     - ``cp370[2-4]`` (total : 3)
      - 96
      - 500G (0,48T)
-     - 1T (NVMe)
+     - 2 x AMD EPYC 7643 ``milan``
      -
-     - IQ
-     - Oui
+     - 1T (NVMe)
      - 7 jours
-     - ``c-iq``
-   * - ``cp3705``
-     - 2 x Xeon Gold 6342 ``icelake``
+     - Oui
+     - IQ
+   * - ``c-iq``
+     - ``cp3705``
      - 48
      - 500G (0,48T)
-     - 1T (NVMe)
+     - 2 x Xeon Gold 6342 ``icelake``
      - 2 x NVidia A40 48G ``nvidia_a40``
-     - IQ
-     - Oui
+     - 1T (NVMe)
      - 7 jours
-     - ``c-iq``
+     - Oui
+     - IQ

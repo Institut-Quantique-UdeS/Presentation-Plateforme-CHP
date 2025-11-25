@@ -2,83 +2,83 @@
    :header-rows: 1
    :width: 960px
 
-   * - Nœud(s)
-     - CPU
+   * - Partition
+     - Nœud(s)
      - Nombre de cœurs
      - Mémoire
-     - Stockage
+     - CPU
      - GPU
-     - Propriétaire(s)
-     - Accès libre
+     - Stockage
      - Limite de temps
-     - Partition
-   * - ``cp3707``
-     - 2 x AMD EPYC 9554 ``genoa``
+     - Accès libre
+     - Propriétaire(s)
+   * - ``c-blais``
+     - ``cp3707``
      - 128
      - 1508G (1,47T)
-     - 1T (NVMe)
      -
-     - Alexandre Blais
-     - Non
+     - 2 x AMD EPYC 9554 ``genoa``
+     - 1T (NVMe)
      - 28 jours
-     - ``c-blais``
-   * - ``cp3701``
-     - 2 x AMD EPYC 7F72 ``rome``
+     - Non
+     - \A. Blais
+   * - ``c-aphex``
+     - ``cp3701``
      - 48
      - 1004G (0,98T)
-     - 3,4T
+     - 2 x AMD EPYC 7F72 ``rome``
      -
-     - Stefanos Kourtis
-     - Non
+     - 3,4T
      - 7 jours
-     - ``c-aphex``
-   * - ``cp3706``
-     - 2 x AMD EPYC 7742 ``rome``
+     - Non
+     - \S. Kourtis
+   * - ``c-royer``
+     - ``cp3706``
      - 128
      - 2000G (1,95T)
-     - 6T (NVMe)
+     - 2 x AMD EPYC 7742 ``rome``
      -
-     - Batiste Royer
-     - Non
+     - 6T (NVMe)
      - 7 jours
-     - ``c-royer``
-   * - ``cp3711``
-     - 1 x AMD EPYC 9124 ``genoa``
+     - Non
+     - \B. Royer
+   * - ``c-royer-gpu``
+     - ``cp3711``
      - 16
      - 374G (0,36T)
-     - 375G (NVMe)
+     - 1 x AMD EPYC 9124 ``genoa``
      - 1 x Nvidia L40S 48G ``nvidia_l40s``
-     - Batiste Royer
-     - Non
+     - 375G (NVMe)
      - 7 jours
-     - ``c-royer-gpu``
-   * - ``cp3710``
-     - 2 x AMD EPYC 9965 ``turin``
+     - Non
+     - \B. Royer
+   * - ``c-softcorr``
+     - ``cp3710``
      - 384
      - 1508G (1,47T)
-     - 800G
+     - 2 x AMD EPYC 9965 ``turin``
      -
-     - David Sénéchal, André-Marie Tremblay
-     - Non
+     - 800G
      - 7 jours
-     - ``c-softcorr``
-   * - ``cp3708``
-     - 2 x AMD EPYC 9754 ``bergamo``
+     - Non
+     - \D. Sénéchal, A.-M. Tremblay
+   * - ``c-tremblay``
+     - ``cp3708``
      - 256
      - 752G (0,73T)
-     - 1,7T
+     - 2 x AMD EPYC 9754 ``bergamo``
      -
-     - André-Marie Tremblay
-     - Non
+     - 1,7T
      - 7 jours
-     - ``c-tremblay``
-   * - ``cp3709``
-     - 2 x AMD EPYC 9654 ``genoa``
+     - Non
+     - \A.-M. Tremblay
+   * - ``c-maiagv``
+     - ``cp3709``
      - 192
      - 2264G (2,21T)
-     - 3,4T
+     - 2 x AMD EPYC 9654 ``genoa``
      -
-     - Maia Vergniory
-     - Non
+     - 3,4T
      - 7 jours
-     - ``c-maiagv``
+     - Non
+     - \M. Vergniory

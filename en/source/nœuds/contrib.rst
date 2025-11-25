@@ -2,83 +2,83 @@
    :header-rows: 1
    :width: 960px
 
-   * - Node(s)
-     - CPU(s)
+   * - Partition
+     - Node(s)
      - Core count
      - Memory
-     - Storage
+     - CPU(s)
      - GPU(s)
-     - Owner(s)
-     - Open access
+     - Storage
      - Time limit
-     - Partition
-   * - ``cp3707``
-     - 2 x AMD EPYC 9554 ``genoa``
+     - Open access
+     - Owner(s)
+   * - ``c-blais``
+     - ``cp3707``
      - 128
      - 1508G (1.47T)
-     - 1T (NVMe)
+     - 2 x AMD EPYC 9554 ``genoa``
      -
-     - Alexandre Blais
-     - No
+     - 1T (NVMe)
      - 28 days
-     - ``c-blais``
-   * - ``cp3701``
-     - 2 x AMD EPYC 7F72 ``rome``
+     - No
+     - \A. Blais
+   * - ``c-aphex``
+     - ``cp3701``
      - 48
      - 1004G (0.98T)
      - 3.4T
+     - 2 x AMD EPYC 7F72 ``rome``
      -
-     - Stefanos Kourtis
-     - No
      - 7 days
-     - ``c-aphex``
-   * - ``cp3706``
-     - 2 x AMD EPYC 7742 ``rome``
+     - No
+     - \S. Kourtis
+   * - ``c-royer``
+     - ``cp3706``
      - 128
      - 2000G (1.95T)
-     - 6T (NVMe)
+     - 2 x AMD EPYC 7742 ``rome``
      -
-     - Batiste Royer
-     - No
+     - 6T (NVMe)
      - 7 days
-     - ``c-royer``
-   * - ``cp3711``
-     - 1 x AMD EPYC 9124 ``genoa``
+     - No
+     - \B. Royer
+   * - ``c-royer-gpu``
+     - ``cp3711``
      - 16
      - 374G (0.36T)
-     - 375G (NVMe)
+     - 1 x AMD EPYC 9124 ``genoa``
      - 1 x Nvidia L40S 48G ``nvidia_l40s``
-     - Batiste Royer
-     - No
+     - 375G (NVMe)
      - 7 days
-     - ``c-royer-gpu``
-   * - ``cp3710``
-     - 2 x AMD EPYC 9965 ``turin``
+     - No
+     - \B. Royer
+   * - ``c-softcorr``
+     - ``cp3710``
      - 384
      - 1508G (1,47T)
-     - 800G
+     - 2 x AMD EPYC 9965 ``turin``
      -
-     - David Sénéchal, André-Marie Tremblay
-     - No
+     - 800G
      - 7 days
-     - ``c-softcorr``
-   * - ``cp3708``
-     - 2 x AMD EPYC 9754 ``bergamo``
+     - No
+     - \D. Sénéchal, A.-M. Tremblay
+   * - ``c-tremblay``
+     - ``cp3708``
      - 256
      - 752G (0.73T)
-     - 1.7T
+     - 2 x AMD EPYC 9754 ``bergamo``
      -
-     - André-Marie Tremblay
-     - No
+     - 1.7T
      - 7 days
-     - ``c-tremblay``
-   * - ``cp3709``
-     - 2 x AMD EPYC 9654 ``genoa``
+     - No
+     - \A.-M. Tremblay
+   * - ``c-maiagv``
+     - ``cp3709``
      - 192
      - 2264G (2.21T)
-     - 3.4T
+     - 2 x AMD EPYC 9654 ``genoa``
      -
-     - Maia Vergniory
-     - No
+     - 3.4T
      - 7 days
-     - ``c-maiagv``
+     - No
+     - M. Vergniory
