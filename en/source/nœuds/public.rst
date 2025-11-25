@@ -3,12 +3,12 @@
    :width: 960px
 
    * - Node(s)
-     - CPU
-     - Cores
+     - CPU(s)
+     - Core count
      - Memory
      - Storage
-     - GPU
-     - Owner
+     - GPU(s)
+     - Owner(s)
      - Open access
      - Time limit
      - Partition

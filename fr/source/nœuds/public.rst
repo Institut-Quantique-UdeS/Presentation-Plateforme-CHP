@@ -4,11 +4,11 @@
 
    * - Nœud(s)
      - CPU
-     - Cœurs
+     - Nombre de cœurs
      - Mémoire
      - Stockage
      - GPU
-     - Propriétaire
+     - Propriétaire(s)
      - Accès libre
      - Limite de temps
      - Partition
