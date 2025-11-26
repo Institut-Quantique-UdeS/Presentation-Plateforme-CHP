@@ -13,7 +13,8 @@
      - Open access
      - Owner(s)
    * - ``c-iq``
-     - ``cp370[2-4]`` (3 total)
+     - | ``cp370[2-4]``
+       | (3 total)
      - 96
      - 500G (0.48T)
      - 2 x AMD EPYC 7643 ``milan``
