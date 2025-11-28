@@ -5,7 +5,7 @@ Summary
     Use your `CCDB <https://ccdb.alliancecan.ca/>`_ username and password.
 
 **Address**
-    SSH: ``iq-hpc.ccs.usherbrooke.ca``
+    SSH: ``hpc.iq.ccs.usherbrooke.ca``
 
 **Home directory**
     - Location: ``/home/$USER``

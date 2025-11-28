@@ -2,7 +2,7 @@ Connexion
 =========
 
 L’accès à la plateforme CHP-IQ se fait par SSH (Secure Shell). L’adresse de la
-grappe est ``iq-hpc.ccs.usherbrooke.ca``.
+grappe est ``hpc.iq.ccs.usherbrooke.ca``.
 
 Les systèmes d’exploitation récents (Linux, MacOS, Windows 11) incluent
 habituellement un client SSH. Pour vous connecter à la plateforme en mode ligne
@@ -12,7 +12,7 @@ connexion :
 
 .. code-block:: console
 
-   $ ssh alice@iq-hpc.ccs.usherbrooke.ca
+   $ ssh alice@hpc.iq.ccs.usherbrooke.ca
 
 Remplacez ``alice`` par votre nom d’utilisateur.
 
@@ -24,10 +24,10 @@ connus. Ce dialogue prendra la forme suivante :
 
 .. code-block:: console
 
-    The authenticity of host 'iq-hpc.ccs.usherbrooke.ca (204.19.23.210)' can't be established.
+    The authenticity of host 'hpc.iq.ccs.usherbrooke.ca (204.19.23.210)' can't be established.
     ED25519 key fingerprint is SHA256:hVAo6KoqKOEbtOaBh6H6GYHAvsStPsDEcg4LXBQUP50.
     Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-    Warning: Permanently added 'iq-hpc.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
+    Warning: Permanently added 'hpc.iq.ccs.usherbrooke.ca' (ED25519) to the list of known hosts.
 
 L’empreinte de la clé du serveur devrait correspondre à celle donnée dans
 l’exemple ci-haut.
@@ -37,7 +37,7 @@ Entrez ensuite votre mot de passe CCDB. Notez qu’aucun caractère ne s’affic
 
 .. code-block:: console
 
-   (alice@iq-hpc.ccs.usherbrooke.ca) Password:
+   (alice@hpc.iq.ccs.usherbrooke.ca) Password:
 
 Utilisez un second facteur d’authentification pour compléter le processus de
 connexion. Cette invite différera selon le ou les appareils que vous avez
@@ -46,7 +46,7 @@ Android :
 
 .. code-block:: console
 
-    (alice@iq-hpc.ccs.usherbrooke.ca) Duo two-factor login for alice
+    (alice@hpc.iq.ccs.usherbrooke.ca) Duo two-factor login for alice
 
     Enter a passcode or select one of the following options:
 

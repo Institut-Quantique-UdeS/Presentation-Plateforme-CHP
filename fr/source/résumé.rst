@@ -6,7 +6,7 @@ Résumé
     <https://ccdb.alliancecan.ca/>`_.
 
 **Adresse**
-    SSH: ``iq-hpc.ccs.usherbrooke.ca``
+    SSH: ``hpc.iq.ccs.usherbrooke.ca``
 
 **Répertoire personnel**
     - Emplacement : ``/home/$USER``
