@@ -92,5 +92,5 @@ research projects, see the Alliance `Getting Started
 .. note::
 
    This documentation is managed by the CCS. For any question or comment or to
-   report a mistake or an issue, see our :doc:`technical support
+   report a mistake or an issue, contact our :doc:`technical support
    <aide/support>`.
