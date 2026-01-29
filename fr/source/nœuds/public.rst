@@ -12,7 +12,7 @@
      - Limite de temps
      - Accès libre
      - Propriétaire(s)
-   * - ``c-iq``
+   * - ``iq-main``
      - | ``cp370[2-4]``
        | (total : 3)
      - 96
@@ -23,7 +23,7 @@
      - 7 jours
      - Oui
      - IQ
-   * - ``c-iq``
+   * - ``iq-main``
      - ``cp3705``
      - 48
      - 500G (0,48T)

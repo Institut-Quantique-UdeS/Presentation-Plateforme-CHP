@@ -29,12 +29,7 @@ jobs. This location offers better performance than your home directory.
 Public nodes
 ------------
 
-Les tâches doivent être soumises à la partition ``c-iq``, qui est aussi la
-partition par défaut. Aucune option n’est donc nécessaire, mais la partition
-peut néanmoins être indiquée explicitement avec l’option ``--partition`` ou sa
-forme courte ``-p`` si désiré. Par exemple, dans un script de tâche :
-
-Jobs must be submitted to the ``c-iq`` partition, which is the default. The
+Jobs must be submitted to the ``iq-main`` partition, which is the default. The
 partition can nevertheless be explicited using the ``--partition`` option or its
 short form ``-p``. For example, in a job script:
 
@@ -42,7 +37,7 @@ short form ``-p``. For example, in a job script:
 
     #!/bin/bash
     #SBATCH --job-name=my-job
-    #SBATCH --partition=c-iq
+    #SBATCH --partition=iq-main
 
     ...
 
@@ -67,7 +62,7 @@ To use both GPUs in a job script:
 
     #!/bin/bash
     #SBATCH --job-name=my-job
-    #SBATCH --partition=c-iq
+    #SBATCH --partition=iq-main
     #SBATCH --gpus-per-node=nvidia_a40:2
 
     ...
@@ -78,8 +73,8 @@ Contributed nodes
 To run a job on one or more contributed nodes to which you have access, request
 the corresponding partition with ``-p`` ``--partition``. Refer to the
 :ref:`contributed nodes <contrib-label>` table. For instance, use
-``--partition=c-apc`` to submit a job to David Sénéchal’s APC nodes. Maximum job
-duration varies depending on the partition and is noted in the node table.
+``--partition=iq-apc`` to submit a job to David Sénéchal’s APC nodes. Maximum
+job duration varies depending on the partition and is noted in the node table.
 
 Job management
 --------------

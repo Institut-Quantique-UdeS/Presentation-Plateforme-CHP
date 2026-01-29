@@ -25,40 +25,6 @@ optimisation option. If you use the Intel compilers, the corresponding option is
 to optimise for the Intel processors on ``ip09``. The resulting program can be
 incompatible with some compute nodes’ AMD processors.
 
-..
-    My interactive task on ``c-blais`` crashes on startup
-    '''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-    Interactive tasks started on the ``c-blais`` partition (Kerrcat workstation) are
-    currently not working:
-
-    .. code-block:: console
-
-        [alice@ip09 ~]$ salloc -p c-blais
-        salloc: Granted job allocation 5810877
-        salloc: Waiting for resource configuration
-        salloc: Nodes cp3707 are ready for job
-        srun: error: _find_node_record(751): lookup failure for cp3707
-        srun: error: hostlist2bitmap: invalid node specified cp3707
-        srun: fatal: ROUTE: Failed to make bitmap from hostlist=cp3707.
-        salloc: Relinquishing job allocation 5810877
-
-    Job scripts submitted with ``sbatch`` work normally.
-
-    If you wish to run interactive jobs on ``c-blais``, use the ``--no-shell``
-    option as follows, and cancel your job explicitely once you have finished:
-
-    .. code-block:: console
-
-       [alice@ip09 ~]$ salloc -p c-blais --no-shell
-       salloc: Granted job allocation 5944655
-       salloc: Waiting for resource configuration
-       salloc: Nodes cp3707 are ready for job
-       [alice@ip09 ~]$ ssh cp3707
-       [alice@cp3707-mp2 ~]$ ...
-       [alice@cp3707-mp2 ~]$ exit
-       [alice@ip09 ~]$ scancel 5944655
-
 .. _calcul-lent-label:
 
 My computation is much slower than on my laptop
@@ -78,7 +44,7 @@ If the problem persists, check if your task :ref:`uses allocated resources
 correctly <tâches-actives-label>`. A common problem is a parallel program that
 tries to use all the CPU cores on a compute node even though they are not all
 allocated to the job. For instance, a program could start 96 execution threads
-to try to use the 96 CPU cores on a compute node from the ``c-iq`` partition,
+to try to use the 96 CPU cores on a compute node from the ``iq-main`` partition,
 even though that job only has access to a single core. The operating system will
 then alternate between the 96 threads so that each one gets a share of CPU time.
 This context switching causes an important performance degradation. In addition,

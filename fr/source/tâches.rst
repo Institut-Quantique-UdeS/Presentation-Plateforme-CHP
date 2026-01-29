@@ -31,16 +31,16 @@ performance que votre répertoire personnel.
 Nœuds publics
 -------------
 
-Les tâches doivent être soumises à la partition ``c-iq``, ce qui est l’option
+Les tâches doivent être soumises à la partition ``iq-main``, ce qui est l’option
 par défaut. La partition peut néanmoins être indiquée explicitement si désiré
-avec l’option ``--partition`` ou sa forme courte ``-p``. Par exemple,
-dans un script de tâche :
+avec l’option ``--partition`` ou sa forme courte ``-p``. Par exemple, dans un
+script de tâche :
 
 .. code-block:: bash
 
     #!/bin/bash
     #SBATCH --job-name=my-job
-    #SBATCH --partition=c-iq
+    #SBATCH --partition=iq-main
 
     ...
 
@@ -65,7 +65,7 @@ Pour utiliser les deux GPU dans un script de tâche :
 
     #!/bin/bash
     #SBATCH --job-name=my-job
-    #SBATCH --partition=c-iq
+    #SBATCH --partition=iq-main
     #SBATCH --gpus-per-node=nvidia_a40:2
 
     ...
@@ -77,7 +77,7 @@ Pour lancer une tâche sur un ou plusieurs nœuds contribués auxquels vous avez
 accès, demandez la partition correspondante avec ``-p`` ``--partition``.
 Référez-vous au tableau des :ref:`nœuds de calcul contribués <contrib-label>`.
 Par exemple, vous pouvez soumettre une tâche aux nœuds APC de David Sénéchal
-avec ``--partition=c-apc``. La durée maximale des tâches varie selon la
+avec ``--partition=iq-apc``. La durée maximale des tâches varie selon la
 partition et est indiquée dans le tableau des nœuds.
 
 Gestion des tâches

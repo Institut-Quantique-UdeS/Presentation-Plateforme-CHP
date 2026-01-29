@@ -12,7 +12,7 @@
      - Time limit
      - Open access
      - Owner(s)
-   * - ``c-iq``
+   * - ``iq-main``
      - | ``cp370[2-4]``
        | (3 total)
      - 96
@@ -23,7 +23,7 @@
      - 7 days
      - Yes
      - IQ
-   * - ``c-iq``
+   * - ``iq-main``
      - ``cp3705``
      - 48
      - 500G (0.48T)

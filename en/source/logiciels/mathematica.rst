@@ -38,7 +38,7 @@ To use Mathematica in an interactive job:
 
 .. code-block:: console
 
-    [alice@ip09 ~]$ salloc -p c-iq -t 2:00:00 -c 2 --mem=8G
+    [alice@ip09 ~]$ salloc -t 2:00:00 -c 2 --mem=8G
     salloc: Granted job allocation 5843885
     salloc: Waiting for resource configuration
     salloc: Nodes cp3702 are ready for job

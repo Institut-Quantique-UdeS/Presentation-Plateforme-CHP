@@ -12,7 +12,7 @@
      - Time limit
      - Open access
      - Owner(s)
-   * - ``c-blais``
+   * - ``iq-blais``
      - ``cp3707``
      - 128
      - 1508G (1.47T)
@@ -22,7 +22,7 @@
      - 28 days
      - No
      - \A. Blais
-   * - ``c-aphex``
+   * - ``iq-aphex``
      - ``cp3701``
      - 48
      - 1004G (0.98T)
@@ -32,7 +32,7 @@
      - 7 days
      - No
      - \S. Kourtis
-   * - ``c-royer``
+   * - ``iq-royer``
      - ``cp3706``
      - 128
      - 2000G (1.95T)
@@ -42,7 +42,7 @@
      - 7 days
      - No
      - \B. Royer
-   * - ``c-royer-gpu``
+   * - ``iq-royer-gpu``
      - ``cp3711``
      - 16
      - 374G (0.36T)
@@ -52,7 +52,7 @@
      - 7 days
      - No
      - \B. Royer
-   * - ``c-softcorr``
+   * - ``iq-softcorr``
      - ``cp3710``
      - 384
      - 1508G (1,47T)
@@ -62,7 +62,7 @@
      - 7 days
      - No
      - \D. Sénéchal, A.-M. Tremblay
-   * - ``c-tremblay``
+   * - ``iq-tremblay``
      - ``cp3708``
      - 256
      - 752G (0.73T)
@@ -72,7 +72,7 @@
      - 7 days
      - No
      - \A.-M. Tremblay
-   * - ``c-maiagv``
+   * - ``iq-maiagv``
      - ``cp3709``
      - 192
      - 2264G (2.21T)
