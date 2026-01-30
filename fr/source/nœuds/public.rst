@@ -27,7 +27,7 @@
      - ``cp3705``
      - 48
      - 500G (0,48T)
-     - 2 x Xeon Gold 6342 ``icelake``
+     - 2 x Intel Xeon Gold 6342 ``icelake``
      - 2 x NVidia A40 48G ``nvidia_a40``
      - 1T (NVMe)
      - 7 jours
