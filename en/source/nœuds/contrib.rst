@@ -26,9 +26,9 @@
      - ``cp3701``
      - 48
      - 1004G (0.98T)
-     - 3.4T
      - 2 x AMD EPYC 7F72 ``rome``
      -
+     - 3.4T
      - 7 days
      - No
      - \S. Kourtis

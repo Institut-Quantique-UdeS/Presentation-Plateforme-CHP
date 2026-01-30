@@ -16,8 +16,8 @@
      - ``cp3707``
      - 128
      - 1508G (1,47T)
-     -
      - 2 x AMD EPYC 9554 ``genoa``
+     -
      - 1T (NVMe)
      - 28 jours
      - Non
