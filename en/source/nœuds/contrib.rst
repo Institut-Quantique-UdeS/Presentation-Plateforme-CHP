@@ -1,10 +1,10 @@
 .. list-table::
    :header-rows: 1
-   :width: 960px
+   :width: 1200px
 
    * - Partition
      - Node(s)
-     - Core count
+     - Cores
      - Memory
      - CPU(s)
      - GPU(s)
