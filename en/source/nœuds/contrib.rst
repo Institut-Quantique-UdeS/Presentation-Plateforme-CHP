@@ -1,6 +1,7 @@
 .. list-table::
    :header-rows: 1
    :width: 1200px
+   :widths: 8 5 5 5 15 15 5 8 5 10
 
    * - Partition
      - Node(s)
