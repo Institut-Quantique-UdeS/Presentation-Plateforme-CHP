@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Plateforme CHP-IQ'
-copyright = '2022-2024, CCS'
+copyright = '2022-2026, CCS'
 author = 'CCS'
 
 

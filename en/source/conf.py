@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'IQ HPC Platform'
-copyright = '2022-2024, CCS'
+copyright = '2022-2026, CCS'
 author = 'CCS'
 
 
